@@ -1,12 +1,12 @@
 """Build the static RadLex browser.
 
-Usage: python3 site/build.py --input OWL_OR_TSV_DIR --out DIR --base-path P [--record FILE]
+Usage: python3 site/build.py --input OWL_OR_TSV_DIR --out DIR --base-path P [--record FILE] [--work DIR]
 
 --input is an OWL file, extracted with ROBOT, or a directory of query TSVs such as a test
 fixture. --base-path is an empty string or /name, and every internal URL is absolute
 under it. --record is the JSON that resolve_input.py printed, and version.json carries
 it. Without one, the build records the input's own SHA-256 and leaves the tag fields
-empty. The build ID is the first 12 hex characters of the SHA-256 of the input sha256,
+empty. --work keeps the ROBOT query output in WORK/tsv, which check_site.py reads. The build ID is the first 12 hex characters of the SHA-256 of the input sha256,
 the generator commit, and the base path, joined by newlines.
 """
 import argparse
@@ -136,9 +136,10 @@ def main(argv=None):
     parser.add_argument("--out", required=True, help="the site folder to write")
     parser.add_argument("--base-path", default="", help='"" or /name, with no trailing slash')
     parser.add_argument("--record", help="the JSON file resolve_input.py printed")
+    parser.add_argument("--work", help="keep the ROBOT query output in WORK/tsv for check_site.py")
     args = parser.parse_args(argv)
     record = json.loads(Path(args.record).read_text()) if args.record else None
-    print(json.dumps(build(args.input, args.out, args.base_path, record)))
+    print(json.dumps(build(args.input, args.out, args.base_path, record, args.work)))
 
 
 if __name__ == "__main__":
