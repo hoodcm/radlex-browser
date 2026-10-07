@@ -4,7 +4,7 @@ title: Implement the RadLex browser complete-site plan
 band: next
 first_surfaced: 2026-10-07
 last_touched: 2026-10-07
-depends_on: [implement-radlex-browser-poc-plan]
+depends_on: []
 links: [~/GitHub/anatomy-ontology/radlex/docs/plans/2026-10-06-radlex-browser-complete-plan.md]
 worktype: build
 workstream: radlex-browser
