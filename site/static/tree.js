@@ -168,7 +168,7 @@ async function init() {
 
   function toggle(r) {
     const node = rows[r].node;
-    if (!children[node].length || visible) return;
+    if (!children[node].length || visible) { draw(); return; }
     if (expanded.has(node)) expanded.delete(node); else expanded.add(node);
     flatten();
     currentRow = current == null ? -1 : findRow(currentState().path.filter((id) => index.has(id)));
@@ -205,8 +205,8 @@ async function init() {
     scroller.focus({ preventScroll: true });
     if (event.target.closest(".tw") || !el.hasAttribute("href")) {
       event.preventDefault();
-      setActive(r, false);
-      toggle(r);
+      active = r;
+      toggle(r);   // draws once, with the clicked row active
     }
   });
   scroller.addEventListener("mouseover", (event) => {
