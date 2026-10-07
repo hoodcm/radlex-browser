@@ -89,6 +89,12 @@ def copy_static(out, bid):
             shutil.copyfile(src, target)
 
 
+def inline_script(path):
+    """The script without its comment lines and indentation, since every page carries a copy."""
+    lines = (line.strip() for line in path.read_text().splitlines())
+    return "\n".join(line for line in lines if line and not line.startswith("//"))
+
+
 def load_ontology(input_path, workdir):
     input_path = Path(input_path)
     if input_path.is_dir():
@@ -111,7 +117,7 @@ def build(input_path, out, base, record=None, workdir=None):
     with tempfile.TemporaryDirectory() as tmp:
         onto = load_ontology(input_path, workdir or tmp)
     out = prepare_out(out)
-    ctx = render.Context(onto, base, bid, record, (STATIC / "boot.js").read_text().strip())
+    ctx = render.Context(onto, base, bid, record, inline_script(STATIC / "boot.js"))
 
     for rid in onto.terms:
         write(out / "RID" / f"{rid}.html", render.term_page(ctx, rid))

@@ -50,6 +50,7 @@ def page(ctx, title, main, *, description=""):
         f"<title>{e(title)}</title>{desc}"
         f'<meta name="radlex-build" content="{ctx.build_id}">'
         f'<meta name="radlex-base" content="{e(ctx.base)}">'
+        f'<link rel="icon" href="{ctx.static("icon.svg")}" type="image/svg+xml">'
         f'<link rel="preload" href="{ctx.static(FONT_PRELOAD)}" as="font" type="font/woff2" crossorigin>'
         f"{links}<script>{ctx.boot_js}</script></head>"
         '<body><div class="app" data-dtools-role="page">'
@@ -59,7 +60,7 @@ def page(ctx, title, main, *, description=""):
         f'<span>Search {ctx.count:,} terms by name, synonym, or RID</span><kbd>⌘K</kbd></button>'
         '<nav class="topnav" aria-label="Site">'
         '<button type="button" class="view-switch" data-view-switch aria-pressed="false">Ontology view</button>'
-        f'<span class="chip" data-dtools-role="chip">v{e(version)}</span>'
+        + (f'<span class="chip" data-dtools-role="chip">v{e(version)}</span>' if version else "") +
         '<a class="keep" href="https://github.com/RSNA/RadLex">GitHub</a></nav>'
         "</header>"
         '<div class="body"><nav class="sidebar" data-dtools-role="sidebar" aria-label="RadLex hierarchy"></nav>'
