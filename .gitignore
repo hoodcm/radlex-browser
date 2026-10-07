@@ -1,0 +1,44 @@
+# Environment
+.env
+.env.*
+.env.local
+!.env.example
+
+# Dependencies
+node_modules/
+vendor/
+__pycache__/
+.venv/
+
+# Build outputs
+dist/
+build/
+*.pyc
+
+# Claude local files
+.claude/settings.local.json
+CLAUDE.local.md
+
+# Per-clone state written by /end-session and the stores, never shared
+.claude/todo/.watermark.json
+.claude/friction/.watermark.json
+.claude/.end-session-audit.json
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Python
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+.pytest_cache/
+
+# RadLex browser build
+site/_build/
+.robot/
