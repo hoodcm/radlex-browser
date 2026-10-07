@@ -1,4 +1,5 @@
-// The ⌘K search dialog. Queries go to search-worker.js, and results open through nav.js.
+// The ⌘K search dialog. Queries go to search-worker.js, which starts when this module loads so the
+// shard list is in hand before the first keystroke, and results open through nav.js.
 import { navigate, prefetch } from "./nav.js";
 
 const R = window.RADLEX;
@@ -10,7 +11,10 @@ const escapeHtml = (s) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt
 
 function startWorker() {
   worker = new Worker(R.static + "search-worker.js");
-  worker.onmessage = ({ data }) => { if (data.type === "results") receive(data); };
+  worker.onmessage = ({ data }) => {
+    if (data.type === "results") receive(data);
+    else if (data.type === "complete") R.searchComplete = true;
+  };
   worker.postMessage({ type: "init", data: R.data, intl: R.store.get("langs") === "1" });
 }
 
@@ -76,9 +80,13 @@ function receive(data) {
     `<span class="lb">${escapeHtml(r.label)}${r.via ? ` <span class="via">${escapeHtml(r.via)}</span>` : ""}</span>` +
     `${r.retired ? '<span class="chip">Retired</span>' : ""}<span class="chip">${escapeHtml(r.id)}</span></li>`).join("");
   input.setAttribute("aria-activedescendant", data.results.length ? "sr-0" : "");
-  count.textContent = data.q ? `${data.total.toLocaleString()} ${data.total === 1 ? "term" : "terms"}` : "";
+  // Partial results lack substring matches or other languages until the full index loads.
+  const terms = `${data.total.toLocaleString()}${data.partial ? "+" : ""} ${data.total === 1 && !data.partial ? "term" : "terms"}`;
+  count.textContent = !data.q ? "" : data.partial && !data.total ? "Searching…" : terms;
   list.dataset.query = input.value;
-  requestAnimationFrame(() => R.searchLog.push({ painted: input.value, t: performance.now() }));
+  list.dataset.partial = String(Boolean(data.partial));
+  const painted = { painted: input.value, n: data.results.length, partial: Boolean(data.partial) };
+  requestAnimationFrame(() => R.searchLog.push({ ...painted, t: performance.now() }));
   if (enterPending) { enterPending = false; if (data.results.length) open(data.results[0]); }
 }
 
@@ -98,7 +106,6 @@ function open(result) {
 
 export function openSearch(initial = "") {
   if (!dialog) build();
-  if (!worker) startWorker();
   if (!dialog.open) dialog.showModal();
   if (initial) { input.value = initial; query(); }
   input.select();
@@ -114,3 +121,4 @@ document.addEventListener("click", (event) => {
   if (event.target.closest("[data-search]")) openSearch();
 });
 R.openSearch = openSearch;
+startWorker();

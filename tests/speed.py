@@ -6,8 +6,9 @@ Chrome for Testing through Playwright, with CDP throttling of 150 ms round trip,
 down, 750 kbps up, and the CPU slowed four times. Measures the first contentful paint of
 RID665 on a cold cache, the term-to-term swap after hover prefetch (desktop) and after
 on-screen prefetch (touch), the cold swap with no prefetch, the time per search keystroke
-from input to painted results over 20 queries, the first search on a cold page, and the
-longest task while imaging sign expands. Prints one line per measure and a JSON report,
+from input to painted results over 20 queries once the full index has loaded, the first
+search on a cold page (typing "liver" at 150 ms a key, from the first keystroke to the first
+painted results), and the longest task while imaging sign expands. Prints one line per measure and a JSON report,
 and exits non-zero when a held target is missed.
 """
 import argparse
@@ -24,6 +25,7 @@ NETWORK = {"offline": False, "latency": 150, "downloadThroughput": 1.6e6 / 8, "u
 CPU_SLOWDOWN = 4
 QUERIES = ["liver", "lung", "carotid", "kidney", "aorta", "femur", "brain", "heart", "spleen", "rid58",
            "pancreas", "ive", "fracture", "stenosis", "thyroid", "mri", "contrast", "lesion", "pleural effusion", "vertebra"]
+FIRST_QUERY = "liver"
 TARGETS = {"fcp_ms": 1000, "warm_swap_ms": 100, "search_p95_ms": 16, "first_search_ms": 1000, "long_task_ms": 50}
 # The page set: RID665 and the terms it links to, imaging sign for the expansion.
 START = "/RID/RID665.html"
@@ -130,9 +132,14 @@ def search(browser, url):
     wait_ready(page)
     page.wait_for_function("!!window.RADLEX.openSearch", timeout=60000)
     page.keyboard.press("Meta+k")
-    page.keyboard.type("l")
-    page.wait_for_function("document.querySelector('.search-dialog .results')?.dataset.query === 'l'", timeout=120000)
-    first = keystroke_latencies(page.evaluate("RADLEX.searchLog"))[0]
+    page.keyboard.type(FIRST_QUERY, delay=150)
+    page.wait_for_function("() => RADLEX.searchLog.some((e) => e.n > 0)", timeout=120000)
+    log = page.evaluate("RADLEX.searchLog")
+    start = next(e["t"] for e in log if "input" in e)
+    shown = next(e for e in log if e.get("n"))
+    first = shown["t"] - start
+    print(f"      first results painted for {shown['painted']!r}, partial={shown['partial']}")
+    page.wait_for_function("RADLEX.searchComplete === true", timeout=120000)
     page.evaluate("RADLEX.searchLog.length = 0")
     for q in QUERIES:
         type_query(page, q)

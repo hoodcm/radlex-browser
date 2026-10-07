@@ -78,15 +78,17 @@ def wait_rid(page, rid):
     page.wait_for_function("rid => document.querySelector('main .detail')?.dataset.rid === rid", arg=rid, timeout=15000)
 
 
-def search_ids(page, query, typed=False):
+def search_ids(page, query, typed=False, complete=True):
+    """The result IDs for a query, once they're complete, or once any arrive with complete=False."""
     box = page.locator(".search-dialog input[type=search]")
     box.fill("")
     if typed:
         box.press_sequentially(query, delay=60)
     else:
         box.fill(query)
-    page.wait_for_function("q => document.querySelector('.search-dialog .results')?.dataset.query === q",
-                           arg=query, timeout=30000)
+    page.wait_for_function("([q, complete]) => { const r = document.querySelector('.search-dialog .results');"
+                           " return r?.dataset.query === q && (!complete || r.dataset.partial === 'false'); }",
+                           arg=[query, complete], timeout=30000)
     return page.eval_on_selector_all(".search-dialog .results li", "els => els.map(e => e.dataset.id)")
 
 
@@ -167,6 +169,28 @@ def main():
                 assert typed == pasted, (typed[:5], pasted[:5])
                 page.keyboard.press("Escape")
             checks.run('"ive" typed key by key lists RID58, the same as pasted', search_typed)
+
+            def shard_answers_first():
+                page.keyboard.press("Meta+k")
+                complete = search_ids(page, "li")
+                page.keyboard.press("Escape")
+                # The full index never arrives here, so every answer comes from a shard.
+                cold = browser.new_context(viewport={"width": 1440, "height": 900})
+                held = []
+                cold.route("**/search-en.json", lambda route: held.append(route))
+                tab = cold.new_page()
+                tab.goto(url("/RID/RID665.html"))
+                tab.wait_for_function("!!window.RADLEX?.openSearch", timeout=15000)
+                tab.keyboard.press("Meta+k")
+                assert search_ids(tab, "li") == complete, "a shard ranks a two-letter query differently"
+                ids = search_ids(tab, "liver", complete=False)
+                assert ids[:1] == ["RID58"], ids[:5]
+                assert tab.evaluate("document.querySelector('.search-dialog .results').dataset.partial") == "true"
+                assert not tab.evaluate("window.RADLEX.searchComplete ?? false")
+                for route in held:
+                    route.abort()
+                cold.close()
+            checks.run('a shard answers "li" as the full index does, and "liver" before it loads', shard_answers_first)
 
             def swap_and_back():
                 page.goto(url("/RID/RID665.html"))

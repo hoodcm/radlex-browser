@@ -74,6 +74,23 @@ def oversized(site):
     page.write_text(page.read_text() + "<!--" + os.urandom(48 * 1024).hex() + "-->")
 
 
+def search_dir(site):
+    bid = json.loads((site / "version.json").read_text())["build_id"]
+    return site / "data" / bid / "search"
+
+
+def shard_missing_key(site):
+    path = search_dir(site) / "0.json"
+    shard = json.loads(path.read_text())
+    del shard["keys"][0], shard["postings"][0]
+    shard["display"] = {}
+    path.write_text(json.dumps(shard))
+
+
+def shard_file_missing(site):
+    (search_dir(site) / "0.json").unlink()
+
+
 def version_field(site):
     path = site / "version.json"
     version = json.loads(path.read_text())
@@ -87,7 +104,8 @@ def test_clean_build_passes(clean):
 
 
 @pytest.mark.parametrize("mutate", [delete_page, mislabel, second_root, corrupt_children,
-                                    broken_link, oversized, version_field])
+                                    broken_link, oversized, version_field, shard_missing_key,
+                                    shard_file_missing])
 def test_failure_shape_fails(clean, tmp_path, mutate):
     tsv, site = clean
     copy = tmp_path / "site"

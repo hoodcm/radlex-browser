@@ -6,8 +6,8 @@ DIR is the query output of the ROBOT run that built SITE, so every count is chec
 against that run's scoped class count, never a number written here. Exits non-zero when:
 the page count differs from the scoped count; a class with an @en label renders another
 title; the tree has other than one live root plus the retired group; tree.json's parent
-edges differ from the pages' "Is a" lists, or a search posting names a node with no
-page; an internal link in the sample is broken; a page exceeds 40 KB gzipped or the site
+edges differ from the pages' "Is a" lists, a search posting names a node with no
+page, or the search shards differ from search-en.json; an internal link in the sample is broken; a page exceeds 40 KB gzipped or the site
 900 MB; or version.json lacks a field. Prints the tag, commit, input source, build ID,
 file count, site size, and gzipped bundle sizes as a Markdown table for the job summary.
 """
@@ -21,6 +21,7 @@ import sys
 from collections import defaultdict
 from pathlib import Path
 
+import bundles
 import extract
 
 PAGE_GZIP_LIMIT = 40 * 1024
@@ -121,7 +122,58 @@ def check_tree(site, data, pages, isa, gate):
             gate.fail(f"{name}: {bad} postings name a node with no page")
         if len(index["postings"]) != len(index["keys"]):
             gate.fail(f"{name}: postings and keys differ in length")
+    check_shards(data, tree, gate)
     return tree
+
+
+def check_shards(data, tree, gate):
+    """The shards hold search-en.json losslessly: each key sits in the shard that each of its
+    word starts names, with the same postings and node labels, unless the word start equals a
+    split name and is left to the full index."""
+    manifest = json.loads((data / "search" / "index.json").read_text())
+    names, stop = manifest["shards"], set(manifest["stop"])
+    position = {n: i for i, n in enumerate(names)}
+    if names != sorted(position) or any(n[:i] in position for n in names for i in range(1, len(n))):
+        gate.fail("search/index.json: shard names are not sorted, unique, and prefix-free")
+    files = {p.name for p in (data / "search").glob("*.json")} - {"index.json"}
+    if files != {f"{n}.json" for n in range(len(names))}:
+        gate.fail(f"search/: {len(files)} shard files against {len(names)} shard names")
+        return
+    index = json.loads((data / "search-en.json").read_text())
+    expected = defaultdict(dict)   # shard name -> key -> {(id, kind)}
+    lost = []
+    for k, key in enumerate(index["keys"]):
+        p = index["postings"][k]
+        codes = {(tree["ids"][c // 8], c % 8) for c in ([p] if isinstance(p, int) else p)}
+        for s in bundles.word_starts(key, stop):
+            name = next((s[:i] for i in range(1, len(s) + 1) if s[:i] in position), None)
+            if name is not None:
+                expected[name][key] = codes
+            elif not any(n.startswith(s) for n in names):
+                lost.append(key)
+    if lost:
+        gate.fail(f"{len(lost)} word starts reach no shard, such as {lost[:3]}")
+    label_of = dict(zip(tree["ids"], tree["labels"]))
+    retired_of = dict(zip(tree["ids"], tree["retired"]))
+    wrong = []
+    for name, n in position.items():
+        obj = json.loads((data / "search" / f"{n}.json").read_text())
+        ids, labels = obj["ids"], list(obj["labels"])
+        found = {}
+        for key, p in zip(obj["keys"], obj["postings"]):
+            codes = [p] if isinstance(p, int) else p
+            if any(not 0 <= c // 8 < len(ids) for c in codes):
+                wrong.append(name)
+                break
+            found[key] = {(ids[c // 8], c % 8) for c in codes}
+            for c in codes:
+                if c % 8 == bundles.KIND["label"] and labels[c // 8] == "":
+                    labels[c // 8] = key
+        if (found != expected[name] or len(obj["keys"]) != len(obj["postings"])
+                or [label_of.get(i) for i in ids] != labels or [retired_of.get(i) for i in ids] != obj["retired"]):
+            wrong.append(name)
+    if wrong:
+        gate.fail(f"{len(wrong)} search shards differ from search-en.json, such as {wrong[:3]}")
 
 
 def resolve(site, base, url):
@@ -188,6 +240,9 @@ def main(argv=None):
         path = data / name
         if path.is_file():
             rows.append((f"{name} gzipped", f"{len(gzip.compress(path.read_bytes(), 9)) / 1024:.0f} KB"))
+    shards = [len(gzip.compress(p.read_bytes(), 9)) for p in (data / "search").glob("*.json") if p.name != "index.json"]
+    if shards:
+        rows.append(("Search shards", f"{len(shards):,}, largest {max(shards) / 1024:.0f} KB gzipped"))
     print("| Check | Value |\n|---|---|")
     print("\n".join(f"| {k} | {v} |" for k, v in rows))
     if gate.failures:
