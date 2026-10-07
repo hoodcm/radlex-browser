@@ -19,8 +19,10 @@ The plan set, the shared contracts, and Michael's locked decisions live in `~/Gi
 | Command | Description |
 |---------|-------------|
 | `python3 site/resolve_input.py --out site/_build/input` | Resolve the newest `RSNA/RadLex` tag and fetch its OWL, printing the JSON record |
-| `python3 site/build.py --input <owl> --out site/_build/site --base-path /radlex-browser` | Build the site from an OWL file |
-| `python3 site/check_site.py site/_build/site` | Run the fail-closed site gates on a build |
+| `python3 site/build.py --input <owl> --out site/_build/site --base-path /radlex-browser --work site/_build/work` | Build the site from an OWL file, keeping the ROBOT output for the gates |
+| `python3 site/check_site.py site/_build/site --tsv site/_build/work/tsv` | Run the fail-closed site gates on a build |
+| `python3 site/build_newest.py --out site/_build/site --base-path /radlex-browser --work site/_build/newest` | Build the newest tag that passes the gates, falling back one tag at a time, as the workflow does |
+| `python3 tests/browser_smoke.py --site site/_build/site` | Drive the built site in Chrome for Testing |
 | `python3 -m pytest tests -q` | Run the test suite |
 | `python3 -m http.server -d site/_build/site 8000` | Serve a build locally, with an empty base path |
 

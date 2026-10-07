@@ -26,6 +26,12 @@ def test_only_a_scheduled_run_can_skip():
     assert "site/early_exit.py" in text
 
 
+def test_the_build_falls_back_through_build_newest():
+    text = WORKFLOW.read_text()
+    assert "python3 site/build_newest.py --out _site" in text
+    assert '--summary "$GITHUB_STEP_SUMMARY"' in text
+
+
 RECORD = {"tag": "4.3", "commit": "d53bd9c", "tag_date": "2026-08-10", "source": "release-asset"}
 DEPLOYED = {"tag": "4.3", "commit": "d53bd9c", "generator_commit": "g1", "base_path": "/radlex-browser",
             "build_id": "x", "sha256": "s", "tag_date": "2026-08-10", "source": "release-asset", "built_at": "t"}

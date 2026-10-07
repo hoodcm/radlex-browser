@@ -32,8 +32,8 @@ def version_key(tag):
     return tuple(int(part) for part in tag.lstrip("v").split("."))
 
 
-def select_tag(ls_remote_text):
-    """Return (tag, commit) for the newest version tag in `git ls-remote --tags` output.
+def version_tags(ls_remote_text):
+    """(tag, commit) for every version tag in `git ls-remote --tags` output, newest first.
 
     An annotated tag lists its tag object and then its peeled commit under `^{}`, and
     the peeled commit wins.
@@ -52,10 +52,15 @@ def select_tag(ls_remote_text):
             continue
         if peeled or name not in commits:
             commits[name] = sha
-    if not commits:
+    return sorted(commits.items(), key=lambda pair: version_key(pair[0]), reverse=True)
+
+
+def select_tag(ls_remote_text):
+    """(tag, commit) for the newest version tag."""
+    tags = version_tags(ls_remote_text)
+    if not tags:
         raise ResolveError("no tag matches " + TAG_PATTERN.pattern)
-    tag = max(commits, key=version_key)
-    return tag, commits[tag]
+    return tags[0]
 
 
 def ls_remote(repo):
@@ -159,10 +164,11 @@ def sha256_file(path):
     return digest.hexdigest()
 
 
-def resolve(repo, out_dir):
+def resolve(repo, out_dir, pick=None):
+    """Fetch the input of `pick`, a (tag, commit) pair, or of the newest tag."""
     out_dir = Path(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
-    tag, commit = select_tag(ls_remote(repo))
+    tag, commit = pick or select_tag(ls_remote(repo))
     with tempfile.TemporaryDirectory() as work:
         checkout = TagCheckout(repo, tag, work)
         tag_date = checkout.commit_date()

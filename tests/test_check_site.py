@@ -112,3 +112,19 @@ def test_failure_shape_fails(clean, tmp_path, mutate):
     shutil.copytree(site, copy)
     mutate(copy)
     assert run(copy, tsv) == 1
+
+
+def test_no_class_in_the_namespaces_fails_by_name(clean, tmp_path, capsys):
+    tsv, site = clean
+    empty = tmp_path / "tsv"
+    shutil.copytree(tsv, empty)
+    (empty / "count.tsv").write_text("?n\n0\n")
+    (empty / "classes.tsv").write_text("?c\n")
+    assert run(site, empty) == 1
+    assert "no named classes in the namespaces of namespaces.json" in capsys.readouterr().err
+
+
+def test_summary_reports_unmapped_properties(clean, capsys):
+    tsv, site = clean
+    assert run(site, tsv) == 0
+    assert "| Unmapped annotation properties |" in capsys.readouterr().out

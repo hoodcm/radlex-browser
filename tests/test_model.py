@@ -60,6 +60,9 @@ def ex_with(values):
     ([("label", "Leber", "de"), ("obsolete_name", "old liver", "")], "old liver"),
     ([("label", "Leber", "de")], "Leber"),
     ([], "RID1"),
+    ([("label", "Leber", "de"), ("label", "liver", "")], "liver"),
+    ([("label", "liver", ""), ("label", "hepar", "en-US")], "hepar"),
+    ([("label", "Leber", "DE"), ("obsolete_name", "old liver", "")], "old liver"),
 ])
 def test_label_fallback_order(values, label):
     assert model.Ontology(ex_with(values)).terms["RID1"].label == label
@@ -140,3 +143,8 @@ def test_misspelling_is_search_only(shape, rid, word):
     t = model.Ontology(load(shape)).terms[rid]
     assert [v.text for v in t.misspellings] == [word]
     assert word not in {v.text for v in t.synonyms + t.acronyms + t.unsanctioned}
+
+
+@pytest.mark.parametrize("flag, retired", [("true", True), ("1", True), ("false", False), ("0", False)])
+def test_deprecated_reads_either_boolean_form(flag, retired):
+    assert model.Ontology(ex_with([("label", "liver", "en"), ("deprecated", flag, "")])).terms["RID1"].retired is retired

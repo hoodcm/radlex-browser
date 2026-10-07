@@ -29,11 +29,10 @@ import re
 import unicodedata
 from collections import defaultdict, deque
 
-from model import RETIRED_ID
+from model import RETIRED_ID, is_english
 
 KIND = {"label": 0, "synonym": 1, "acronym": 2, "misspelling": 3, "unsanctioned": 4, "rid": 5,
         "intl-label": 6, "intl-synonym": 7}
-ENGLISH = {"", "en"}
 # An English label displays from tree.json, so every other name keeps its written form.
 LABEL_KINDS = {KIND["label"], KIND["rid"]}
 # Function words that start no word-start entry after a key's first word, so "of" doesn't
@@ -101,7 +100,7 @@ def search_entries(onto, index):
     for rid, t in onto.terms.items():
         i = index[rid]
         en.append((rid, i, KIND["rid"]))
-        if t.label_value is None or t.label_lang in ENGLISH:
+        if t.label_value is None or is_english(t.label_lang):
             en.append((t.label, i, KIND["label"]))
         else:
             intl.append((t.label, i, KIND["intl-label"]))
@@ -111,7 +110,7 @@ def search_entries(onto, index):
                  "unsanctioned": t.unsanctioned}
         for field, values in names.items():
             for v in values:
-                if v.lang in ENGLISH:
+                if is_english(v.lang):
                     en.append((v.text, i, KIND[field]))
                 else:
                     intl.append((v.text, i, KIND["intl-synonym"]))

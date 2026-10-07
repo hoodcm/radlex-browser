@@ -5,7 +5,7 @@ Usage: python3 site/build.py --input OWL_OR_TSV_DIR --out DIR --base-path P [--r
 --input is an OWL file, extracted with ROBOT, or a directory of query TSVs such as a test
 fixture. --base-path is an empty string or /name, and every internal URL is absolute
 under it. --record is the JSON that resolve_input.py printed, and version.json carries
-it. Without one, the build records the input's own SHA-256 and leaves the tag fields
+it, with its `fallback_from` when build_newest.py skipped a newer tag. Without one, the build records the input's own SHA-256 and leaves the tag fields
 empty. --work keeps the ROBOT query output in WORK/tsv, which check_site.py reads. The build ID is the first 12 hex characters of the SHA-256 of the input sha256,
 the generator commit, and the base path, joined by newlines.
 """
@@ -127,6 +127,8 @@ def build(input_path, out, base, record=None, workdir=None):
     sizes = bundles.write_bundles(onto, out / "data" / bid)
 
     version = {k: record.get(k, "") for k in ("tag", "commit", "tag_date", "source", "sha256")}
+    if record.get("fallback_from"):
+        version["fallback_from"] = record["fallback_from"]
     version.update(generator_commit=gen, base_path=base, build_id=bid,
                    built_at=datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"))
     write(out / "version.json", json.dumps(version, indent=2) + "\n")

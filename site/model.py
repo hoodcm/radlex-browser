@@ -59,9 +59,20 @@ def rid_sort_key(rid):
     return (0, int(m.group(1)), "") if m else (1, 0, rid)
 
 
+def in_language(tag, code):
+    """Whether a language tag is `code` or a regional form of it: "en", "EN", or "en-US"."""
+    tag = tag.lower()
+    return tag == code or tag.startswith(code + "-")
+
+
+def is_english(tag):
+    """English or untagged, the names the English search index and labels read."""
+    return tag == "" or in_language(tag, "en")
+
+
 def first(values, lang=None):
     for v in values:
-        if lang is None or v.lang == lang:
+        if lang is None or (in_language(v.lang, lang) if lang else v.lang == ""):
             return v
     return None
 
@@ -109,13 +120,13 @@ class Ontology:
             by[v.field].append(v)
         rid = local_name(iri)
         labels = by["label"]
-        en, de = first(labels, "en"), first(labels, "de")
+        en, de = first(labels, "en") or first(labels, ""), first(labels, "de")
         obsolete = by["obsolete_name"]
         label_value = en or first(obsolete) or de
         label = label_value.text if label_value else rid
         seen = {label.casefold()} | ({de.text.casefold()} if de else set())
         names = {name: dedup_names(by[name], seen) for name in NAME_FIELDS}
-        deprecated = any(v.text.lower() == "true" for v in by["deprecated"])
+        deprecated = any(v.text.strip().lower() in ("true", "1") for v in by["deprecated"])
         replaced_by = [self._target_rid(v) for v in by["replaced_by"]]
         return Term(
             rid=rid, iri=iri, label=label, label_lang=label_value.lang if label_value else "",

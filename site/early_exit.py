@@ -1,18 +1,20 @@
 """Decide whether a scheduled run can stop early, because the deployed site already renders this input.
 
-Usage: python3 site/early_exit.py --record FILE --base-url URL --base-path P
+Usage: python3 site/early_exit.py --base-url URL --base-path P [--repo OWNER/NAME]
 
-Reads URL/version.json and prints `skip=true` when the deployed tag, commit, generator
-commit, and base path all equal this run's, and `skip=false` otherwise, including when
-nothing is deployed yet or the file can't be read. The workflow appends the line to
-$GITHUB_OUTPUT.
+Reads the newest version tag with `git ls-remote` and URL/version.json, and prints
+`skip=true` when the deployed tag, commit, generator commit, and base path all equal this
+run's, and `skip=false` otherwise, including when nothing is deployed yet, a file can't be
+read, or the deployed build fell back from the newest tag, so a scheduled run retries it.
+The workflow appends the line to $GITHUB_OUTPUT.
 """
 import argparse
 import json
+import subprocess
 import urllib.error
 import urllib.request
-from pathlib import Path
 
+import resolve_input
 from build import generator_commit, normalize_base
 
 
@@ -34,13 +36,16 @@ def fetch(url):
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    parser.add_argument("--record", required=True, help="the JSON file resolve_input.py printed")
     parser.add_argument("--base-url", required=True, help="the deployed site's URL, from configure-pages")
     parser.add_argument("--base-path", default="", help="this run's base path, from configure-pages")
+    parser.add_argument("--repo", default=resolve_input.DEFAULT_REPO, help="GitHub OWNER/NAME to read tags from")
     args = parser.parse_args(argv)
-    record = json.loads(Path(args.record).read_text())
+    try:
+        tag, commit = resolve_input.select_tag(resolve_input.ls_remote(args.repo))
+    except (resolve_input.ResolveError, OSError, subprocess.CalledProcessError):
+        tag, commit = None, None
     deployed = fetch(args.base_url.rstrip("/") + "/version.json")
-    skip = matches(deployed, record, generator_commit(), args.base_path)
+    skip = tag is not None and matches(deployed, {"tag": tag, "commit": commit}, generator_commit(), args.base_path)
     print(f"skip={'true' if skip else 'false'}")
 
 

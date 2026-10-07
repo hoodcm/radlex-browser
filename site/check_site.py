@@ -18,11 +18,12 @@ import json
 import random
 import re
 import sys
-from collections import defaultdict
+from collections import Counter, defaultdict
 from pathlib import Path
 
 import bundles
 import extract
+import model
 
 PAGE_GZIP_LIMIT = 40 * 1024
 SITE_LIMIT = 900 * 1024 * 1024
@@ -47,17 +48,33 @@ class Gate:
 
 
 def english_labels(tsv):
-    """The first @en label per class IRI, normalized as the extraction does."""
-    labels = {}
+    """Per class IRI, its first English label (@en or a regional @en-XX), else its first
+    untagged label, normalized as the extraction does."""
+    tagged, untagged = {}, {}
     for _, (c, p, v) in extract.read_tsv(tsv / "annotations.tsv"):
         if (isinstance(c, extract.IRI) and p.value == "http://www.w3.org/2000/01/rdf-schema#label"
-                and isinstance(v, extract.Literal) and v.lang == "en"):
-            labels.setdefault(c.value, extract.normalize(v.lex))
-    return labels
+                and isinstance(v, extract.Literal)):
+            if model.in_language(v.lang, "en"):
+                tagged.setdefault(c.value, extract.normalize(v.lex))
+            elif not v.lang:
+                untagged.setdefault(c.value, extract.normalize(v.lex))
+    return {**untagged, **tagged}
+
+
+def unmapped_properties(tsv):
+    """Annotation properties on the classes that properties.json maps to no field, with counts.
+    Record-keeping properties land here by design, and a new property for a shown field would too."""
+    _, by_prop = extract.load_properties()
+    counts = Counter(p.value for _, (c, p, v) in extract.read_tsv(tsv / "annotations.tsv")
+                     if isinstance(c, extract.IRI) and isinstance(p, extract.IRI) and p.value not in by_prop)
+    return counts.most_common()
 
 
 def check_pages(site, tsv, gate):
     count = next(int(cells[0].lex) for _, cells in extract.read_tsv(tsv / "count.tsv"))
+    if count == 0:
+        gate.fail("the input has no named classes in the namespaces of namespaces.json; "
+                  "a release that moved RadLex to a new namespace needs it added there")
     classes = [cells[0].value for _, cells in extract.read_tsv(tsv / "classes.tsv")]
     pages = {p.stem: p for p in (site / "RID").glob("*.html")}
     if len(pages) != count:
@@ -234,12 +251,18 @@ def main(argv=None):
         gate.fail(f"the site is {size / 2**20:.0f} MB, over 900 MB")
     rows = [("Tag", f"`{version.get('tag', '')}` ({version.get('tag_date', '')})"),
             ("Commit", f"`{version.get('commit', '')[:12]}`"), ("Input source", version.get("source", "")),
+            *([("Fell back from", f"`{version['fallback_from'].get('tag', '')}`")] if version.get("fallback_from") else []),
             ("Build ID", f"`{build_id}`"), ("Files", f"{len(files):,}"), ("Site size", f"{size / 2**20:.1f} MB"),
             ("Pages link-checked", f"{sampled:,}")]
     for name in ("tree.json", "search-en.json", "search-intl.json"):
         path = data / name
         if path.is_file():
             rows.append((f"{name} gzipped", f"{len(gzip.compress(path.read_bytes(), 9)) / 1024:.0f} KB"))
+    unmapped = unmapped_properties(args.tsv)
+    if unmapped:
+        names = ", ".join(f"`{extract.local_name(p)}` ({n:,})" for p, n in unmapped[:8])
+        names += f", and {len(unmapped) - 8} more" if len(unmapped) > 8 else ""
+        rows.append(("Unmapped annotation properties", names))
     shards = [len(gzip.compress(p.read_bytes(), 9)) for p in (data / "search").glob("*.json") if p.name != "index.json"]
     if shards:
         rows.append(("Search shards", f"{len(shards):,}, largest {max(shards) / 1024:.0f} KB gzipped"))
