@@ -88,7 +88,10 @@ button:focus-visible, a:focus-visible, input:focus-visible, [tabindex]:focus-vis
 }
 
 /* Shell */
-.app { display: grid; grid-template-rows: auto minmax(0, 1fr); height: 100vh; height: 100dvh; }
+/* A fixed frame around two scroll areas. Clipping its overflow also keeps print layout to one
+   page, where an unclipped frame let the main column spill onto a second page and lose the
+   sidebar's scroll offset. */
+.app { display: grid; grid-template-rows: auto minmax(0, 1fr); height: 100vh; height: 100dvh; overflow: hidden; }
 .topbar {
   display: grid; grid-template-columns: auto minmax(0, 480px) 1fr; align-items: center;
   gap: var(--dtools-space-scale-24);
@@ -109,6 +112,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, [tabindex]:focus-vis
 }
 .search span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .search kbd { font-size: var(--dtools-type-scale-xs); letter-spacing: var(--dtools-tracking-caps); }
+.search .short { display: none; }
 .topnav { justify-self: end; display: flex; align-items: center; gap: var(--dtools-space-scale-16); font-size: var(--dtools-type-scale-sm); }
 .topnav a { color: var(--text); }
 .view-switch[aria-pressed="true"] { background: var(--select); border-color: var(--accent); }
@@ -122,6 +126,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, [tabindex]:focus-vis
   border: 1px solid var(--border); border-radius: var(--dtools-radius-chip);
   background: var(--surface); color: var(--text); font: inherit; font-size: var(--dtools-type-scale-sm);
 }
+.sidebar .filter input::placeholder { color: var(--muted); opacity: 1; }
 .sidebar .scroller { position: relative; flex: 1; min-height: 0; overflow: auto; overscroll-behavior: contain; }
 .sidebar .rows { position: relative; }
 .sidebar .pins { position: sticky; top: 0; z-index: 2; height: 0; }
@@ -130,12 +135,18 @@ button:focus-visible, a:focus-visible, input:focus-visible, [tabindex]:focus-vis
   display: flex; align-items: center; gap: var(--dtools-space-scale-4);
   padding: 0 var(--dtools-space-scale-12) 0 var(--dtools-space-scale-8);
   font-size: var(--dtools-type-scale-sm); line-height: var(--dtools-leading-dense);
-  color: var(--text); background: var(--surface); white-space: nowrap; cursor: pointer;
+  color: var(--text); white-space: nowrap; cursor: pointer;
 }
 .row:hover { text-decoration: none; background: var(--sunken); }
-.pins .row { border-bottom: 1px solid var(--border); }
-.row .ind { flex: none; align-self: stretch; display: flex; }
-.row .ind i { width: var(--indent); border-left: 1px solid var(--border); }
+button.row { border: 0; border-radius: 0; height: var(--row); background: transparent; font: inherit; font-size: var(--dtools-type-scale-sm); text-align: left; }
+.pins .row { background: var(--surface); }
+.pins .row:last-child { border-bottom: 1px solid var(--border); }
+/* Guides stop clear of the pins' divider, above it in the last pin and below it in the row beneath. */
+.row .ind { flex: none; align-self: stretch; display: flex; align-items: flex-end; }
+.row .ind i { width: var(--indent); height: calc(100% - var(--cut, 0px)); border-left: 1px solid var(--border); }
+.pins .row:last-child .ind { align-items: flex-start; }
+.pins .row:last-child .ind i { height: calc(100% - 2px); }
+.row.under .lb, .row.under .ct, .row.under .tw { visibility: hidden; }
 .row .tw { width: 16px; height: 16px; flex: none; color: var(--muted); display: inline-flex; align-items: center; justify-content: center; }
 .row .tw svg { width: 8px; height: 8px; }
 .row[aria-expanded="true"] .tw svg { transform: rotate(90deg); }
@@ -143,11 +154,12 @@ button:focus-visible, a:focus-visible, input:focus-visible, [tabindex]:focus-vis
 .row .ct { color: var(--muted); font-family: var(--dtools-font-stack-mono); font-size: var(--dtools-type-scale-xs); }
 .row.retired .lb { color: var(--muted); }
 .row.match .lb { font-weight: var(--dtools-type-weight-emphasis); }
-.row[aria-current="page"] { background: var(--select); font-weight: var(--dtools-type-weight-emphasis); }
-.row[aria-current="page"]::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: var(--accent); }
+.row[aria-current="page"] { z-index: 0; font-weight: var(--dtools-type-weight-emphasis); }
+.row[aria-current="page"]::after { content: ""; position: absolute; inset: var(--cut, 0px) 0 0 0; z-index: -1; background: var(--select); }
+.row[aria-current="page"]::before { content: ""; position: absolute; left: 0; top: var(--cut, 0px); bottom: 0; width: 2px; background: var(--accent); }
 .scroller:focus-visible .row.active { outline: 2px solid var(--accent); outline-offset: -2px; }
-.sidebar .resizer { position: absolute; top: 0; right: -4px; bottom: 0; width: 8px; z-index: 3; cursor: col-resize; touch-action: none; }
-.sidebar .resizer::after { content: ""; position: absolute; top: 0; bottom: 0; left: 3px; width: 1px; background: var(--border); }
+/* The divider the reader sees is the main column's left border; the handle straddles it. */
+.sidebar .resizer { position: absolute; top: 0; right: -4px; bottom: 0; width: 8px; height: auto; z-index: 3; padding: 0; border: 0; border-radius: 0; background: transparent; cursor: col-resize; touch-action: none; }
 .sidebar .empty { padding: var(--dtools-space-scale-12); }
 
 /* Term page, shared by both views */
@@ -232,6 +244,7 @@ section { display: flex; flex-direction: column; gap: var(--dtools-space-scale-8
 .branches { list-style: none; margin: 0; padding: 0; columns: 2; column-gap: var(--dtools-space-scale-24); }
 .branches li { break-inside: avoid; padding-bottom: var(--dtools-space-scale-4); }
 .branches .ct { color: var(--muted); font-family: var(--dtools-font-stack-mono); font-size: var(--dtools-type-scale-xs); }
+.home .head { gap: var(--dtools-space-scale-12); }
 .release, .retired-note { margin: 0; color: var(--muted); font-size: var(--dtools-type-scale-sm); }
 .notfound p { margin: 0; }
 
@@ -264,9 +277,12 @@ section { display: flex; flex-direction: column; gap: var(--dtools-space-scale-8
   .body { grid-template-columns: minmax(0, 1fr); }
   .sidebar { display: none; }
   .topbar { grid-template-columns: auto minmax(0, 1fr) auto; gap: var(--dtools-space-scale-12); padding: var(--dtools-space-scale-12) var(--dtools-space-scale-16); }
-  .topbar .search span, .topnav .chip, .topnav a:not(.keep), .topnav .view-switch { display: none; }
+  .topbar .search .long, .topbar .search kbd, .topnav .chip, .topnav a:not(.keep), .topnav .view-switch { display: none; }
+  .topbar .search .short { display: inline; }
   .main { border-left: 0; padding: var(--dtools-space-scale-24) var(--dtools-space-scale-16) var(--dtools-space-scale-48); }
   .pairs { grid-template-columns: minmax(0, 1fr); row-gap: var(--dtools-space-scale-4); }
   .vals, .branches { columns: 1; }
+  /* A phone's measure is near 48 characters, where the house rung for DM Sans is 1.3. */
+  .prose { line-height: var(--dtools-leading-rung-130); }
   [data-view="ontology"] .detail { grid-template-columns: minmax(0, 1fr); grid-template-areas: "head" "banner" "ann" "desc"; }
 }

@@ -5,6 +5,8 @@ const R = window.RADLEX;
 const ROW = 28;
 const OVERSCAN = 8;
 const MAX_PINS = 5;
+const PIN_GAP = 2;          // px between the pins' divider and the guides of the row beneath
+const TEXT_CLEARANCE = 6;   // px a row can slide under the pins before its label would be covered
 const FILTER_LIMIT = 2000;
 const CHEVRON = '<svg viewBox="0 0 8 8" aria-hidden="true"><path d="M2 1 6 4 2 7Z" fill="currentColor"/></svg>';
 const norm = (s) => s.normalize("NFKD").replace(/\p{M}/gu, "").toLowerCase().replace(/[^\p{L}\p{N}]+/gu, " ").trim();
@@ -24,7 +26,7 @@ async function init() {
   sidebar.innerHTML =
     '<div class="filter"><input type="search" placeholder="Filter the tree" aria-label="Filter the tree" spellcheck="false"></div>' +
     '<div class="scroller" tabindex="0" role="tree" aria-label="RadLex hierarchy"><div class="pins"></div><div class="rows"></div></div>' +
-    '<div class="resizer" role="separator" aria-orientation="vertical" aria-label="Resize the sidebar"></div>';
+    '<button type="button" class="resizer" aria-label="Resize the sidebar"></button>';
   const input = sidebar.querySelector("input");
   const scroller = sidebar.querySelector(".scroller");
   const rowsEl = sidebar.querySelector(".rows");
@@ -78,7 +80,7 @@ async function init() {
     return ancestors(first + k).slice(-MAX_PINS);
   }
 
-  function rowHtml(r, top) {
+  function rowHtml(r, top, cut = 0) {
     const row = rows[r];
     const node = row.node;
     const n = children[node].length;
@@ -90,9 +92,12 @@ async function init() {
     const href = id === "retired" ? "" : ` href="${R.base}/RID/${id}.html"`;
     const ind = row.depth ? `<span class="ind">${"<i></i>".repeat(row.depth)}</span>` : "";
     const label = labels[node].replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
-    return `<a class="${cls.join(" ")}" style="top:${top}px" data-row="${r}"${href} role="treeitem" aria-level="${row.depth + 1}"` +
+    if (cut > TEXT_CLEARANCE) cls.push("under");
+    const style = `top:${top}px${cut ? `;--cut:${cut}px` : ""}`;
+    const tag = href ? "a" : "button";
+    return `<${tag} class="${cls.join(" ")}" style="${style}" data-row="${r}"${href || ' type="button"'} tabindex="-1" role="treeitem" aria-level="${row.depth + 1}"` +
       `${n ? ` aria-expanded="${isOpen(row)}"` : ""}${r === currentRow ? ' aria-current="page"' : ""} title="${label}">` +
-      `${ind}<span class="tw">${n ? CHEVRON : ""}</span><span class="lb">${label}</span>${n ? `<span class="ct">${n}</span>` : ""}</a>`;
+      `${ind}<span class="tw">${n ? CHEVRON : ""}</span><span class="lb">${label}</span>${n ? `<span class="ct">${n}</span>` : ""}</${tag}>`;
   }
 
   function draw() {
@@ -100,10 +105,15 @@ async function init() {
     const first = Math.floor(scrollTop / ROW);
     const pinned = pins(first);
     const height = scroller.clientHeight;
-    const from = Math.max(0, first - OVERSCAN);
+    // Rows under the pins or above the view stay undrawn, so nothing sits beneath a pinned row.
+    const from = Math.min(rows.length, first + pinned.length);
     const to = Math.min(rows.length, Math.ceil((scrollTop + height) / ROW) + OVERSCAN);
+    // The first drawn row can sit partly under the pins or the scroller's top edge: its guides
+    // and fill start below that edge, so no drawing overlaps a pinned row.
+    const hidden = Math.max(0, scrollTop + pinned.length * ROW - from * ROW);
+    const cut = hidden + (pinned.length ? PIN_GAP : 0);
     let html = "";
-    for (let r = from; r < to; r++) html += rowHtml(r, r * ROW);
+    for (let r = from; r < to; r++) html += rowHtml(r, r * ROW, r === from ? cut : 0);
     rowsEl.innerHTML = html;
     pinsEl.innerHTML = pinned.map((r, i) => rowHtml(r, i * ROW)).join("");
   }
@@ -192,6 +202,7 @@ async function init() {
     const el = event.target.closest(".row");
     if (!el) return;
     const r = Number(el.dataset.row);
+    scroller.focus({ preventScroll: true });
     if (event.target.closest(".tw") || !el.hasAttribute("href")) {
       event.preventDefault();
       setActive(r, false);
@@ -259,6 +270,14 @@ async function init() {
     };
     resizer.addEventListener("pointermove", move);
     resizer.addEventListener("pointerup", up, { once: true });
+  });
+  resizer.addEventListener("keydown", (event) => {
+    if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+    event.preventDefault();
+    const now = sidebar.getBoundingClientRect().width;
+    const width = Math.round(Math.max(200, Math.min(640, now + (event.key === "ArrowRight" ? 16 : -16))));
+    document.documentElement.style.setProperty("--sidebar", `${width}px`);
+    R.store.set("sidebar", String(width));
   });
 
   document.addEventListener("radlex:navigated", (event) => select(event.detail));

@@ -57,7 +57,8 @@ def page(ctx, title, main, *, description=""):
         '<header class="topbar">'
         f'<a class="wordmark" href="{ctx.home}"><b>RadLex</b><span>RSNA</span></a>'
         '<button type="button" class="search" data-search aria-haspopup="dialog">'
-        f'<span>Search {ctx.count:,} terms by name, synonym, or RID</span><kbd>⌘K</kbd></button>'
+        f'<span class="long">Search {ctx.count:,} terms by name, synonym, or RID</span>'
+        '<span class="short">Search</span><kbd>⌘K</kbd></button>'
         '<nav class="topnav" aria-label="Site">'
         '<button type="button" class="view-switch" data-view-switch aria-pressed="false">Ontology view</button>'
         + (f'<span class="chip" data-dtools-role="chip">v{e(version)}</span>' if version else "") +
@@ -104,10 +105,12 @@ def prose(value):
 
 
 def pairs(rows):
-    """A definition list from (dt html, dd html, extra class) rows, or "" when empty."""
-    out = "".join(f'<dt{f" class=\"{c}\"" if c else ""}>{dt}</dt><dd{f" class=\"{c}\"" if c else ""}>{dd}</dd>'
-                  for dt, dd, c in rows)
-    return f'<dl class="pairs">{out}</dl>' if out else ""
+    """A definition list from (dt html, dd html, class for both[, class for the dd]) rows, or ""."""
+    out = []
+    for dt, dd, c, *dd_extra in rows:
+        dd_cls = " ".join(filter(None, [c, *dd_extra]))
+        out.append(f'<dt{f" class=\"{c}\"" if c else ""}>{dt}</dt><dd{f" class=\"{dd_cls}\"" if dd_cls else ""}>{dd}</dd>')
+    return f'<dl class="pairs">{"".join(out)}</dl>' if out else ""
 
 
 def section(key, heading, body):
@@ -217,8 +220,7 @@ def referenced_section(ctx, t):
 def xrefs_section(t):
     rows = []
     if t.xrefs:
-        rows.append(("Cross-references", ", ".join(
-            f'<span class="code">{annotation(v)}</span>' for v in t.xrefs), ""))
+        rows.append(("Cross-references", ", ".join(annotation(v) for v in t.xrefs), "", "code"))
     if t.sources:
         rows.append(("Source", ", ".join(annotation(v) for v in t.sources), ""))
     if t.version_changed:
@@ -267,7 +269,7 @@ def home_page(ctx):
     rec = ctx.record
     meta = (f'<p class="release">RadLex {e(rec.get("tag", ""))}, tagged {e(rec.get("tag_date", ""))}. '
             f"{ctx.count:,} terms.</p>")
-    main = (f'<article class="detail home" data-dtools-group="home"><h1>RadLex</h1>{meta}'
+    main = (f'<article class="detail home" data-dtools-group="home"><div class="head"><h1>RadLex</h1>{meta}</div>'
             f'{search_box(ctx)}<section data-dtools-role="section">{"".join(rows)}</section></article>')
     return page(ctx, "RadLex", main, description="Browse the RadLex radiology lexicon.")
 
