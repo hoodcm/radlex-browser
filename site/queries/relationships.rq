@@ -1,0 +1,12 @@
+# someValuesFrom restrictions on the scoped classes whose filler is a named class.
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?c ?prop ?target WHERE {
+  ?c a owl:Class .
+  %SCOPE(?c)%
+  ?c rdfs:subClassOf ?r .
+  ?r a owl:Restriction ;
+     owl:onProperty ?prop ;
+     owl:someValuesFrom ?target .
+  FILTER(isIRI(?prop) && isIRI(?target))
+}

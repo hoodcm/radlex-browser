@@ -1,0 +1,1041 @@
+?c	?p	?v
+<http://radlex.org/RID/RID12936>	<http://www.w3.org/2002/07/owl#deprecated>	true
+<http://radlex.org/RID/RID12936>	<http://www.w3.org/2000/01/rdf-schema#label>	"obsolete number of samples"@en
+<http://radlex.org/RID/RID12936>	<http://www.w3.org/2000/01/rdf-schema#comment>	"Was used as an instance-level  slot for a procedure; not needed"
+<http://radlex.org/RID/RID12936>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID12936"
+<http://radlex.org/RID/RID13392>	<http://www.w3.org/2000/01/rdf-schema#label>	"organ component of neuraxis"@en
+<http://radlex.org/RID/RID13392>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID13392"
+<http://radlex.org/RID/RID13392>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Organkomponente der Neuralachse"@de
+<http://radlex.org/RID/RID13392>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:83153"
+<http://radlex.org/RID/RID13392>	<http://purl.obolibrary.org/obo/IAO_0000115>	"Organ component which is part of the brain or spinal cord."@en
+<http://radlex.org/RID/RID36012>	<http://www.w3.org/2000/01/rdf-schema#label>	"superior terminal branch of middle cerebral artery"@en
+<http://radlex.org/RID/RID36012>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID36012"
+<http://radlex.org/RID/RID36012>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Ramus terminalis superior der Arteria cerebri media"@de
+<http://radlex.org/RID/RID36012>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50436"
+<http://radlex.org/RID/RID13225>	<http://www.w3.org/2000/01/rdf-schema#label>	"subdivision of cardiovascular system"@en
+<http://radlex.org/RID/RID13225>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID13225"
+<http://radlex.org/RID/RID13225>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Segment des kardiovaskulären Systems"@de
+<http://radlex.org/RID/RID32954>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"space of abdominal compartment"@en
+<http://radlex.org/RID/RID32954>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID32954"
+<http://radlex.org/RID/RID32954>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"cavity of compartment of abdomen"@en
+<http://radlex.org/RID/RID32954>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"cavitas abdominalis"@la
+<http://radlex.org/RID/RID32954>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"cavitas abdominis"@la
+<http://radlex.org/RID/RID32954>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Bauchhöhle"@de
+<http://radlex.org/RID/RID32954>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"cavity of abdominal compartment"@en
+<http://radlex.org/RID/RID32954>	<http://www.w3.org/2000/01/rdf-schema#label>	"abdominal cavity"@en
+<http://radlex.org/RID/RID32954>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:12266"
+<http://radlex.org/RID/RID36443>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50082"
+<http://radlex.org/RID/RID36443>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID36443"
+<http://radlex.org/RID/RID36443>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"rechte Arteria cerebri media"@de
+<http://radlex.org/RID/RID36443>	<http://www.w3.org/2000/01/rdf-schema#label>	"right middle cerebral artery"@en
+<http://radlex.org/RID/RID36444>	<http://www.w3.org/2000/01/rdf-schema#label>	"left middle cerebral artery"@en
+<http://radlex.org/RID/RID36444>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50083"
+<http://radlex.org/RID/RID36444>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"linke Arteria cerebri media"@de
+<http://radlex.org/RID/RID36444>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID36444"
+<http://radlex.org/RID/RID36445>	<http://www.w3.org/2000/01/rdf-schema#label>	"anterolateral central branch of right middle cerebral artery"@en
+<http://radlex.org/RID/RID36445>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID36445"
+<http://radlex.org/RID/RID36445>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Ramus centralis anterolateralis der rechten Arteria cerebri media"@de
+<http://radlex.org/RID/RID36445>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50377"
+<http://radlex.org/RID/RID585>	<http://www.w3.org/2000/01/rdf-schema#label>	"internal carotid artery"@en
+<http://radlex.org/RID/RID585>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"ICA"@en
+<http://radlex.org/RID/RID585>	<http://purl.obolibrary.org/obo/IAO_0000115>	"Branch of the common carotid artery which supplies the anterior part of the brain, the eye and its appendages, the forehead and nose. [MeSH]"@en
+<http://radlex.org/RID/RID585>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"UMLS:C0007276"
+<http://radlex.org/RID/RID585>	<http://radlex.org/RID/Radlex_version_of_class_change>	"10/09/2014 syn"
+<http://radlex.org/RID/RID585>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID585"
+<http://radlex.org/RID/RID585>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Arteria carotis interna"@de
+<http://radlex.org/RID/RID35896>	<http://www.w3.org/2000/01/rdf-schema#label>	"subdivision of internal carotid artery"@en
+<http://radlex.org/RID/RID35896>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID35896"
+<http://radlex.org/RID/RID35896>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"internal carotid arterial subdivision"@en
+<http://radlex.org/RID/RID35896>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"branch of internal carotid artery"@en
+<http://radlex.org/RID/RID35896>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Segment der Arteria carotis interna"@de
+<http://radlex.org/RID/RID35896>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:70506"
+<http://radlex.org/RID/RID36446>	<http://www.w3.org/2000/01/rdf-schema#label>	"anterolateral central branch of left middle cerebral artery"@en
+<http://radlex.org/RID/RID36446>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID36446"
+<http://radlex.org/RID/RID36446>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Ramus centralis anterolateralis der linken Arteria cerebri media"@de
+<http://radlex.org/RID/RID36446>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50378"
+<http://radlex.org/RID/RID28639>	<http://www.w3.org/2000/01/rdf-schema#label>	"RadLex non-anatomical set"@en
+<http://radlex.org/RID/RID28639>	<http://www.w3.org/2000/01/rdf-schema#comment>	"Non-anatomical terms; anatomical sets go under \"anatomical set\""
+<http://radlex.org/RID/RID28639>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID28639"
+<http://radlex.org/RID/RID28639>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"nicht-anatomisches Radlex-Set"@de
+<http://radlex.org/RID/RID28639>	<http://purl.obolibrary.org/obo/IAO_0000115>	"A Radlex set is an entity which consists of the maximum number of discontinuous members of the same class."@en
+<http://radlex.org/RID/RID13290>	<http://www.w3.org/2000/01/rdf-schema#label>	"anatomical cluster"@en
+<http://radlex.org/RID/RID13290>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID13290"
+<http://radlex.org/RID/RID13290>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"anatomischer Block"@de
+<http://radlex.org/RID/RID13290>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"anatomic cluster"@en
+<http://radlex.org/RID/RID13290>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:49443"
+<http://radlex.org/RID/RID13290>	<http://purl.obolibrary.org/obo/IAO_0000115>	"Anatomical structure, which has as its parts a heterogeneous collection of  organs, organ parts, cells, cell parts or body part subdivisions that are adjacent to, or continuous with one another; does not constitute a cell part, cell,  tissue,  organ, organ system or organ system subdivision, cardinal body part, body part subdivision or anatomical junction. Examples: joint, adnexa of uterus, root of lung, renal pedicle, back."@en
+<http://radlex.org/RID/RID36447>	<http://www.w3.org/2000/01/rdf-schema#label>	"medial striate branch of right middle cerebral artery"@en
+<http://radlex.org/RID/RID36447>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID36447"
+<http://radlex.org/RID/RID36447>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Ramus striatus medialis der rechten Arteria cerebri media"@de
+<http://radlex.org/RID/RID36447>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50431"
+<http://radlex.org/RID/RID15985>	<http://www.w3.org/2000/01/rdf-schema#label>	"organ region cluster"@en
+<http://radlex.org/RID/RID15985>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID15985"
+<http://radlex.org/RID/RID15985>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"organ subdivision cluster"@en
+<http://radlex.org/RID/RID15985>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Organregion-Cluster"@de
+<http://radlex.org/RID/RID15985>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:14462"
+<http://radlex.org/RID/RID15985>	<http://purl.obolibrary.org/obo/IAO_0000115>	"Organ part cluster, which consists of some members of two or more organ subdivision subclasses which are grouped together according to some shared attributes. Examples: root of lung, neurovascular bundle, renal pedicle, fascia of back."@en
+<http://radlex.org/RID/RID35904>	<http://www.w3.org/2000/01/rdf-schema#label>	"subdivision of cerebral part of internal carotid artery"@en
+<http://radlex.org/RID/RID35904>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID35904"
+<http://radlex.org/RID/RID35904>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Segment der Pars cerebralis der Arteria carotis interna"@de
+<http://radlex.org/RID/RID35904>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:70523"
+<http://radlex.org/RID/RID36448>	<http://www.w3.org/2000/01/rdf-schema#label>	"medial striate branch of left middle cerebral artery"@en
+<http://radlex.org/RID/RID36448>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID36448"
+<http://radlex.org/RID/RID36448>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Ramus striatus medialis der linken Arteria cerebri media"@de
+<http://radlex.org/RID/RID36448>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50432"
+<http://radlex.org/RID/RID80>	<http://www.w3.org/2000/01/rdf-schema#label>	"porta Hepatis"@en
+<http://radlex.org/RID/RID80>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID80"
+<http://radlex.org/RID/RID80>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Leberpforte"@de
+<http://radlex.org/RID/RID80>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:15758"
+<http://radlex.org/RID/RID11209>	<http://www.w3.org/2000/01/rdf-schema#label>	"laparascopic"@en
+<http://radlex.org/RID/RID11209>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID11209"
+<http://radlex.org/RID/RID11209>	<http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym>	"laprascopic"@en
+<http://radlex.org/RID/RID11209>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"laparaskopisch"@de
+<http://radlex.org/RID/RID36449>	<http://www.w3.org/2000/01/rdf-schema#label>	"proximal lateral striate branch of right middle cerebral artery"@en
+<http://radlex.org/RID/RID36449>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID36449"
+<http://radlex.org/RID/RID36449>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Ramus striatus lateralis proximalis der rechten Arteria cerebri media"@de
+<http://radlex.org/RID/RID36449>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50387"
+<http://radlex.org/RID/RID81>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID81"
+<http://radlex.org/RID/RID81>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"ligamentum falciforme hepatis"@la
+<http://radlex.org/RID/RID81>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Ligamentum falciforme"@de
+<http://radlex.org/RID/RID81>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:15823"
+<http://radlex.org/RID/RID81>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"falciform ligament of liver"@en
+<http://radlex.org/RID/RID81>	<http://www.w3.org/2000/01/rdf-schema#label>	"falciform ligament"@en
+<http://radlex.org/RID/RID16262>	<http://www.w3.org/2000/01/rdf-schema#label>	"set of organ regions"@en
+<http://radlex.org/RID/RID16262>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID16262"
+<http://radlex.org/RID/RID16262>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"set of organ subdivisions"@en
+<http://radlex.org/RID/RID16262>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"organ subdivisions set"@en
+<http://radlex.org/RID/RID16262>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Gruppe der Organregionen"@de
+<http://radlex.org/RID/RID16262>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:78562"
+<http://radlex.org/RID/RID82>	<http://www.w3.org/2000/01/rdf-schema#label>	"fissure ligamentum venosum"@en
+<http://radlex.org/RID/RID82>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID82"
+<http://radlex.org/RID/RID82>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Fissura ligamenti venosi"@de
+<http://radlex.org/RID/RID16263>	<http://www.w3.org/2000/01/rdf-schema#label>	"set of nerves"@en
+<http://radlex.org/RID/RID16263>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID16263"
+<http://radlex.org/RID/RID16263>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"nerves set"@en
+<http://radlex.org/RID/RID16263>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Gruppe der Nerven"@de
+<http://radlex.org/RID/RID16263>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:63819"
+<http://radlex.org/RID/RID83>	<http://www.w3.org/2000/01/rdf-schema#label>	"ligamentum teres of liver"@en
+<http://radlex.org/RID/RID83>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID83"
+<http://radlex.org/RID/RID83>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Ligamentum teres"@de
+<http://radlex.org/RID/RID31899>	<http://www.w3.org/2000/01/rdf-schema#label>	"abdominal proper lymph node group"@en
+<http://radlex.org/RID/RID31899>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID31899"
+<http://radlex.org/RID/RID31899>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"set of lymph nodes of abdomen proper"@en
+<http://radlex.org/RID/RID31899>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"nodi lymphoidei abdominis"@la
+<http://radlex.org/RID/RID31899>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"abdominal proper lymph nodes set"@en
+<http://radlex.org/RID/RID31899>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:71773"
+<http://radlex.org/RID/RID31899>	<http://purl.obolibrary.org/obo/IAO_0000115>	"Abdominal lymph node group which is located below the diaphragm and above the plane of pelvic inlet."@en
+<http://radlex.org/RID/RID85>	<http://www.w3.org/2000/01/rdf-schema#label>	"dome of liver"@en
+<http://radlex.org/RID/RID85>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID85"
+<http://radlex.org/RID/RID85>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Leberkuppe"@de
+<http://radlex.org/RID/RID85>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:265200"
+<http://radlex.org/RID/RID31730>	<http://www.w3.org/2000/01/rdf-schema#label>	"region of diaphragmatic surface of liver"@en
+<http://radlex.org/RID/RID31730>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID31730"
+<http://radlex.org/RID/RID31730>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Region der diaphragmatischen Oberfläche der Leber"@de
+<http://radlex.org/RID/RID31730>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:17529"
+<http://radlex.org/RID/RID13220>	<http://www.w3.org/2000/01/rdf-schema#label>	"anatomical surface"@en
+<http://radlex.org/RID/RID13220>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID13220"
+<http://radlex.org/RID/RID13220>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"surface"@en
+<http://radlex.org/RID/RID13220>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"anatomische Oberfläche"@de
+<http://radlex.org/RID/RID13220>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:24137"
+<http://radlex.org/RID/RID13220>	<http://purl.obolibrary.org/obo/IAO_0000115>	"Anatomical boundary entity which has two spatial dimensions. Examples: body surface, epigastrium, precordium, right iliac fossa."@en
+<http://radlex.org/RID/RID36466>	<http://www.w3.org/2000/01/rdf-schema#label>	"insular artery"@en
+<http://radlex.org/RID/RID36466>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID36466"
+<http://radlex.org/RID/RID36466>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Arteria insularis"@de
+<http://radlex.org/RID/RID36466>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50434"
+<http://radlex.org/RID/RID36467>	<http://www.w3.org/2000/01/rdf-schema#label>	"right insular artery"@en
+<http://radlex.org/RID/RID36467>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID36467"
+<http://radlex.org/RID/RID36467>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"rechte Arteria insularis"@de
+<http://radlex.org/RID/RID36467>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50464"
+<http://radlex.org/RID/RID13230>	<http://www.w3.org/2000/01/rdf-schema#label>	"anatomical set"@en
+<http://radlex.org/RID/RID13230>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID13230"
+<http://radlex.org/RID/RID13230>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"set of material anatomical entities"@en
+<http://radlex.org/RID/RID13230>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"anatomische Zusammenstellung"@de
+<http://radlex.org/RID/RID13230>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"anatomic set"@en
+<http://radlex.org/RID/RID13230>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:55652"
+<http://radlex.org/RID/RID13230>	<http://purl.obolibrary.org/obo/IAO_0000115>	"A set may be a complete or partial set of given entities; i.e. \"set of Xes\" may be either all or just some of the Xes in the super group.  E.g. \"set of upper extremity vessels\" may be used to refer to all the blood vessels of the upper extremity, or to some subset of them."@en
+<http://radlex.org/RID/RID34345>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Gruppe von Ultraschall-Begriffen des BI-RADS-Systems"@de
+<http://radlex.org/RID/RID34345>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID34345"
+<http://radlex.org/RID/RID34345>	<http://www.w3.org/2000/01/rdf-schema#label>	"set of BI-RADS ultrasound terms"@en
+<http://radlex.org/RID/RID29216>	<http://www.w3.org/2000/01/rdf-schema#label>	"organ component layer"@en
+<http://radlex.org/RID/RID29216>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID29216"
+<http://radlex.org/RID/RID29216>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"lamina"@la
+<http://radlex.org/RID/RID29216>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:82485"
+<http://radlex.org/RID/RID29216>	<http://purl.obolibrary.org/obo/IAO_0000115>	"Organ component which is a part of a wall of an organ."@en
+<http://radlex.org/RID/RID28847>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"lymph nodes set"@en
+<http://radlex.org/RID/RID28847>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID28847"
+<http://radlex.org/RID/RID28847>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Lymphknotengruppe"@de
+<http://radlex.org/RID/RID28847>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:70776"
+<http://radlex.org/RID/RID28847>	<http://www.w3.org/2000/01/rdf-schema#label>	"lymph node group"@en
+<http://radlex.org/RID/RID28847>	<http://radlex.org/RID/Radlex_version_of_class_change>	"3.15 syn"
+<http://radlex.org/RID/RID28847>	<http://purl.org/dc/terms/source>	"BI-RADS 5"
+<http://radlex.org/RID/RID28847>	<http://purl.obolibrary.org/obo/IAO_0000115>	"Set of organ components of lymphatic tree organ consisting of lymph nodes without connecting lymphatic vessels."@en
+<http://radlex.org/RID/RID28847>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"set of lymph nodes"@en
+<http://radlex.org/RID/RID13289>	<http://www.w3.org/2000/01/rdf-schema#label>	"anatomical fold"@en
+<http://radlex.org/RID/RID13289>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID13289"
+<http://radlex.org/RID/RID13289>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"anatomische Falte"@de
+<http://radlex.org/RID/RID13289>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:85278"
+<http://radlex.org/RID/RID36468>	<http://www.w3.org/2000/01/rdf-schema#label>	"left insular artery"@en
+<http://radlex.org/RID/RID36468>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID36468"
+<http://radlex.org/RID/RID36468>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"linke Arteria insularis"@de
+<http://radlex.org/RID/RID36468>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50435"
+<http://radlex.org/RID/RID29293>	<http://www.w3.org/2000/01/rdf-schema#label>	"serosa of organ"@en
+<http://radlex.org/RID/RID29293>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID29293"
+<http://radlex.org/RID/RID29293>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"organ serosa"@en
+<http://radlex.org/RID/RID29293>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Serosa des Organs"@de
+<http://radlex.org/RID/RID29293>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:85423"
+<http://radlex.org/RID/RID13259>	<http://www.w3.org/2000/01/rdf-schema#label>	"organ region"@en
+<http://radlex.org/RID/RID13259>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID13259"
+<http://radlex.org/RID/RID13259>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Organregion"@de
+<http://radlex.org/RID/RID13259>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:67619"
+<http://radlex.org/RID/RID13259>	<http://purl.obolibrary.org/obo/IAO_0000115>	"Cardinal organ part which is a fiat subdivision of an organ. Examples: lingula of left lung, tail of pancreas, artery, trochanter, nodulus of semilunar valve, right side of heart, duodenum, fundus of stomach."@en
+<http://radlex.org/RID/RID34277>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Gruppe von Mammographie-Begriffen des BI-RADS-Systems"@de
+<http://radlex.org/RID/RID34277>	<http://www.w3.org/2000/01/rdf-schema#label>	"set of BI-RADS mammo terms"@en
+<http://radlex.org/RID/RID34277>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID34277"
+<http://radlex.org/RID/RID28458>	<http://www.w3.org/2000/01/rdf-schema#label>	"region of organ surface"@en
+<http://radlex.org/RID/RID28458>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID28458"
+<http://radlex.org/RID/RID28458>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"organ surface region"@en
+<http://radlex.org/RID/RID28458>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Region der Organoberfläche"@de
+<http://radlex.org/RID/RID28458>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:24210"
+<http://radlex.org/RID/RID28458>	<http://purl.obolibrary.org/obo/IAO_0000115>	"Anatomical surface, which is the subdivision of the surface of an organ. Examples: diaphragmatic surface of lung, sternocostal surface of heart, anterior surface of stomach."@en
+<http://radlex.org/RID/RID36469>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Ramus terminalis inferior der rechten Arteria cerebri media"@de
+<http://radlex.org/RID/RID36469>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID36469"
+<http://radlex.org/RID/RID36469>	<http://www.w3.org/2000/01/rdf-schema#label>	"inferior terminal branch of right middle cerebral artery"@en
+<http://radlex.org/RID/RID36469>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50716"
+<http://radlex.org/RID/RID29294>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"serous coat of liver"@en
+<http://radlex.org/RID/RID29294>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"hepatic serosa"@en
+<http://radlex.org/RID/RID29294>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:15811"
+<http://radlex.org/RID/RID29294>	<http://www.w3.org/2000/01/rdf-schema#label>	"serosa of liver"@en
+<http://radlex.org/RID/RID29294>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"tunica serosa hepatis"@la
+<http://radlex.org/RID/RID29294>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID29294"
+<http://radlex.org/RID/RID77>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID77"
+<http://radlex.org/RID/RID77>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:13365"
+<http://radlex.org/RID/RID77>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"segmentum hepatis I"@la
+<http://radlex.org/RID/RID77>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"posterior hepatic segment I"@en
+<http://radlex.org/RID/RID77>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"posterior part of liver"@en
+<http://radlex.org/RID/RID77>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"posterior liver"@en
+<http://radlex.org/RID/RID77>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"spiegelian lobe"@en
+<http://radlex.org/RID/RID77>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"pars posterior hepatis"@la
+<http://radlex.org/RID/RID77>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"segment I of liver"@en
+<http://radlex.org/RID/RID77>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"lobus caudatus hepatis"@la
+<http://radlex.org/RID/RID77>	<http://www.w3.org/2000/01/rdf-schema#label>	"caudate lobe of liver"@en
+<http://radlex.org/RID/RID77>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Couinaud hepatic segment I"@en
+<http://radlex.org/RID/RID77>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Couinaud hepatic segment 1"@en
+<http://radlex.org/RID/RID77>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"couinaud hepatic segment I"@en
+<http://radlex.org/RID/RID36478>	<http://www.w3.org/2000/01/rdf-schema#label>	"posterior temporal branch of right middle cerebral artery"@en
+<http://radlex.org/RID/RID36478>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID36478"
+<http://radlex.org/RID/RID36478>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Ramus temporalis posterior der rechten Arteria cerebri media"@de
+<http://radlex.org/RID/RID36478>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50470"
+<http://radlex.org/RID/RID38142>	<http://www.w3.org/2002/07/owl#deprecated>	true
+<http://radlex.org/RID/RID38142>	<http://www.w3.org/2000/01/rdf-schema#label>	"obsolete subdiaphragmatic pre-aortic lymph node group"@en
+<http://radlex.org/RID/RID38142>	<http://www.w3.org/2000/01/rdf-schema#comment>	"duplicate"
+<http://radlex.org/RID/RID38142>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID38142"
+<http://radlex.org/RID/RID38142>	<http://purl.obolibrary.org/obo/IAO_0100001>	<http://radlex.org/RID/RID38138>
+<http://radlex.org/RID/RID38142>	<http://purl.obolibrary.org/obo/IAO_0000115>	"OBSOLETE. Abdominal proper lymph node group which is located around aortic hiatus of diaphragm."@en
+<http://radlex.org/RID/RID16386>	<http://www.w3.org/2000/01/rdf-schema#label>	"set of oesophageal branches of recurrent laryngeal nerve"@en
+<http://radlex.org/RID/RID16386>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID16386"
+<http://radlex.org/RID/RID16386>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"rami oesophagei nervus laryngei recurrentis"@la
+<http://radlex.org/RID/RID16386>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"oesophageal branches of recurrent laryngeal nerve"@en
+<http://radlex.org/RID/RID16386>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:75554"
+<http://radlex.org/RID/RID15845>	<http://www.w3.org/2000/01/rdf-schema#label>	"anatomical boundary entity"@en
+<http://radlex.org/RID/RID15845>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID15845"
+<http://radlex.org/RID/RID15845>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"anatomische Grenzeinheit"@de
+<http://radlex.org/RID/RID15845>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50705"
+<http://radlex.org/RID/RID15845>	<http://purl.obolibrary.org/obo/IAO_0000115>	"Immaterial anatomical entity of one less dimension than the anatomical entity it bounds or demarcates from another anatomical entity. Examples: surface of heart, surface of epithelial cell, cervicothoracic plane, supra-orbital notch, costal margin, apex beat, Sylvian point."@en
+<http://radlex.org/RID/RID31722>	<http://www.w3.org/2000/01/rdf-schema#label>	"region of surface of liver"@en
+<http://radlex.org/RID/RID31722>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID31722"
+<http://radlex.org/RID/RID31722>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Region der Oberfläche der Leber"@de
+<http://radlex.org/RID/RID31722>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:18141"
+<http://radlex.org/RID/RID78>	<http://www.w3.org/2000/01/rdf-schema#label>	"bare area of liver"@en
+<http://radlex.org/RID/RID78>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID78"
+<http://radlex.org/RID/RID78>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"area nuda hepatis"@la
+<http://radlex.org/RID/RID78>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:14480"
+<http://radlex.org/RID/RID31900>	<http://www.w3.org/2000/01/rdf-schema#label>	"parietal lymph node group of abdomen proper"@en
+<http://radlex.org/RID/RID31900>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID31900"
+<http://radlex.org/RID/RID31900>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"parietal abdominal lymph nodes set"@en
+<http://radlex.org/RID/RID31900>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"parietal abdominal lymph node group"@en
+<http://radlex.org/RID/RID31900>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"nodi lymphoidei abdominis parietales"@la
+<http://radlex.org/RID/RID31900>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"nodi abdominis parietales"@la
+<http://radlex.org/RID/RID31900>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:71774"
+<http://radlex.org/RID/RID36479>	<http://www.w3.org/2000/01/rdf-schema#label>	"posterior temporal branch of left middle cerebral artery"@en
+<http://radlex.org/RID/RID36479>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID36479"
+<http://radlex.org/RID/RID36479>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Ramus temporalis posterior der linken Arteria cerebri media"@de
+<http://radlex.org/RID/RID36479>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50471"
+<http://radlex.org/RID/RID35820>	<http://www.w3.org/2000/01/rdf-schema#label>	"region of vascular tree"@en
+<http://radlex.org/RID/RID35820>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID35820"
+<http://radlex.org/RID/RID35820>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"vascular tree organ region"@en
+<http://radlex.org/RID/RID35820>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Region des Gefäßsystems"@de
+<http://radlex.org/RID/RID35820>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50722"
+<http://radlex.org/RID/RID35820>	<http://purl.obolibrary.org/obo/IAO_0000115>	"Organ segment which is a regional part of a vascular tree. Examples: capillary, segment of arterial tree organ."@en
+<http://radlex.org/RID/RID31901>	<http://www.w3.org/2000/01/rdf-schema#label>	"visceral lymph node group of abdomen proper"@en
+<http://radlex.org/RID/RID31901>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID31901"
+<http://radlex.org/RID/RID31901>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"visceral abdominal lymph nodes set"@en
+<http://radlex.org/RID/RID31901>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"visceral abdominal lymph node group"@en
+<http://radlex.org/RID/RID31901>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"nodi lymphoidei abdominis viscerales"@la
+<http://radlex.org/RID/RID31901>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"nodi abdominis viscerales"@la
+<http://radlex.org/RID/RID31901>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:71786"
+<http://radlex.org/RID/RID35821>	<http://www.w3.org/2000/01/rdf-schema#label>	"segment of arterial tree organ"@en
+<http://radlex.org/RID/RID35821>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID35821"
+<http://radlex.org/RID/RID35821>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"arterial tree organ segment"@en
+<http://radlex.org/RID/RID35821>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Segment des arteriellen Gefäßsystems"@de
+<http://radlex.org/RID/RID35821>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:86187"
+<http://radlex.org/RID/RID15847>	<http://www.w3.org/2000/01/rdf-schema#label>	"bona fide anatomical surface"@en
+<http://radlex.org/RID/RID15847>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID15847"
+<http://radlex.org/RID/RID15847>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"echte anatomische Oberfläche"@de
+<http://radlex.org/RID/RID15847>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:242980"
+<http://radlex.org/RID/RID15847>	<http://purl.obolibrary.org/obo/IAO_0000115>	"Anatomical surface which marks a physical discontinuity between two or more anatomical structures or is an interface between an anatomical space and one more anatomical structures. Examples: surface of head, costal surface of lung, luminal surface of epithelium, P-face of plasma membrane."@en
+<http://radlex.org/RID/RID28921>	<http://www.w3.org/2000/01/rdf-schema#label>	"segment of lymphatic tree organ"@en
+<http://radlex.org/RID/RID28921>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID28921"
+<http://radlex.org/RID/RID28921>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"lymphatic tree organ segment"@en
+<http://radlex.org/RID/RID28921>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Segment des Lymphgefäßsystems"@de
+<http://radlex.org/RID/RID28921>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:86189"
+<http://radlex.org/RID/RID28921>	<http://purl.obolibrary.org/obo/IAO_0000115>	"Organ segment which is regional part of lymphatic tree organ. Examples: lymphatic chain, lymphatic plexus."@en
+<http://radlex.org/RID/RID30969>	<http://www.w3.org/2000/01/rdf-schema#label>	"set of viscera"@en
+<http://radlex.org/RID/RID30969>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID30969"
+<http://radlex.org/RID/RID30969>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"viscera set"@en
+<http://radlex.org/RID/RID30969>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"set of viscus organs"@en
+<http://radlex.org/RID/RID30969>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Gruppe der Viszera"@de
+<http://radlex.org/RID/RID30969>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:55564"
+<http://radlex.org/RID/RID30969>	<http://purl.obolibrary.org/obo/IAO_0000115>	"Set of organs located in the body cavity. Examples: abdominal viscera, thoracic viscera, pelvic viscera."@en
+<http://radlex.org/RID/RID13218>	<http://www.w3.org/2000/01/rdf-schema#label>	"immaterial anatomical entity"@en
+<http://radlex.org/RID/RID13218>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID13218"
+<http://radlex.org/RID/RID13218>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"immaterielles körperliches anatomisches Wesen"@de
+<http://radlex.org/RID/RID13218>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"immaterial physical anatomical entity"@en
+<http://radlex.org/RID/RID13218>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"immaterial anatomic entity"@en
+<http://radlex.org/RID/RID13218>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:67112"
+<http://radlex.org/RID/RID13218>	<http://purl.obolibrary.org/obo/IAO_0000115>	"Physical anatomical entity which is a three-dimensional space, surface, line or point associated with a material anatomical entity. Examples: body space, surface of heart, costal margin, apex of right lung, anterior compartment of right arm."@en
+<http://radlex.org/RID/RID28922>	<http://www.w3.org/2000/01/rdf-schema#label>	"lymphatic chain"@en
+<http://radlex.org/RID/RID28922>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID28922"
+<http://radlex.org/RID/RID28922>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Lymphknotenkette"@de
+<http://radlex.org/RID/RID28922>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:62865"
+<http://radlex.org/RID/RID28922>	<http://purl.obolibrary.org/obo/IAO_0000115>	"Segment of lymphatic tree organ which has as its direct parts one or more lymph nodes connected by two or more lymphatic vessels; together with other lymphatic chains forms a lymphatic tree organ part."@en
+<http://radlex.org/RID/RID15849>	<http://www.w3.org/2002/07/owl#deprecated>	true
+<http://radlex.org/RID/RID15849>	<http://www.w3.org/2000/01/rdf-schema#label>	"obsolete RadLex Term"@en
+<http://radlex.org/RID/RID15849>	<http://www.w3.org/2000/01/rdf-schema#comment>	"RID's  that existed in a previous version of Radlex but should no longer be used as part of Radlex.  This could be due to invadvertent duplications of terms, erroneous terms, etc.  If a term is medically obsolete, i.e. is no longer used in the medical or radiological fields, but is an older term, it may be retained in Radlex with a note in the comment field as to its use or current lack thereof."
+<http://radlex.org/RID/RID15849>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID15849"
+<http://radlex.org/RID/RID15849>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"obsoleter Radlex-Term"@de
+<http://radlex.org/RID/RID38616>	<http://www.w3.org/2000/01/rdf-schema#label>	"fold of mucosa of middle ear"@en
+<http://radlex.org/RID/RID38616>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID38616"
+<http://radlex.org/RID/RID38616>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Falte der Mukosa des Mittelohrs"@de
+<http://radlex.org/RID/RID13219>	<http://www.w3.org/2000/01/rdf-schema#label>	"anatomical line"@en
+<http://radlex.org/RID/RID13219>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID13219"
+<http://radlex.org/RID/RID13219>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"anatomische Linie"@de
+<http://radlex.org/RID/RID13219>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:9657"
+<http://radlex.org/RID/RID13219>	<http://purl.obolibrary.org/obo/IAO_0000115>	"Anatomical boundary entity which has one spatial dimension. Examples: margin of tongue, posterior border of right lung, inferior margin of liver, arcuate line of hip bone, sulcus terminalis of heart, pancreatic incisure."@en
+<http://radlex.org/RID/RID29693>	<http://www.w3.org/2000/01/rdf-schema#label>	"hepatic lymphatic chain"@en
+<http://radlex.org/RID/RID29693>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"hepatische Lymphknotenkette"@de
+<http://radlex.org/RID/RID29693>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:224309"
+<http://radlex.org/RID/RID29693>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID29693"
+<http://radlex.org/RID/RID10103>	<http://www.w3.org/2002/07/owl#deprecated>	true
+<http://radlex.org/RID/RID10103>	<http://www.w3.org/2000/01/rdf-schema#label>	"obsolete anterior malleolar fold of tympanic membrane"@en
+<http://radlex.org/RID/RID10103>	<http://www.w3.org/2000/01/rdf-schema#comment>	"duplicate"
+<http://radlex.org/RID/RID10103>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID10103"
+<http://radlex.org/RID/RID10103>	<http://purl.obolibrary.org/obo/IAO_0100001>	<http://radlex.org/RID/RID10191>
+<http://radlex.org/RID/RID15779>	<http://www.w3.org/2000/01/rdf-schema#label>	"organ part cluster"@en
+<http://radlex.org/RID/RID15779>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID15779"
+<http://radlex.org/RID/RID15779>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Organteil-Cluster"@de
+<http://radlex.org/RID/RID15779>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:64990"
+<http://radlex.org/RID/RID15779>	<http://purl.obolibrary.org/obo/IAO_0000115>	"Anatomical cluster which has as its direct parts all or some members of one or more organ part types which are grouped together according to some shared attributes. Examples: root of lung, internal nose, soft palate, wall of gut, periorbita."@en
+<http://radlex.org/RID/RID36500>	<http://www.w3.org/2000/01/rdf-schema#label>	"right anterior parietal artery"@en
+<http://radlex.org/RID/RID36500>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID36500"
+<http://radlex.org/RID/RID36500>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"rechte Arteria parietalis anterior"@de
+<http://radlex.org/RID/RID36500>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50486"
+<http://radlex.org/RID/RID36460>	<http://www.w3.org/2000/01/rdf-schema#label>	"left anterior temporal artery"@en
+<http://radlex.org/RID/RID36460>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID36460"
+<http://radlex.org/RID/RID36460>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"linke Arteria temporalis anterior"@de
+<http://radlex.org/RID/RID36460>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50384"
+<http://radlex.org/RID/RID30382>	<http://www.w3.org/2000/01/rdf-schema#label>	"organ component of lymphatic tree organ"@en
+<http://radlex.org/RID/RID30382>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID30382"
+<http://radlex.org/RID/RID30382>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Organkomponente des Lymphgefäßsystems"@de
+<http://radlex.org/RID/RID30382>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:278572"
+<http://radlex.org/RID/RID13408>	<http://www.w3.org/2000/01/rdf-schema#label>	"portion of connective tissue"@en
+<http://radlex.org/RID/RID13408>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID13408"
+<http://radlex.org/RID/RID13408>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"textus connectivus"@la
+<http://radlex.org/RID/RID13408>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"connective tissue"@en
+<http://radlex.org/RID/RID13408>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"bindegewebe"@de
+<http://radlex.org/RID/RID13408>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:9640"
+<http://radlex.org/RID/RID13408>	<http://purl.obolibrary.org/obo/IAO_0000115>	"Tissue which consists of fibroblasts, osteocytes or chondrocytes and intercellular matrix produced by these cells. Examples: bone (tissue), dense regular elastic tissue, areolar tissue, neuroglia, adipose tissue."@en
+<http://radlex.org/RID/RID13251>	<http://www.w3.org/2000/01/rdf-schema#label>	"anatomical orifice"@en
+<http://radlex.org/RID/RID13251>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID13251"
+<http://radlex.org/RID/RID13251>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"anatomische Öffnung"@de
+<http://radlex.org/RID/RID13251>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Orifizium"@de
+<http://radlex.org/RID/RID13251>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:3724"
+<http://radlex.org/RID/RID13251>	<http://purl.obolibrary.org/obo/IAO_0000115>	"Anatomical conduit space that connects two adjacent body spaces, surrounded by two or more subdivisions of two or more organs or organ parts. Examples: right atrioventricular orifice, orifice of artery, hilum of kidney, porta hepatis."@en
+<http://radlex.org/RID/RID36501>	<http://www.w3.org/2000/01/rdf-schema#label>	"left anterior parietal artery"@en
+<http://radlex.org/RID/RID36501>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID36501"
+<http://radlex.org/RID/RID36501>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"linke Arteria parietalis anterior"@de
+<http://radlex.org/RID/RID36501>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50487"
+<http://radlex.org/RID/RID31970>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"proximal superior mesenteric lymph nodes"@en
+<http://radlex.org/RID/RID31970>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"proximale obere mesenteriale Lymphknotengruppe"@de
+<http://radlex.org/RID/RID31970>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"lynph nodes along proximal superior mesenteric artery"@en
+<http://radlex.org/RID/RID31970>	<http://purl.obolibrary.org/obo/IAO_0000115>	"Abdominal proper lymph node group which is located long the proximal region of superior mesenteric artery."@en
+<http://radlex.org/RID/RID31970>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"set of proximal superior mesenteric lymph nodes"@en
+<http://radlex.org/RID/RID31970>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"jPS No. 14p nodes"@en
+<http://radlex.org/RID/RID31970>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:277418"
+<http://radlex.org/RID/RID31970>	<http://www.w3.org/2000/01/rdf-schema#label>	"proximal superior mesenteric lymph node group"@en
+<http://radlex.org/RID/RID31970>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"jPS 14p lymph nodes"@en
+<http://radlex.org/RID/RID31970>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID31970"
+<http://radlex.org/RID/RID31970>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"area 14p lymph node group"@en
+<http://radlex.org/RID/RID665>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50079"
+<http://radlex.org/RID/RID665>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"arteria cerebri media"@la
+<http://radlex.org/RID/RID665>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID665"
+<http://radlex.org/RID/RID665>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"UMLS:C0149566"
+<http://radlex.org/RID/RID665>	<http://purl.obolibrary.org/obo/IAO_0000115>	"The largest and most complex of the cerebral arteries. Branches of the middle cerebral artery supply the insular region, motor and premotor areas, and large regions of the association cortex. [MeSH]"@en
+<http://radlex.org/RID/RID665>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Arteria cerebri media"@de
+<http://radlex.org/RID/RID665>	<http://purl.org/dc/terms/source>	"Playbook"
+<http://radlex.org/RID/RID665>	<http://www.w3.org/2000/01/rdf-schema#label>	"middle cerebral artery"@en
+<http://radlex.org/RID/RID36461>	<http://www.w3.org/2000/01/rdf-schema#label>	"right posterior temporal artery"@en
+<http://radlex.org/RID/RID36461>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID36461"
+<http://radlex.org/RID/RID36461>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"rechte Arteria temporalis posterior"@de
+<http://radlex.org/RID/RID36461>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50459"
+<http://radlex.org/RID/RID29237>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Segment der Leber"@de
+<http://radlex.org/RID/RID29237>	<http://purl.obolibrary.org/obo/IAO_0000115>	"[Fleischner Society] A segment is the unit of a lobe ventilated by a segmental bronchus, perfused by a segmental pulmonary artery, and drained by an intersegmental pulmonary vein. There are two to five segments per lobe."@en
+<http://radlex.org/RID/RID29237>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"lobular segment of liver"@en
+<http://radlex.org/RID/RID29237>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"liver segment"@en
+<http://radlex.org/RID/RID29237>	<http://purl.org/dc/terms/source>	"Fleischner Society"
+<http://radlex.org/RID/RID29237>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID29237"
+<http://radlex.org/RID/RID29237>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Lebersegment"@de
+<http://radlex.org/RID/RID29237>	<http://www.w3.org/2000/01/rdf-schema#label>	"segment of liver"@en
+<http://radlex.org/RID/RID30383>	<http://www.w3.org/2000/01/rdf-schema#label>	"lymphatic vessel"@en
+<http://radlex.org/RID/RID30383>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID30383"
+<http://radlex.org/RID/RID30383>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"vas lymphaticum"@la
+<http://radlex.org/RID/RID30383>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:30315"
+<http://radlex.org/RID/RID10191>	<http://www.w3.org/2000/01/rdf-schema#label>	"anterior fold of malleus"@en
+<http://radlex.org/RID/RID10191>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID10191"
+<http://radlex.org/RID/RID10191>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"anterior malleolar fold of tympanic membrane"@en
+<http://radlex.org/RID/RID10191>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Plica mallearis anterior des Trommelfells"@de
+<http://radlex.org/RID/RID10191>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Plica mallearis anterior"@de
+<http://radlex.org/RID/RID13409>	<http://www.w3.org/2000/01/rdf-schema#label>	"solid organ"@en
+<http://radlex.org/RID/RID13409>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID13409"
+<http://radlex.org/RID/RID13409>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"solides Organ"@de
+<http://radlex.org/RID/RID13409>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:55670"
+<http://radlex.org/RID/RID13409>	<http://purl.obolibrary.org/obo/IAO_0000115>	"Organ the unshared parts of which do not surround macroscopic anatomical spaces; only its shared parts (subdivisions of hollow tree organs) contain anatomical spaces. Examples: lung, liver, thymus, ovary, muscle (organ), meninx, superficial fascia, skin."@en
+<http://radlex.org/RID/RID33009>	<http://www.w3.org/2000/01/rdf-schema#label>	"zone of liver"@en
+<http://radlex.org/RID/RID33009>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID33009"
+<http://radlex.org/RID/RID33009>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"hepatic zone"@en
+<http://radlex.org/RID/RID33009>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Bereich der Leber"@de
+<http://radlex.org/RID/RID33009>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:13360"
+<http://radlex.org/RID/RID36502>	<http://www.w3.org/2000/01/rdf-schema#label>	"right posterior parietal artery"@en
+<http://radlex.org/RID/RID36502>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID36502"
+<http://radlex.org/RID/RID36502>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"rechte Arteria parietalis posterior"@de
+<http://radlex.org/RID/RID36502>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50489"
+<http://radlex.org/RID/RID29236>	<http://www.w3.org/2000/01/rdf-schema#label>	"lobular segment"@en
+<http://radlex.org/RID/RID29236>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID29236"
+<http://radlex.org/RID/RID29236>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"lobuläres Segment"@de
+<http://radlex.org/RID/RID36462>	<http://www.w3.org/2000/01/rdf-schema#label>	"left posterior temporal artery"@en
+<http://radlex.org/RID/RID36462>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID36462"
+<http://radlex.org/RID/RID36462>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"linke Arteria temporalis posterior"@de
+<http://radlex.org/RID/RID36462>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50460"
+<http://radlex.org/RID/RID36464>	<http://www.w3.org/2000/01/rdf-schema#label>	"right recurrent temporal artery"@en
+<http://radlex.org/RID/RID36464>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID36464"
+<http://radlex.org/RID/RID36464>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"rechte Arteria temporalis recurrens"@de
+<http://radlex.org/RID/RID36464>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50462"
+<http://radlex.org/RID/RID30384>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"lymphatic trunk"@en
+<http://radlex.org/RID/RID30384>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"lymphatic duct"@en
+<http://radlex.org/RID/RID30384>	<http://www.w3.org/2000/01/rdf-schema#label>	"trunk of lymphatic tree organ part"@en
+<http://radlex.org/RID/RID30384>	<http://radlex.org/RID/Radlex_version_of_class_change>	"10/01/2014 pref, syn, source"
+<http://radlex.org/RID/RID30384>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Truncus des Teils des Lymphgefäßsystems"@de
+<http://radlex.org/RID/RID30384>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID30384"
+<http://radlex.org/RID/RID30384>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:66162"
+<http://radlex.org/RID/RID30384>	<http://purl.org/dc/terms/source>	"Playbook"
+<http://radlex.org/RID/RID36503>	<http://www.w3.org/2000/01/rdf-schema#label>	"left posterior parietal artery"@en
+<http://radlex.org/RID/RID36503>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID36503"
+<http://radlex.org/RID/RID36503>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"linke Arteria parietalis posterior"@de
+<http://radlex.org/RID/RID36503>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50490"
+<http://radlex.org/RID/RID36471>	<http://www.w3.org/2000/01/rdf-schema#label>	"anterior temporal branch of middle cerebral artery"@en
+<http://radlex.org/RID/RID36471>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID36471"
+<http://radlex.org/RID/RID36471>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"ramus temporalis anterior (Arteria cerebri media)"@la
+<http://radlex.org/RID/RID36471>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50465"
+<http://radlex.org/RID/RID36463>	<http://www.w3.org/2000/01/rdf-schema#label>	"recurrent temporal artery"@en
+<http://radlex.org/RID/RID36463>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID36463"
+<http://radlex.org/RID/RID36463>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Arteria temporalis recurrens"@de
+<http://radlex.org/RID/RID36463>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50461"
+<http://radlex.org/RID/RID29239>	<http://www.w3.org/2000/01/rdf-schema#label>	"segment of left lobe of liver"@en
+<http://radlex.org/RID/RID29239>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID29239"
+<http://radlex.org/RID/RID29239>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Segment des linken Leberlappens"@de
+<http://radlex.org/RID/RID36465>	<http://www.w3.org/2000/01/rdf-schema#label>	"left recurrent temporal artery"@en
+<http://radlex.org/RID/RID36465>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID36465"
+<http://radlex.org/RID/RID36465>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"linke Arteria temporalis recurrens"@de
+<http://radlex.org/RID/RID36465>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50463"
+<http://radlex.org/RID/RID36472>	<http://www.w3.org/2000/01/rdf-schema#label>	"anterior temporal branch of right middle cerebral artery"@en
+<http://radlex.org/RID/RID36472>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID36472"
+<http://radlex.org/RID/RID36472>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Ramus temporalis anterior der rechten Arteria cerebri media"@de
+<http://radlex.org/RID/RID36472>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50440"
+<http://radlex.org/RID/RID668>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"anterolateral central branch of middle cerebral artery"@en
+<http://radlex.org/RID/RID668>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50376"
+<http://radlex.org/RID/RID668>	<http://www.w3.org/2000/01/rdf-schema#label>	"lenticulostriate artery"@en
+<http://radlex.org/RID/RID668>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Arteriae lenticulostriatae"@de
+<http://radlex.org/RID/RID668>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID668"
+<http://radlex.org/RID/RID74>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"right hemiliver"@en
+<http://radlex.org/RID/RID74>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"lobus hepatis dexter"@la
+<http://radlex.org/RID/RID74>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"pars hepatis dextra"@la
+<http://radlex.org/RID/RID74>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Rechter Leberlappen"@de
+<http://radlex.org/RID/RID74>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"right part of liver"@en
+<http://radlex.org/RID/RID74>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID74"
+<http://radlex.org/RID/RID74>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"right segment of liver"@en
+<http://radlex.org/RID/RID74>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:15809"
+<http://radlex.org/RID/RID74>	<http://purl.obolibrary.org/obo/IAO_0000115>	"Hemiliver located to the right of the main portal scissura."@en
+<http://radlex.org/RID/RID74>	<http://www.w3.org/2000/01/rdf-schema#label>	"right lobe of liver"@en
+<http://radlex.org/RID/RID28854>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"set of abdominal lymph nodes"@en
+<http://radlex.org/RID/RID28854>	<http://purl.obolibrary.org/obo/IAO_0000115>	"Lymph node group which is located in the abdomen."@en
+<http://radlex.org/RID/RID28854>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:278485"
+<http://radlex.org/RID/RID28854>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID28854"
+<http://radlex.org/RID/RID28854>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"abdominal lymph node set"@en
+<http://radlex.org/RID/RID28854>	<http://www.w3.org/2000/01/rdf-schema#label>	"abdominal lymph node group"@en
+<http://radlex.org/RID/RID28854>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"abdominale Lymphknotengruppe"@de
+<http://radlex.org/RID/RID28854>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"abdominal lymph nodes"@en
+<http://radlex.org/RID/RID28854>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"lymph node group of abdomen"@en
+<http://radlex.org/RID/RID677>	<http://www.w3.org/2000/01/rdf-schema#label>	"posterior parietal artery"@en
+<http://radlex.org/RID/RID677>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID677"
+<http://radlex.org/RID/RID677>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Arteria parietalis posterior"@de
+<http://radlex.org/RID/RID677>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50488"
+<http://radlex.org/RID/RID677>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"arteria parietalis posterior"@la
+<http://radlex.org/RID/RID36473>	<http://www.w3.org/2000/01/rdf-schema#label>	"anterior temporal branch of left middle cerebral artery"@en
+<http://radlex.org/RID/RID36473>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID36473"
+<http://radlex.org/RID/RID36473>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Ramus temporalis anterior der linken Arteria cerebri media"@de
+<http://radlex.org/RID/RID36473>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50441"
+<http://radlex.org/RID/RID36475>	<http://www.w3.org/2000/01/rdf-schema#label>	"middle temporal branch of right middle cerebral artery"@en
+<http://radlex.org/RID/RID36475>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID36475"
+<http://radlex.org/RID/RID36475>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Ramus temporalis medius der rechten Arteria cerebri media"@de
+<http://radlex.org/RID/RID36475>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50467"
+<http://radlex.org/RID/RID36474>	<http://www.w3.org/2000/01/rdf-schema#label>	"middle temporal branch of middle cerebral artery"@en
+<http://radlex.org/RID/RID36474>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID36474"
+<http://radlex.org/RID/RID36474>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"ramus temporalis medius (Arteria cerebri media)"@la
+<http://radlex.org/RID/RID36474>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50466"
+<http://radlex.org/RID/RID36476>	<http://www.w3.org/2000/01/rdf-schema#label>	"middle temporal branch of left middle cerebral artery"@en
+<http://radlex.org/RID/RID36476>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID36476"
+<http://radlex.org/RID/RID36476>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Ramus temporalis medius der linken Arteria cerebri media"@de
+<http://radlex.org/RID/RID36476>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50468"
+<http://radlex.org/RID/RID679>	<http://www.w3.org/2000/01/rdf-schema#label>	"posterior temporal artery"@en
+<http://radlex.org/RID/RID679>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID679"
+<http://radlex.org/RID/RID679>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Arteria temporalis posterior"@de
+<http://radlex.org/RID/RID679>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50458"
+<http://radlex.org/RID/RID36477>	<http://www.w3.org/2000/01/rdf-schema#label>	"posterior temporal branch of middle cerebral artery"@en
+<http://radlex.org/RID/RID36477>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID36477"
+<http://radlex.org/RID/RID36477>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"ramus temporalis posterior (Arteria cerebri media)"@la
+<http://radlex.org/RID/RID36477>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50469"
+<http://radlex.org/RID/RID29520>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:73748"
+<http://radlex.org/RID/RID29520>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Gefäße der Leber"@de
+<http://radlex.org/RID/RID29520>	<http://www.w3.org/2000/01/rdf-schema#label>	"vasculature of liver"@en
+<http://radlex.org/RID/RID29520>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID29520"
+<http://radlex.org/RID/RID49459>	<http://purl.org/dc/terms/source>	"FMA"
+<http://radlex.org/RID/RID49459>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"parenchyma of liver"@en
+<http://radlex.org/RID/RID49459>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Leberparenchym"@de
+<http://radlex.org/RID/RID49459>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID49459"
+<http://radlex.org/RID/RID49459>	<http://www.w3.org/2000/01/rdf-schema#label>	"liver parenchyma"@en
+<http://radlex.org/RID/RID49459>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"hepatic parenchyma"@en
+<http://radlex.org/RID/RID49459>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:17540"
+<http://radlex.org/RID/RID13389>	<http://www.w3.org/2000/01/rdf-schema#label>	"material anatomical entity"@en
+<http://radlex.org/RID/RID13389>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID13389"
+<http://radlex.org/RID/RID13389>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"materielles körperliches anatomisches Wesen"@de
+<http://radlex.org/RID/RID13389>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"material anatomic structure"@en
+<http://radlex.org/RID/RID13389>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:67165"
+<http://radlex.org/RID/RID13389>	<http://purl.obolibrary.org/obo/IAO_0000115>	"Physical anatomical entity which has mass. Examples: hemoglobin molecule, mitochondrion, hepatocyte, erythrocyte, heart, head, blood, urine."@en
+<http://radlex.org/RID/RID34478>	<http://www.w3.org/2000/01/rdf-schema#label>	"anatomical conduit space"@en
+<http://radlex.org/RID/RID34478>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID34478"
+<http://radlex.org/RID/RID34478>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Binnenraum des anatomischen Conduits"@de
+<http://radlex.org/RID/RID34478>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:9338"
+<http://radlex.org/RID/RID34478>	<http://purl.obolibrary.org/obo/IAO_0000115>	"Anatomical space which connects two or more compartment spaces or two or more anatomical cavities. Examples: foramen magnum, pyloric orifice, space of right inguinal canal, nutrient canal space,"@en
+<http://radlex.org/RID/RID29745>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:278410"
+<http://radlex.org/RID/RID29745>	<http://www.w3.org/2000/01/rdf-schema#label>	"superior pre-aortic lymphatic chain"@en
+<http://radlex.org/RID/RID29745>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"obere präaortale Lymphknotenkette"@de
+<http://radlex.org/RID/RID29745>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID29745"
+<http://radlex.org/RID/RID11087>	<http://www.w3.org/2000/01/rdf-schema#label>	"route of administration"@en
+<http://radlex.org/RID/RID11087>	<http://www.w3.org/2000/01/rdf-schema#comment>	"Use FDA Center for Drug Evaluation and Research Data Standards Manual values:  http://www.fda.gov/cder/dsm/DRG/drg00301.htm"
+<http://radlex.org/RID/RID11087>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID11087"
+<http://radlex.org/RID/RID11087>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Applikationsweg"@de
+<http://radlex.org/RID/RID11087>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"UMLS:C0013153"
+<http://radlex.org/RID/RID11087>	<http://radlex.org/RID/Radlex_version_of_class_change>	"4.1 loc"
+<http://radlex.org/RID/RID11087>	<http://purl.obolibrary.org/obo/IAO_0000115>	"The various ways of administering a drug or other chemical to a site in a patient or animal from where the chemical is absorbed into the blood and delivered to the target tissue. [MeSH]"@en
+<http://radlex.org/RID/RID35810>	<http://www.w3.org/2000/01/rdf-schema#label>	"set of solid abdominal organs"@en
+<http://radlex.org/RID/RID35810>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID35810"
+<http://radlex.org/RID/RID35810>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"solid abdominal organs"@en
+<http://radlex.org/RID/RID35810>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Gruppe der soliden Bauchorgane"@de
+<http://radlex.org/RID/RID670>	<http://www.w3.org/2000/01/rdf-schema#label>	"medial lenticulostriate artery"@en
+<http://radlex.org/RID/RID670>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"medial striate branch of middle cerebral artery"@en
+<http://radlex.org/RID/RID670>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Arteriae lenticulostriatae mediales"@de
+<http://radlex.org/RID/RID670>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50430"
+<http://radlex.org/RID/RID670>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID670"
+<http://radlex.org/RID/RID29288>	<http://www.w3.org/2000/01/rdf-schema#label>	"region of mucosa"@en
+<http://radlex.org/RID/RID29288>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID29288"
+<http://radlex.org/RID/RID29288>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"mucosal region"@en
+<http://radlex.org/RID/RID29288>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"mucosa of organ part"@en
+<http://radlex.org/RID/RID29288>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Mucosaregion"@de
+<http://radlex.org/RID/RID29288>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:85358"
+<http://radlex.org/RID/RID13406>	<http://www.w3.org/2000/01/rdf-schema#label>	"anatomical lobe"@en
+<http://radlex.org/RID/RID13406>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID13406"
+<http://radlex.org/RID/RID13406>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"lobus"@la
+<http://radlex.org/RID/RID13406>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:45728"
+<http://radlex.org/RID/RID34847>	<http://www.w3.org/2000/01/rdf-schema#label>	"viscerocranial mucosa organ part"@en
+<http://radlex.org/RID/RID34847>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID34847"
+<http://radlex.org/RID/RID34847>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Organsegment der Mukosa des Viszerokraniums"@de
+<http://radlex.org/RID/RID36493>	<http://www.w3.org/2000/01/rdf-schema#label>	"left prefrontal artery"@en
+<http://radlex.org/RID/RID36493>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID36493"
+<http://radlex.org/RID/RID36493>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"linke Arteria praefrontalis"@de
+<http://radlex.org/RID/RID36493>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50478"
+<http://radlex.org/RID/RID13407>	<http://www.w3.org/2000/01/rdf-schema#label>	"vestigial embryonic structure"@en
+<http://radlex.org/RID/RID13407>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID13407"
+<http://radlex.org/RID/RID13407>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"nicht voll ausgebildete embryonale Struktur"@de
+<http://radlex.org/RID/RID36494>	<http://www.w3.org/2000/01/rdf-schema#label>	"artery of precentral sulcus"@en
+<http://radlex.org/RID/RID36494>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID36494"
+<http://radlex.org/RID/RID36494>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"precentral sulcus artery"@en
+<http://radlex.org/RID/RID36494>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"arteria sulci precentralis"@la
+<http://radlex.org/RID/RID36494>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50479"
+<http://radlex.org/RID/RID29234>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:13361"
+<http://radlex.org/RID/RID29234>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Leberlappen"@de
+<http://radlex.org/RID/RID29234>	<http://purl.obolibrary.org/obo/IAO_0000115>	"Anatomical lobe in liver which is demarcated either by surface landmarks, such as falciform ligament and fissures for ligamentum teres and ligamentum venosum."@en
+<http://radlex.org/RID/RID29234>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID29234"
+<http://radlex.org/RID/RID29234>	<http://www.w3.org/2000/01/rdf-schema#label>	"lobe of liver"@en
+<http://radlex.org/RID/RID38138>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"subdiaphragmatische präaortale Lymphknotengruppe"@de
+<http://radlex.org/RID/RID38138>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"area 16a1 lymph node group"@en
+<http://radlex.org/RID/RID38138>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"jPS 16a1 lymph nodes"@en
+<http://radlex.org/RID/RID38138>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"superior para-aortic lymph nodes"@en
+<http://radlex.org/RID/RID38138>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID38138"
+<http://radlex.org/RID/RID38138>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"superior para-aortic lymph node group"@en
+<http://radlex.org/RID/RID38138>	<http://purl.obolibrary.org/obo/IAO_0000115>	"Parietal para-aortic lymph node group proper located around abdominal aorta at aortic hiatus of diaphragm."@en
+<http://radlex.org/RID/RID38138>	<http://www.w3.org/2000/01/rdf-schema#label>	"subdiaphragmatic pre-aortic lymph node group"@en
+<http://radlex.org/RID/RID38138>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:71784"
+<http://radlex.org/RID/RID38138>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"16a1 lymph node group"@en
+<http://radlex.org/RID/RID673>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Arteria temporalis anterior"@de
+<http://radlex.org/RID/RID673>	<http://www.w3.org/2000/01/rdf-schema#label>	"anterior temporal artery"@en
+<http://radlex.org/RID/RID673>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50382"
+<http://radlex.org/RID/RID673>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"arteria temporalis anterior"@la
+<http://radlex.org/RID/RID673>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID673"
+<http://radlex.org/RID/RID31081>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"tunica fibrosa (Hepar)"@la
+<http://radlex.org/RID/RID31081>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"tunica fibrosa hepatis"@la
+<http://radlex.org/RID/RID31081>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Leberkapsel"@de
+<http://radlex.org/RID/RID31081>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:15813"
+<http://radlex.org/RID/RID31081>	<http://www.w3.org/2000/01/rdf-schema#label>	"fibrous capsule of liver"@en
+<http://radlex.org/RID/RID31081>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID31081"
+<http://radlex.org/RID/RID31081>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"glisson capsule"@en
+<http://radlex.org/RID/RID36495>	<http://www.w3.org/2000/01/rdf-schema#label>	"artery of right precentral sulcus"@en
+<http://radlex.org/RID/RID36495>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID36495"
+<http://radlex.org/RID/RID36495>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"right precentral sulcus artery"@en
+<http://radlex.org/RID/RID36495>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Arterie des rechten Sulcus praecentralis"@de
+<http://radlex.org/RID/RID36495>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50480"
+<http://radlex.org/RID/RID36497>	<http://www.w3.org/2000/01/rdf-schema#label>	"artery of postcentral sulcus"@en
+<http://radlex.org/RID/RID36497>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID36497"
+<http://radlex.org/RID/RID36497>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"postcentral sulcus artery"@en
+<http://radlex.org/RID/RID36497>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"arteria sulci postcentralis"@la
+<http://radlex.org/RID/RID36497>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50482"
+<http://radlex.org/RID/RID6>	<http://www.w3.org/2000/01/rdf-schema#label>	"RadLex descriptor"@en
+<http://radlex.org/RID/RID6>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID6"
+<http://radlex.org/RID/RID6>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Radlex-Deskriptor"@de
+<http://radlex.org/RID/RID6>	<http://purl.obolibrary.org/obo/IAO_0000115>	"The leaf node children are adjectives, rather than noun phrases as entities should be."@en
+<http://radlex.org/RID/RID36496>	<http://www.w3.org/2000/01/rdf-schema#label>	"artery of left precentral sulcus"@en
+<http://radlex.org/RID/RID36496>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID36496"
+<http://radlex.org/RID/RID36496>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"left precentral sulcus artery"@en
+<http://radlex.org/RID/RID36496>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Arterie des linken Sulcus praecentralis"@de
+<http://radlex.org/RID/RID36496>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50481"
+<http://radlex.org/RID/RID36498>	<http://www.w3.org/2000/01/rdf-schema#label>	"artery of right postcentral sulcus"@en
+<http://radlex.org/RID/RID36498>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID36498"
+<http://radlex.org/RID/RID36498>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"right postcentral sulcus artery"@en
+<http://radlex.org/RID/RID36498>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Arterie des rechten Sulcus postcentralis"@de
+<http://radlex.org/RID/RID36498>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50483"
+<http://radlex.org/RID/RID5978>	<http://www.w3.org/2000/01/rdf-schema#label>	"parenchyma"@en
+<http://radlex.org/RID/RID5978>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID5978"
+<http://radlex.org/RID/RID5978>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Parenchym"@de
+<http://radlex.org/RID/RID5978>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:45732"
+<http://radlex.org/RID/RID5978>	<http://purl.org/dc/terms/source>	"Fleischner Society"
+<http://radlex.org/RID/RID5978>	<http://purl.obolibrary.org/obo/IAO_0000115>	"Organ component constituted by specialized tissues which are organized into acini, lobules, segments, and lobes, or corticomedullary units and supported by stroma. Examples: parenchyma of lung, parenchyma of liver, parenchyma of kidney."@en
+<http://radlex.org/RID/RID36499>	<http://www.w3.org/2000/01/rdf-schema#label>	"artery of left postcentral sulcus"@en
+<http://radlex.org/RID/RID36499>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID36499"
+<http://radlex.org/RID/RID36499>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"left postcentral sulcus artery"@en
+<http://radlex.org/RID/RID36499>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Arterie des linken Sulcus postcentralis"@de
+<http://radlex.org/RID/RID36499>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50484"
+<http://radlex.org/RID/RID34554>	<http://www.w3.org/2000/01/rdf-schema#label>	"viscerocranial mucosal fold"@en
+<http://radlex.org/RID/RID34554>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID34554"
+<http://radlex.org/RID/RID34554>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Mukosafalte des Viszerokraniums"@de
+<http://radlex.org/RID/RID16173>	<http://www.w3.org/2000/01/rdf-schema#label>	"set of organ components"@en
+<http://radlex.org/RID/RID16173>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID16173"
+<http://radlex.org/RID/RID16173>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"organ components set"@en
+<http://radlex.org/RID/RID16173>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Gruppe der Organkomponenten"@de
+<http://radlex.org/RID/RID16173>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:78561"
+<http://radlex.org/RID/RID5863>	<http://www.w3.org/2000/01/rdf-schema#label>	"morphologic descriptor"@en
+<http://radlex.org/RID/RID5863>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID5863"
+<http://radlex.org/RID/RID5863>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"shape"@en
+<http://radlex.org/RID/RID5863>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"morphology descriptor"@en
+<http://radlex.org/RID/RID5863>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Morphologische Eigenschaft"@de
+<http://radlex.org/RID/RID13213>	<http://www.w3.org/2000/01/rdf-schema#label>	"organ zone"@en
+<http://radlex.org/RID/RID13213>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID13213"
+<http://radlex.org/RID/RID13213>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"zone of organ"@en
+<http://radlex.org/RID/RID13213>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"organ region with floating fiat boundary"@en
+<http://radlex.org/RID/RID13213>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Organzone"@de
+<http://radlex.org/RID/RID13213>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:55268"
+<http://radlex.org/RID/RID13213>	<http://purl.obolibrary.org/obo/IAO_0000115>	"Organ region with one or more floating fiat boundaries. Examples: apical zone of lung, superior pole of kidney, gingiva, apex of prostate, ascending colon proper."@en
+<http://radlex.org/RID/RID30147>	<http://www.w3.org/2000/01/rdf-schema#label>	"segment of biliary tree"@en
+<http://radlex.org/RID/RID30147>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID30147"
+<http://radlex.org/RID/RID30147>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"biliary tree segment"@en
+<http://radlex.org/RID/RID30147>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Segment der Gallenwege"@de
+<http://radlex.org/RID/RID30147>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:71856"
+<http://radlex.org/RID/RID30147>	<http://purl.obolibrary.org/obo/IAO_0000115>	"Organ segment which is regional part of biliary tree. Examples: hepatic biliary tree, intrahepatic biliary tree."@en
+<http://radlex.org/RID/RID593>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:49817"
+<http://radlex.org/RID/RID593>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"pars cavernosa (Arteria carotis interna)"@en
+<http://radlex.org/RID/RID593>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"cavernous portion of internal carotid artery"@en
+<http://radlex.org/RID/RID593>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID593"
+<http://radlex.org/RID/RID593>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Arteria carotis interna Pars cavernosa"@de
+<http://radlex.org/RID/RID593>	<http://www.w3.org/2000/01/rdf-schema#label>	"cavernous branch of internal carotid artery"@en
+<http://radlex.org/RID/RID593>	<http://radlex.org/RID/Radlex_version_of_class_change>	"3.15 syn"
+<http://radlex.org/RID/RID28438>	<http://www.w3.org/2000/01/rdf-schema#label>	"allothalamus"@en
+<http://radlex.org/RID/RID28438>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID28438"
+<http://radlex.org/RID/RID28438>	<http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym>	"allathalamus"@en
+<http://radlex.org/RID/RID28438>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Allothalamus"@de
+<http://radlex.org/RID/RID28438>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:258758"
+<http://radlex.org/RID/RID13214>	<http://www.w3.org/2000/01/rdf-schema#label>	"cardinal organ part"@en
+<http://radlex.org/RID/RID13214>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID13214"
+<http://radlex.org/RID/RID13214>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"organteil"@la
+<http://radlex.org/RID/RID13214>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:82472"
+<http://radlex.org/RID/RID13214>	<http://purl.obolibrary.org/obo/IAO_0000115>	"Anatomical structure which has as its direct parts two or more types of tissue and is continuous with one or more anatomical structures likewise constituted by two or more portions of tissues distinct from those of their complement. Examples: osteon, cortical bone, neck of femur, bronchopulmonary segment, left lobe of liver, anterior right side of heart, interventricular branch of left coronary artery, right atrium, mitral valve, head of pancreas."@en
+<http://radlex.org/RID/RID15990>	<http://www.w3.org/2000/01/rdf-schema#label>	"vasculature of organ"@en
+<http://radlex.org/RID/RID15990>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID15990"
+<http://radlex.org/RID/RID15990>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"set of blood vessels of organ"@en
+<http://radlex.org/RID/RID15990>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"organ vasculature"@en
+<http://radlex.org/RID/RID15990>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Organblutgefäße"@de
+<http://radlex.org/RID/RID15990>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Gefäße des Organs"@de
+<http://radlex.org/RID/RID15990>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:74612"
+<http://radlex.org/RID/RID13215>	<http://www.w3.org/2000/01/rdf-schema#label>	"organ segment"@en
+<http://radlex.org/RID/RID13215>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID13215"
+<http://radlex.org/RID/RID13215>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"segment of organ"@en
+<http://radlex.org/RID/RID13215>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"organ region with fixed fiat boundary"@en
+<http://radlex.org/RID/RID13215>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Organsegment"@de
+<http://radlex.org/RID/RID13215>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:86140"
+<http://radlex.org/RID/RID13215>	<http://purl.obolibrary.org/obo/IAO_0000115>	"Organ region with one or more anchored fiat boundaries. Examples: artery, trunk of nerve, cervical part of esophagus, pelvic part of vagina, horn of thyroid cartilage, anterior segment of eyeball."@en
+<http://radlex.org/RID/RID5991>	<http://www.w3.org/2000/01/rdf-schema#label>	"serosa"@en
+<http://radlex.org/RID/RID5991>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID5991"
+<http://radlex.org/RID/RID5991>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Serosa"@de
+<http://radlex.org/RID/RID5991>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"UMLS:C0036760"
+<http://radlex.org/RID/RID5991>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:45637"
+<http://radlex.org/RID/RID5991>	<http://purl.obolibrary.org/obo/IAO_0000115>	"A thin lining of closed cavities of the body, consisting of a single layer of squamous epithelial cells (mesothelium) resting on a thin layer of connective tissue, and covered with secreted clear fluid from blood and lymph vessels. Major serous membranes in the body include pericardium; peritoneum; and pleura. [MeSH]"@en
+<http://radlex.org/RID/RID29378>	<http://www.w3.org/2000/01/rdf-schema#label>	"irregular connective tissue"@en
+<http://radlex.org/RID/RID29378>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID29378"
+<http://radlex.org/RID/RID29378>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"unregelmäßiges Bindegewebe"@de
+<http://radlex.org/RID/RID29378>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:20107"
+<http://radlex.org/RID/RID29378>	<http://purl.obolibrary.org/obo/IAO_0000115>	"Connective tissue, which consists of a population of connective tissue cells, the intercellular matrix of which contains an irregular network of collagen and elastic fiber bundles. Examples: areolar tissue, mucoid tissue, connective tissue of peritoneum, connective tissue of fibrous pericardium."@en
+<http://radlex.org/RID/RID29379>	<http://www.w3.org/2000/01/rdf-schema#label>	"dense irregular connective tissue"@en
+<http://radlex.org/RID/RID29379>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID29379"
+<http://radlex.org/RID/RID29379>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"dichtes unregelmäßiges Bindegewebe"@de
+<http://radlex.org/RID/RID29379>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:20109"
+<http://radlex.org/RID/RID29379>	<http://purl.obolibrary.org/obo/IAO_0000115>	"Irregular connective tissue is an irregular connective tissue, the intercellular matrix of which contains a dense irregular network of collagen and elastic fiber bundles. Examples: connective tissue of peritoneum, connective tissue of fibrous pericardium."@en
+<http://radlex.org/RID/RID13217>	<http://www.w3.org/2000/01/rdf-schema#label>	"anatomical space"@en
+<http://radlex.org/RID/RID13217>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID13217"
+<http://radlex.org/RID/RID13217>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"anatomischer Raum"@de
+<http://radlex.org/RID/RID13217>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:5897"
+<http://radlex.org/RID/RID13217>	<http://purl.obolibrary.org/obo/IAO_0000115>	"Immaterial anatomical entity which has three spatial dimensions. Examples: celom, thoracic cavity, lesser sac of peritoneum, cavity of right atrium, lumen of aorta, mediastinal space, space of anterior compartment of forearm, intervertebral foramen space."@en
+<http://radlex.org/RID/RID33014>	<http://www.w3.org/2000/01/rdf-schema#label>	"hemiliver"@en
+<http://radlex.org/RID/RID33014>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID33014"
+<http://radlex.org/RID/RID33014>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Leberhälfte"@de
+<http://radlex.org/RID/RID33014>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:15808"
+<http://radlex.org/RID/RID5799>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"ball-shaped"@en
+<http://radlex.org/RID/RID5799>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"spherical"@en
+<http://radlex.org/RID/RID5799>	<http://purl.org/dc/terms/source>	"BI-RADS 5, BI-RADS 4: mammo, MRI, US; PI-RADS 2"
+<http://radlex.org/RID/RID5799>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"rund"@de
+<http://radlex.org/RID/RID5799>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"globular"@en
+<http://radlex.org/RID/RID5799>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"circular"@en
+<http://radlex.org/RID/RID5799>	<http://radlex.org/RID/Radlex_version_of_class_change>	"07/07/2014 def, source"
+<http://radlex.org/RID/RID5799>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID5799"
+<http://radlex.org/RID/RID5799>	<http://www.w3.org/2000/01/rdf-schema#comment>	"The synonyms are only sanctioned by BI-RADS Ultrasound."
+<http://radlex.org/RID/RID5799>	<http://www.w3.org/2000/01/rdf-schema#label>	"round"@en
+<http://radlex.org/RID/RID5799>	<http://purl.obolibrary.org/obo/IAO_0000115>	"BI-RADS 5: Sphereical, ball-shaped, circular, or globular.\nPI-RADS 2: The shape of a circle or sphere."@en
+<http://radlex.org/RID/RID35919>	<http://www.w3.org/2000/01/rdf-schema#label>	"distal lateral striate branch of middle cerebral artery"@en
+<http://radlex.org/RID/RID35919>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID35919"
+<http://radlex.org/RID/RID35919>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Ramus striatus lateralis distalis der Arteria cerebri media"@de
+<http://radlex.org/RID/RID35919>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50386"
+<http://radlex.org/RID/RID0>	<http://www.w3.org/2000/01/rdf-schema#label>	"RadLex ontology entity"@en
+<http://radlex.org/RID/RID0>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID0"
+<http://radlex.org/RID/RID0>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Einheit der Radlex-Ontologie"@de
+<http://radlex.org/RID/RID36490>	<http://www.w3.org/2000/01/rdf-schema#label>	"left lateral frontobasal artery"@en
+<http://radlex.org/RID/RID36490>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID36490"
+<http://radlex.org/RID/RID36490>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"linke Arteria frontobasalis lateralis"@de
+<http://radlex.org/RID/RID36490>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50444"
+<http://radlex.org/RID/RID1>	<http://www.w3.org/2000/01/rdf-schema#label>	"RadLex entity"@en
+<http://radlex.org/RID/RID1>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID1"
+<http://radlex.org/RID/RID1>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Radlex-Einheit"@de
+<http://radlex.org/RID/RID36491>	<http://www.w3.org/2000/01/rdf-schema#label>	"prefrontal artery"@en
+<http://radlex.org/RID/RID36491>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID36491"
+<http://radlex.org/RID/RID36491>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"arteria prefrontalis"@la
+<http://radlex.org/RID/RID36491>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50437"
+<http://radlex.org/RID/RID36492>	<http://www.w3.org/2000/01/rdf-schema#label>	"right prefrontal artery"@en
+<http://radlex.org/RID/RID36492>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID36492"
+<http://radlex.org/RID/RID36492>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"rechte Arteria praefrontalis"@de
+<http://radlex.org/RID/RID36492>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50445"
+<http://radlex.org/RID/RID29674>	<http://www.w3.org/2000/01/rdf-schema#label>	"abdominal lymphatic chain"@en
+<http://radlex.org/RID/RID29674>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID29674"
+<http://radlex.org/RID/RID29674>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"abdominale Lymphknotenkette"@de
+<http://radlex.org/RID/RID29674>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:277359"
+<http://radlex.org/RID/RID31917>	<http://www.w3.org/2002/07/owl#deprecated>	true
+<http://radlex.org/RID/RID31917>	<http://www.w3.org/2000/01/rdf-schema#label>	"obsolete inferior diaphragmatic lymph node group"@en
+<http://radlex.org/RID/RID31917>	<http://www.w3.org/2000/01/rdf-schema#comment>	"duplicate"
+<http://radlex.org/RID/RID31917>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID31917"
+<http://radlex.org/RID/RID31917>	<http://purl.obolibrary.org/obo/IAO_0100001>	<http://radlex.org/RID/RID38138>
+<http://radlex.org/RID/RID3>	<http://www.w3.org/2000/01/rdf-schema#label>	"anatomical entity"@en
+<http://radlex.org/RID/RID3>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID3"
+<http://radlex.org/RID/RID3>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"anatomic entity"@en
+<http://radlex.org/RID/RID3>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Anatomische Entität"@de
+<http://radlex.org/RID/RID3>	<http://purl.obolibrary.org/obo/IAO_0000115>	"Organismal continuant entity which is enclosed by the bona fide boundary of an organism or is an attribute of its structural organization. Examples: cell, heart, head, peritoneal cavity, apex of lung, anatomical term, sagittal plane. [FMA]"@en
+<http://radlex.org/RID/RID15989>	<http://www.w3.org/2000/01/rdf-schema#label>	"vasculature"@en
+<http://radlex.org/RID/RID15989>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID15989"
+<http://radlex.org/RID/RID15989>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Gefäße"@de
+<http://radlex.org/RID/RID15989>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Blutgefäße"@de
+<http://radlex.org/RID/RID15989>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:69050"
+<http://radlex.org/RID/RID35846>	<http://www.w3.org/2000/01/rdf-schema#label>	"subdivision of common carotid artery"@en
+<http://radlex.org/RID/RID35846>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID35846"
+<http://radlex.org/RID/RID35846>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"common carotid arterial subdivision"@en
+<http://radlex.org/RID/RID35846>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Segment der Arteria carotis communis"@de
+<http://radlex.org/RID/RID35846>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:70504"
+<http://radlex.org/RID/RID31080>	<http://www.w3.org/2000/01/rdf-schema#label>	"fibrous connective tissue"@en
+<http://radlex.org/RID/RID31080>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID31080"
+<http://radlex.org/RID/RID31080>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"fibröses Bindegewebe"@de
+<http://radlex.org/RID/RID31080>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:75634"
+<http://radlex.org/RID/RID30363>	<http://www.w3.org/2000/01/rdf-schema#label>	"liver stroma"@en
+<http://radlex.org/RID/RID30363>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID30363"
+<http://radlex.org/RID/RID30363>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Stroma der Leber"@de
+<http://radlex.org/RID/RID30363>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:17553"
+<http://radlex.org/RID/RID36481>	<http://www.w3.org/2000/01/rdf-schema#label>	"temporo-occipital branch of right middle cerebral artery"@en
+<http://radlex.org/RID/RID36481>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID36481"
+<http://radlex.org/RID/RID36481>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Ramus temporo-occipitalis der rechten Arteria cerebri media"@de
+<http://radlex.org/RID/RID36481>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50473"
+<http://radlex.org/RID/RID28901>	<http://www.w3.org/2000/01/rdf-schema#label>	"parenchymatous organ"@en
+<http://radlex.org/RID/RID28901>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID28901"
+<http://radlex.org/RID/RID28901>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"parenchymatöses Organ"@de
+<http://radlex.org/RID/RID28901>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:55661"
+<http://radlex.org/RID/RID28901>	<http://purl.obolibrary.org/obo/IAO_0000115>	"Solid organ which consists of parenchyma and connective tissue stroma; the stroma subdivides the parenchyma into lobes, segments, lobules, acini, or cortex and medulla. Examples: lung, liver, spleen, kidney, parathyroid gland."@en
+<http://radlex.org/RID/RID36482>	<http://www.w3.org/2000/01/rdf-schema#label>	"temporo-occipital branch of left middle cerebral artery"@en
+<http://radlex.org/RID/RID36482>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID36482"
+<http://radlex.org/RID/RID36482>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Ramus temporo-occipitalis der linken Arteria cerebri media"@de
+<http://radlex.org/RID/RID36482>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50474"
+<http://radlex.org/RID/RID36483>	<http://www.w3.org/2000/01/rdf-schema#label>	"branch of middle cerebral artery to angular gyrus"@en
+<http://radlex.org/RID/RID36483>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID36483"
+<http://radlex.org/RID/RID36483>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"ramus gyri angularis (Arteria cerebri medii)"@la
+<http://radlex.org/RID/RID36483>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50475"
+<http://radlex.org/RID/RID15506>	<http://www.w3.org/2000/01/rdf-schema#label>	"set of organs"@en
+<http://radlex.org/RID/RID15506>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID15506"
+<http://radlex.org/RID/RID15506>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"organs set"@en
+<http://radlex.org/RID/RID15506>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Gruppe der Organe"@de
+<http://radlex.org/RID/RID15506>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:70779"
+<http://radlex.org/RID/RID36484>	<http://www.w3.org/2000/01/rdf-schema#label>	"branch of right middle cerebral artery to right angular gyrus"@en
+<http://radlex.org/RID/RID36484>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID36484"
+<http://radlex.org/RID/RID36484>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Ramus der rechten Arteria cerebri media zum rechten Gyrus angularis"@de
+<http://radlex.org/RID/RID36484>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50476"
+<http://radlex.org/RID/RID36456>	<http://www.w3.org/2000/01/rdf-schema#label>	"polar temporal artery"@en
+<http://radlex.org/RID/RID36456>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID36456"
+<http://radlex.org/RID/RID36456>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"arteria polaris temporalis"@la
+<http://radlex.org/RID/RID36456>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50379"
+<http://radlex.org/RID/RID36485>	<http://www.w3.org/2000/01/rdf-schema#label>	"branch of left middle cerebral artery to left angular gyrus"@en
+<http://radlex.org/RID/RID36485>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID36485"
+<http://radlex.org/RID/RID36485>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Ramus der linken Arteria cerebri media zum linken Gyrus angularis"@de
+<http://radlex.org/RID/RID36485>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50477"
+<http://radlex.org/RID/RID50555>	<http://www.w3.org/2000/01/rdf-schema#label>	"route descriptor"@en
+<http://radlex.org/RID/RID50555>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID50555"
+<http://radlex.org/RID/RID50555>	<http://radlex.org/RID/Radlex_version_of_class_change>	"4.1 new"
+<http://radlex.org/RID/RID50555>	<http://purl.org/dc/terms/created>	"2019-10-10T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>
+<http://radlex.org/RID/RID7480>	<http://www.w3.org/2000/01/rdf-schema#label>	"imaging procedure descriptor"@en
+<http://radlex.org/RID/RID7480>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID7480"
+<http://radlex.org/RID/RID7480>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Deskriptor des bildgebenden Verfahrens"@de
+<http://radlex.org/RID/RID36457>	<http://www.w3.org/2000/01/rdf-schema#label>	"right polar temporal artery"@en
+<http://radlex.org/RID/RID36457>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID36457"
+<http://radlex.org/RID/RID36457>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"rechte Arteria polaris temporalis"@de
+<http://radlex.org/RID/RID36457>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50380"
+<http://radlex.org/RID/RID35914>	<http://www.w3.org/2000/01/rdf-schema#label>	"branch of middle cerebral artery"@en
+<http://radlex.org/RID/RID35914>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID35914"
+<http://radlex.org/RID/RID35914>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"middle cerebral arterial branch"@en
+<http://radlex.org/RID/RID35914>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Ramus der Arteria cerebri media"@de
+<http://radlex.org/RID/RID35914>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50081"
+<http://radlex.org/RID/RID36488>	<http://www.w3.org/2000/01/rdf-schema#label>	"lateral frontobasal artery"@en
+<http://radlex.org/RID/RID36488>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID36488"
+<http://radlex.org/RID/RID36488>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"arteria orbitofrontalis lateralis"@la
+<http://radlex.org/RID/RID36488>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"arteria frontobasalis lateralis"@la
+<http://radlex.org/RID/RID36488>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50442"
+<http://radlex.org/RID/RID13279>	<http://www.w3.org/2000/01/rdf-schema#label>	"stroma"@en
+<http://radlex.org/RID/RID13279>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID13279"
+<http://radlex.org/RID/RID13279>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Stroma"@de
+<http://radlex.org/RID/RID13279>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:81494"
+<http://radlex.org/RID/RID13279>	<http://purl.obolibrary.org/obo/IAO_0000115>	"Organ component which consists of connective tissue that subdivides parenchyma into lobes, segments, lobules, acini, or cortex and medulla and the vascular and the neural networks intermixed with this connective tissue."@en
+<http://radlex.org/RID/RID36458>	<http://www.w3.org/2000/01/rdf-schema#label>	"left polar temporal artery"@en
+<http://radlex.org/RID/RID36458>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID36458"
+<http://radlex.org/RID/RID36458>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"linke Arteria polaris temporalis"@de
+<http://radlex.org/RID/RID36458>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50381"
+<http://radlex.org/RID/RID34297>	<http://www.w3.org/2000/01/rdf-schema#label>	"set of BI-RADS MRI terms"@en
+<http://radlex.org/RID/RID34297>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID34297"
+<http://radlex.org/RID/RID34297>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Gruppe von MRT-Begriffen des BI-RADS-Systems"@de
+<http://radlex.org/RID/RID33180>	<http://www.w3.org/2000/01/rdf-schema#label>	"mesentery"@en
+<http://radlex.org/RID/RID33180>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID33180"
+<http://radlex.org/RID/RID33180>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"mesenterium"@la
+<http://radlex.org/RID/RID33180>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:7144"
+<http://radlex.org/RID/RID33180>	<http://purl.obolibrary.org/obo/IAO_0000115>	"Anatomical organ component composed of a double layer of serous membrane that suspends a viscus from the body wall or connects adjacent viscera and in doing so conveys blood vessels, lymphatics and nerves to and from the viscera.  Examples: greater omentum, broad ligament of uterus, sigmoid mesocolon."@en
+<http://radlex.org/RID/RID35915>	<http://www.w3.org/2000/01/rdf-schema#label>	"inferior terminal branch of middle cerebral artery"@en
+<http://radlex.org/RID/RID35915>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID35915"
+<http://radlex.org/RID/RID35915>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Ramus terminalis inferior der Arteria cerebri media"@de
+<http://radlex.org/RID/RID35915>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50439"
+<http://radlex.org/RID/RID36489>	<http://www.w3.org/2000/01/rdf-schema#label>	"right lateral frontobasal artery"@en
+<http://radlex.org/RID/RID36489>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID36489"
+<http://radlex.org/RID/RID36489>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"rechte Arteria frontobasalis lateralis"@de
+<http://radlex.org/RID/RID36489>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50443"
+<http://radlex.org/RID/RID58>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Leber"@de
+<http://radlex.org/RID/RID58>	<http://purl.org/dc/terms/source>	"Playbook"
+<http://radlex.org/RID/RID58>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:7197"
+<http://radlex.org/RID/RID58>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"hepar"@la
+<http://radlex.org/RID/RID58>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID58"
+<http://radlex.org/RID/RID58>	<http://purl.obolibrary.org/obo/IAO_0000115>	"Lobular organ which has as its parts lobules connected to the biliary tree. Examples: There is only one liver."@en
+<http://radlex.org/RID/RID58>	<http://www.w3.org/2000/01/rdf-schema#label>	"liver"@en
+<http://radlex.org/RID/RID36459>	<http://www.w3.org/2000/01/rdf-schema#label>	"right anterior temporal artery"@en
+<http://radlex.org/RID/RID36459>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID36459"
+<http://radlex.org/RID/RID36459>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"rechte Arteria temporalis anterior"@de
+<http://radlex.org/RID/RID36459>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50383"
+<http://radlex.org/RID/RID34298>	<http://www.w3.org/2000/01/rdf-schema#comment>	"See the subsets for MRI, mammo, and ultrasound for individual BI-RADS terms.  To search for all BI-RADS terms, search for \"BI-RADS\" in the Source property, or \"BI-RADS #\" for a particular version number, e.g. \"BI-RADS 5\". (Cannot add properties such as ['set of BI-RADS terms' Has_Member some 'set of BI-RADS mammo terms'] because inheritence won't work correctly. Likewise for Member_of properties for the terms.)"
+<http://radlex.org/RID/RID34298>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Gruppe von Begriffen des BI-RADS-Systems"@de
+<http://radlex.org/RID/RID34298>	<http://www.w3.org/2000/01/rdf-schema#label>	"set of BI-RADS terms"@en
+<http://radlex.org/RID/RID34298>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID34298"
+<http://radlex.org/RID/RID35916>	<http://www.w3.org/2000/01/rdf-schema#label>	"anterior parietal artery"@en
+<http://radlex.org/RID/RID35916>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID35916"
+<http://radlex.org/RID/RID35916>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"arteria parietalis anterior"@la
+<http://radlex.org/RID/RID35916>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50485"
+<http://radlex.org/RID/RID13183>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"arterielles System"@de
+<http://radlex.org/RID/RID13183>	<http://www.w3.org/2000/01/rdf-schema#label>	"arterial system"@en
+<http://radlex.org/RID/RID13183>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID13183"
+<http://radlex.org/RID/RID10189>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID10189"
+<http://radlex.org/RID/RID10189>	<http://www.w3.org/2000/01/rdf-schema#label>	"mucosa of middle ear cavity"@en
+<http://radlex.org/RID/RID10189>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Mukosa des Mittelohres"@de
+<http://radlex.org/RID/RID35917>	<http://www.w3.org/2000/01/rdf-schema#label>	"branch of sphenoid part of middle cerebral artery"@en
+<http://radlex.org/RID/RID35917>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID35917"
+<http://radlex.org/RID/RID35917>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"branch of horizontal part of middle cerebral artery"@en
+<http://radlex.org/RID/RID35917>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"branch of M1 segment of middle cerebral artery"@en
+<http://radlex.org/RID/RID35917>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Ramus der Pars sphenoidalis der Arteria cerebri media"@de
+<http://radlex.org/RID/RID35917>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:79631"
+<http://radlex.org/RID/RID32949>	<http://www.w3.org/2000/01/rdf-schema#label>	"anatomical compartment space"@en
+<http://radlex.org/RID/RID32949>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID32949"
+<http://radlex.org/RID/RID32949>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"space of anatomical compartment"@en
+<http://radlex.org/RID/RID32949>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Raum des anatomischen Kompartiments"@de
+<http://radlex.org/RID/RID32949>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:84926"
+<http://radlex.org/RID/RID32949>	<http://purl.obolibrary.org/obo/IAO_0000115>	"Anatomical space which contains two or more anatomical structures demarcated by bona fide boundaries and is bounded by the surface of one or more anatomical structures. Examples: orbital cavity, suprasternal space, thoracic cavity, fascial space, hepatic lacuna."@en
+<http://radlex.org/RID/RID13203>	<http://www.w3.org/2000/01/rdf-schema#label>	"organ"@en
+<http://radlex.org/RID/RID13203>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID13203"
+<http://radlex.org/RID/RID13203>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Organ"@de
+<http://radlex.org/RID/RID13203>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:67498"
+<http://radlex.org/RID/RID13203>	<http://purl.org/dc/terms/source>	"Playbook"
+<http://radlex.org/RID/RID13203>	<http://purl.obolibrary.org/obo/IAO_0000115>	"Anatomical structure which has as its direct parts portions of two or more types of tissue or two or more types of cardinal organ part which constitute a maximally connected anatomical structure demarcated predominantly by a bona fide anatomical surface. Examples: femur, biceps, liver, heart, skin, tracheobronchial tree, ovary."@en
+<http://radlex.org/RID/RID31687>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Truncus intestinalis"@de
+<http://radlex.org/RID/RID31687>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:5842"
+<http://radlex.org/RID/RID31687>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"trunk of intestinal lymphatic tree"@en
+<http://radlex.org/RID/RID31687>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID31687"
+<http://radlex.org/RID/RID31687>	<http://www.w3.org/2000/01/rdf-schema#label>	"intestinal lymphatic trunk"@en
+<http://radlex.org/RID/RID35918>	<http://www.w3.org/2000/01/rdf-schema#label>	"proximal lateral striate branch of middle cerebral artery"@en
+<http://radlex.org/RID/RID35918>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID35918"
+<http://radlex.org/RID/RID35918>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Ramus striatus lateralis proximalis der Arteria cerebri media"@de
+<http://radlex.org/RID/RID35918>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50385"
+<http://radlex.org/RID/RID32152>	<http://www.w3.org/2000/01/rdf-schema#label>	"set of viscera of abdomen"@en
+<http://radlex.org/RID/RID32152>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Gruppe der Viszera des Abdomens"@de
+<http://radlex.org/RID/RID32152>	<http://purl.obolibrary.org/obo/IAO_0000115>	"Set of organs located in the abdominal cavity. Examples: There is only one set of abdominal viscera."@en
+<http://radlex.org/RID/RID32152>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"set of abdominal viscera"@en
+<http://radlex.org/RID/RID32152>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID32152"
+<http://radlex.org/RID/RID32152>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:32413"
+<http://radlex.org/RID/RID32152>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"abdominal viscera set"@en
+<http://radlex.org/RID/RID29240>	<http://www.w3.org/2000/01/rdf-schema#label>	"left lobe proper of liver"@en
+<http://radlex.org/RID/RID29240>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID29240"
+<http://radlex.org/RID/RID29240>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"linker Leberlappen"@de
+<http://radlex.org/RID/RID69>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:15810"
+<http://radlex.org/RID/RID69>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID69"
+<http://radlex.org/RID/RID69>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Linker Leberlappen"@de
+<http://radlex.org/RID/RID69>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"left hemiliver"@en
+<http://radlex.org/RID/RID69>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"pars hepatis sinistra"@la
+<http://radlex.org/RID/RID69>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"lobus hepatis sinister"@la
+<http://radlex.org/RID/RID69>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"left part of liver"@en
+<http://radlex.org/RID/RID69>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"left segment of liver"@en
+<http://radlex.org/RID/RID69>	<http://www.w3.org/2000/01/rdf-schema#label>	"left lobe of liver"@en
+<http://radlex.org/RID/RID69>	<http://purl.obolibrary.org/obo/IAO_0000115>	"Hemiliver located to the left of the main portal scissura."@en
+<http://radlex.org/RID/RID69>	<http://www.w3.org/2000/01/rdf-schema#comment>	"the Couinaud liver segments are the preferred method to subdivide the liver"
+<http://radlex.org/RID/RID13206>	<http://www.w3.org/2000/01/rdf-schema#label>	"subdivision of organ system"@en
+<http://radlex.org/RID/RID13206>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID13206"
+<http://radlex.org/RID/RID13206>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"organsystem Unterteilung"@de
+<http://radlex.org/RID/RID13206>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"organ system subdivision"@en
+<http://radlex.org/RID/RID13206>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:67509"
+<http://radlex.org/RID/RID13206>	<http://purl.obolibrary.org/obo/IAO_0000115>	"Anatomical structure, which consists of a specific set of the members of (predominantly) one organ or organ part subclass interconnected by zones of continuity or body substances; is demarcated from other subdivisions of the same organ system by one or more zones of continuity or anatomical lines; together with other subdivisions of the same organ system, it constitutes an organ system. Examples: rib cage, facial skeleton, portal system, central nervous system, upper respiratory tract, muscle group of back."@en
+<http://radlex.org/RID/RID32153>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID32153"
+<http://radlex.org/RID/RID32153>	<http://www.w3.org/2000/01/rdf-schema#label>	"set of viscera of female abdomen"@en
+<http://radlex.org/RID/RID32153>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Gruppe der Viszera des weiblichen Abdomens"@de
+<http://radlex.org/RID/RID32153>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:260486"
+<http://radlex.org/RID/RID13415>	<http://www.w3.org/2000/01/rdf-schema#label>	"region of organ component"@en
+<http://radlex.org/RID/RID13415>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID13415"
+<http://radlex.org/RID/RID13415>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"organ component region"@en
+<http://radlex.org/RID/RID13415>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Region der Organkomponente"@de
+<http://radlex.org/RID/RID13415>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:86103"
+<http://radlex.org/RID/RID13415>	<http://purl.obolibrary.org/obo/IAO_0000115>	"Cardinal organ part which is a fiat subdivision of an organ component. Examples: cervical part of wall of esophagus, mucosa of body of stomach."@en
+<http://radlex.org/RID/RID32154>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID32154"
+<http://radlex.org/RID/RID32154>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:260488"
+<http://radlex.org/RID/RID32154>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Gruppe der Viszera des männlichen Abdomens"@de
+<http://radlex.org/RID/RID32154>	<http://www.w3.org/2000/01/rdf-schema#label>	"set of viscera of male abdomen"@en
+<http://radlex.org/RID/RID13416>	<http://www.w3.org/2000/01/rdf-schema#label>	"lobular organ component"@en
+<http://radlex.org/RID/RID13416>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID13416"
+<http://radlex.org/RID/RID13416>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Komponente eines lobulären Organs"@de
+<http://radlex.org/RID/RID13416>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:82478"
+<http://radlex.org/RID/RID13416>	<http://purl.obolibrary.org/obo/IAO_0000115>	"Organ component which has as its parts a wall and a cavity and together with structures of same type constitutes an anatomical lobe or an organ component gland."@en
+<http://radlex.org/RID/RID13419>	<http://www.w3.org/2000/01/rdf-schema#label>	"lobular organ"@en
+<http://radlex.org/RID/RID13419>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID13419"
+<http://radlex.org/RID/RID13419>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"lobuläres Organ"@de
+<http://radlex.org/RID/RID13419>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:55662"
+<http://radlex.org/RID/RID13419>	<http://purl.obolibrary.org/obo/IAO_0000115>	"Parenchymatous organ the stroma of which subdivides the parenchyma into lobes, segments, lobules and acini. Examples: lung, liver, lactiferous gland, testis."@en
+<http://radlex.org/RID/RID13298>	<http://www.w3.org/2000/01/rdf-schema#label>	"portion of tissue"@en
+<http://radlex.org/RID/RID13298>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID13298"
+<http://radlex.org/RID/RID13298>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"tissue"@en
+<http://radlex.org/RID/RID13298>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"textus"@la
+<http://radlex.org/RID/RID13298>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"gewebe"@de
+<http://radlex.org/RID/RID13298>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:9637"
+<http://radlex.org/RID/RID13298>	<http://purl.obolibrary.org/obo/IAO_0000115>	"Anatomical structure which has as its parts cells of predominantly one type with or without intercellular matrix. Examples: epithelium, muscle tissue, connective tissue, neural tissue, lymphoid tissue."@en
+<http://radlex.org/RID/RID36480>	<http://www.w3.org/2000/01/rdf-schema#label>	"temporo-occipital branch of middle cerebral artery"@en
+<http://radlex.org/RID/RID36480>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID36480"
+<http://radlex.org/RID/RID36480>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"ramus temporooccipitalis (Arteria cerebri medii)"@la
+<http://radlex.org/RID/RID36480>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50472"
+<http://radlex.org/RID/RID30176>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:68016"
+<http://radlex.org/RID/RID30176>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"intrahepatische Gallenwege"@de
+<http://radlex.org/RID/RID30176>	<http://www.w3.org/2000/01/rdf-schema#label>	"intrahepatic biliary tree"@en
+<http://radlex.org/RID/RID30176>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID30176"
+<http://radlex.org/RID/RID15842>	<http://www.w3.org/2000/01/rdf-schema#label>	"set of organ parts"@en
+<http://radlex.org/RID/RID15842>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID15842"
+<http://radlex.org/RID/RID15842>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Gruppe der Organteile"@de
+<http://radlex.org/RID/RID15842>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:228667"
+<http://radlex.org/RID/RID36450>	<http://www.w3.org/2000/01/rdf-schema#label>	"proximal lateral striate branch of left middle cerebral artery"@en
+<http://radlex.org/RID/RID36450>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID36450"
+<http://radlex.org/RID/RID36450>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Ramus striatus lateralis proximalis der linken Arteria cerebri media"@de
+<http://radlex.org/RID/RID36450>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50388"
+<http://radlex.org/RID/RID32950>	<http://www.w3.org/2000/01/rdf-schema#label>	"space of compartment of trunk"@en
+<http://radlex.org/RID/RID32950>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID32950"
+<http://radlex.org/RID/RID32950>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Raum eines Kompartiments des Rumpfes"@de
+<http://radlex.org/RID/RID32950>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:85005"
+<http://radlex.org/RID/RID36451>	<http://www.w3.org/2000/01/rdf-schema#label>	"distal lateral striate branch of right middle cerebral artery"@en
+<http://radlex.org/RID/RID36451>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID36451"
+<http://radlex.org/RID/RID36451>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Ramus striatus lateralis distalis der rechten Arteria cerebri media"@de
+<http://radlex.org/RID/RID36451>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50389"
+<http://radlex.org/RID/RID478>	<http://www.w3.org/2000/01/rdf-schema#label>	"artery"@en
+<http://radlex.org/RID/RID478>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50720"
+<http://radlex.org/RID/RID478>	<http://purl.org/dc/terms/source>	"Playbook"
+<http://radlex.org/RID/RID478>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Arterie"@de
+<http://radlex.org/RID/RID478>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"arterial vessel"@en
+<http://radlex.org/RID/RID478>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"arteria"@la
+<http://radlex.org/RID/RID478>	<http://purl.obolibrary.org/obo/IAO_0000115>	"The vessels carrying blood away from the heart. [MeSH]"@en
+<http://radlex.org/RID/RID478>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"UMLS:C0003842"
+<http://radlex.org/RID/RID478>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID478"
+<http://radlex.org/RID/RID36453>	<http://www.w3.org/2000/01/rdf-schema#label>	"temporal artery"@en
+<http://radlex.org/RID/RID36453>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID36453"
+<http://radlex.org/RID/RID36453>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Arteria temporalis"@de
+<http://radlex.org/RID/RID36453>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50438"
+<http://radlex.org/RID/RID13390>	<http://www.w3.org/2000/01/rdf-schema#label>	"anatomical structure"@en
+<http://radlex.org/RID/RID13390>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID13390"
+<http://radlex.org/RID/RID13390>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"anatomische Struktur"@de
+<http://radlex.org/RID/RID13390>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"anatomic structure"@en
+<http://radlex.org/RID/RID13390>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:305751"
+<http://radlex.org/RID/RID13390>	<http://purl.obolibrary.org/obo/IAO_0000115>	"Material anatomical entity which is generated by coordinated expression of the organism's own genes that guide its morphogenesis; has inherent 3D shape; its parts are connected and spatially related to one another in patterns determined by coordinated gene expression. Examples: heart, right ventricle, mitral valve, myocardium, endothelium, lymphocyte, fibroblast, thorax, cardiovascular system, hemoglobin, T cell receptor."@en
+<http://radlex.org/RID/RID36452>	<http://www.w3.org/2000/01/rdf-schema#label>	"distal lateral striate branch of left middle cerebral artery"@en
+<http://radlex.org/RID/RID36452>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID36452"
+<http://radlex.org/RID/RID36452>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Ramus striatus lateralis distalis der linken Arteria cerebri media"@de
+<http://radlex.org/RID/RID36452>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:50390"
+<http://radlex.org/RID/RID479>	<http://www.w3.org/2000/01/rdf-schema#label>	"systemic artery"@en
+<http://radlex.org/RID/RID479>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID479"
+<http://radlex.org/RID/RID479>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Systemische Arterie"@de
+<http://radlex.org/RID/RID479>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:66464"
+<http://radlex.org/RID/RID13391>	<http://www.w3.org/2000/01/rdf-schema#label>	"organ component"@en
+<http://radlex.org/RID/RID13391>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID13391"
+<http://radlex.org/RID/RID13391>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Organkomponente"@de
+<http://radlex.org/RID/RID13391>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:14065"
+<http://radlex.org/RID/RID13391>	<http://purl.obolibrary.org/obo/IAO_0000115>	"Cardinal organ part which is bounded predominantly by bonafide boundaries.  Examples: lobe of lung, osteon, acinus, submucosa, anterior leaflet of mitral valve, capsule of kidney, cortical bone, muscle fasciculus."@en
+<http://radlex.org/RID/RID32952>	<http://www.w3.org/2000/01/rdf-schema#label>	"body cavity subdivision"@en
+<http://radlex.org/RID/RID32952>	<http://www.geneontology.org/formats/oboInOwl#id>	"RID32952"
+<http://radlex.org/RID/RID32952>	<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>	"Teil einer Körperhöhle"@de
+<http://radlex.org/RID/RID32952>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"FMA:85007"

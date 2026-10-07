@@ -1,0 +1,11 @@
+# Named classes outside the RadLex namespaces, with their labels and named parents, so a
+# parent or filler from another ontology renders as an external link with its name.
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?e ?label ?parent WHERE {
+  ?e a owl:Class .
+  FILTER(isIRI(?e))
+  %OUTSIDE(?e)%
+  OPTIONAL { ?e rdfs:label ?label }
+  OPTIONAL { ?e rdfs:subClassOf ?parent . FILTER(isIRI(?parent)) }
+}

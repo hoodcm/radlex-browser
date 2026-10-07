@@ -1,0 +1,68 @@
+{
+  "fields": {
+    "label": [
+      "http://www.w3.org/2000/01/rdf-schema#label"
+    ],
+    "definition": [
+      "http://www.radlex.org/RID/Definition",
+      "http://radlex.org/RID/Definition",
+      "http://purl.obolibrary.org/obo/IAO_0000115"
+    ],
+    "synonym": [
+      "http://www.radlex.org/RID/Synonym",
+      "http://radlex.org/RID/Synonym",
+      "http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"
+    ],
+    "acronym": [
+      "http://www.radlex.org/RID/Acronym",
+      "http://radlex.org/RID/Acronym"
+    ],
+    "misspelling": [
+      "http://www.radlex.org/RID/Misspelling_of_term",
+      "http://radlex.org/RID/Misspelling_of_term"
+    ],
+    "unsanctioned": [
+      "http://www.radlex.org/RID/Unsanctioned_Term",
+      "http://radlex.org/RID/Unsanctioned_Term",
+      "http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"
+    ],
+    "comment": [
+      "http://www.radlex.org/RID/Comment",
+      "http://radlex.org/RID/Comment",
+      "http://www.w3.org/2000/01/rdf-schema#comment"
+    ],
+    "xref": [
+      "http://www.radlex.org/RID/ExternalRefID",
+      "http://radlex.org/RID/ExternalRefID",
+      "http://www.geneontology.org/formats/oboInOwl#hasDbXref"
+    ],
+    "source": [
+      "http://www.radlex.org/RID/Source",
+      "http://radlex.org/RID/Source",
+      "http://purl.org/dc/terms/source"
+    ],
+    "replaced_by": [
+      "http://www.radlex.org/RID/Replaced_by",
+      "http://radlex.org/RID/Replaced_by",
+      "http://purl.obolibrary.org/obo/IAO_0100001"
+    ],
+    "obsolete_name": [
+      "http://www.radlex.org/RID/Preferred_Name_for_Obsolete",
+      "http://radlex.org/RID/Preferred_Name_for_Obsolete"
+    ],
+    "version_changed": [
+      "http://www.radlex.org/RID/Radlex_version_of_class_change",
+      "http://radlex.org/RID/Radlex_version_of_class_change"
+    ],
+    "deprecated": [
+      "http://www.w3.org/2002/07/owl#deprecated"
+    ]
+  },
+  "synonym_type_property": "http://www.geneontology.org/formats/oboInOwl#hasSynonymType",
+  "synonym_types": {
+    "misspelling": [
+      "http://www.radlex.org/RID/misspelling",
+      "http://radlex.org/RID/misspelling"
+    ]
+  }
+}

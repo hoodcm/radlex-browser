@@ -1,0 +1,6 @@
+# The scoped class count: named classes in the RadLex namespaces. The gates compare against it.
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE {
+  ?c a owl:Class .
+  %SCOPE(?c)%
+}

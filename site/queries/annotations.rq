@@ -1,0 +1,11 @@
+# Every literal and IRI annotation on the scoped classes, labels included, with language and datatype.
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?c ?p ?v WHERE {
+  ?c a owl:Class .
+  %SCOPE(?c)%
+  ?c ?p ?v .
+  FILTER(?p NOT IN (rdf:type, rdfs:subClassOf, owl:equivalentClass, owl:disjointWith))
+  FILTER(!isBlank(?v))
+}

@@ -1,0 +1,6 @@
+# Every named class in the RadLex namespaces.
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+SELECT DISTINCT ?c WHERE {
+  ?c a owl:Class .
+  %SCOPE(?c)%
+}

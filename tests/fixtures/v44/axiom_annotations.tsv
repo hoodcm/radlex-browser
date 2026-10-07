@@ -1,0 +1,8 @@
+?c	?p	?t	?q	?v
+<http://radlex.org/RID/RID585>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"UMLS:C0007276"	<http://radlex.org/RID/UMLS_Term>	"internal carotid artery"
+<http://radlex.org/RID/RID665>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"UMLS:C0149566"	<http://radlex.org/RID/UMLS_Term>	"middle cerebral artery"
+<http://radlex.org/RID/RID11087>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"UMLS:C0013153"	<http://radlex.org/RID/UMLS_Term>	"route of administration"
+<http://radlex.org/RID/RID478>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"UMLS:C0003842"	<http://radlex.org/RID/UMLS_Term>	"artery"
+<http://radlex.org/RID/RID11209>	<http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym>	"laprascopic"@en	<http://www.geneontology.org/formats/oboInOwl#hasSynonymType>	<http://radlex.org/RID/misspelling>
+<http://radlex.org/RID/RID5991>	<http://www.geneontology.org/formats/oboInOwl#hasDbXref>	"UMLS:C0036760"	<http://radlex.org/RID/UMLS_Term>	"serosa"
+<http://radlex.org/RID/RID28438>	<http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym>	"allathalamus"@en	<http://www.geneontology.org/formats/oboInOwl#hasSynonymType>	<http://radlex.org/RID/misspelling>
