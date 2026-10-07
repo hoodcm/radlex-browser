@@ -216,7 +216,7 @@ class Ontology:
              if t.retired and not any(not self.terms[p].retired for p in t.parents)),
             key=rid_sort_key)
         for rid in self.retired_group:
-            self.parents[rid] = self.parents[rid] or [RETIRED_ID]
+            self.parents[rid].append(RETIRED_ID)
         self.children[RETIRED_ID] = list(self.retired_group)
         for kids in self.children.values():
             kids.sort(key=lambda r: (self.terms[r].label.casefold(), rid_sort_key(r)))

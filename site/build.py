@@ -21,6 +21,7 @@ import time
 from datetime import datetime, timezone
 from pathlib import Path
 
+import bundles
 import extract
 import model
 import render
@@ -117,6 +118,7 @@ def build(input_path, out, base, record=None, workdir=None):
     write(out / "index.html", render.home_page(ctx))
     write(out / "404.html", render.not_found_page(ctx))
     copy_static(out, bid)
+    sizes = bundles.write_bundles(onto, out / "data" / bid)
 
     version = {k: record.get(k, "") for k in ("tag", "commit", "tag_date", "source", "sha256")}
     version.update(generator_commit=gen, base_path=base, build_id=bid,
@@ -124,7 +126,8 @@ def build(input_path, out, base, record=None, workdir=None):
     write(out / "version.json", json.dumps(version, indent=2) + "\n")
     files = [f for f in out.rglob("*") if f.is_file()]
     return {"build_id": bid, "base_path": base, "terms": len(onto.terms), "files": len(files),
-            "bytes": sum(f.stat().st_size for f in files), "seconds": round(time.time() - started, 1)}
+            "bytes": sum(f.stat().st_size for f in files), "bundles": sizes,
+            "seconds": round(time.time() - started, 1)}
 
 
 def main(argv=None):
