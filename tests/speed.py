@@ -114,14 +114,21 @@ def type_query(page, query):
                            arg=query, timeout=60000)
 
 
-def keystroke_latencies(log):
+def keystroke_latencies(log, stage="painted"):
+    """Per keystroke, the time from the input event to its results reaching `stage`: "rendered"
+    when they're in the DOM, or "painted" at the next animation frame, which adds the wait for it."""
     pending, out = {}, []
     for entry in log:
         if "input" in entry:
             pending[entry["input"]] = entry["t"]
-        elif "painted" in entry and entry["painted"] in pending:
-            out.append(entry["t"] - pending.pop(entry["painted"]))
+        elif stage in entry and entry[stage] in pending:
+            out.append(entry["t"] - pending.pop(entry[stage]))
     return out
+
+
+def percentile(values, q):
+    values = sorted(values)
+    return values[min(len(values) - 1, int(round(q * (len(values) - 1))))]
 
 
 def search(browser, url):
@@ -143,10 +150,11 @@ def search(browser, url):
     page.evaluate("RADLEX.searchLog.length = 0")
     for q in QUERIES:
         type_query(page, q)
-    times = sorted(keystroke_latencies(page.evaluate("RADLEX.searchLog")))
+    log = page.evaluate("RADLEX.searchLog")
     ctx.close()
-    p95 = times[min(len(times) - 1, int(round(0.95 * (len(times) - 1))))]
-    return first, statistics.median(times), p95, len(times)
+    painted, rendered = keystroke_latencies(log), keystroke_latencies(log, "rendered")
+    return (first, statistics.median(painted), percentile(painted, 0.95), len(painted),
+            statistics.median(rendered), percentile(rendered, 0.95))
 
 
 def expansion(browser, url):
@@ -182,19 +190,24 @@ def main():
         report["warm_swap_ms"], report["hover_swaps"] = swaps(browser, url, "hover", args.runs)
         report["touch_swap_ms"], report["touch_swaps"] = swaps(browser, url, "touch", args.runs)
         report["cold_swap_ms"], report["cold_swaps"] = swaps(browser, url, "cold", args.runs)
-        (report["first_search_ms"], report["search_median_ms"], report["search_p95_ms"],
-         report["keystrokes"]) = search(browser, url)
-        report["long_task_ms"], report["imaging_sign"] = expansion(browser, url)
+        (report["first_search_ms"], report["search_median_ms"], report["search_p95_ms"], report["keystrokes"],
+         report["search_dom_median_ms"], report["search_dom_p95_ms"]) = search(browser, url)
+        runs = [expansion(browser, url) for _ in range(args.runs)]
+        report["long_task_runs"] = [ms for ms, _ in runs]
+        report["long_task_ms"], report["imaging_sign"] = max(ms for ms, _ in runs), runs[0][1]
         browser.close()
     checks = [
         ("first contentful paint, RID665, cold", "fcp_ms", report["fcp_ms"], True),
         ("term-to-term swap, desktop, hover prefetch", "warm_swap_ms", report["warm_swap_ms"], True),
         ("term-to-term swap, touch, on-screen prefetch", "warm_swap_ms", report["touch_swap_ms"], True),
         ("cold swap, no prefetch (reported only)", None, report["cold_swap_ms"], False),
-        ("search keystroke, median (reported only)", None, report["search_median_ms"], False),
-        ("search keystroke, 95th percentile", "search_p95_ms", report["search_p95_ms"], True),
+        ("search keystroke to paint, median (reported only)", None, report["search_median_ms"], False),
+        ("search keystroke to paint, 95th percentile", "search_p95_ms", report["search_p95_ms"], True),
+        ("search keystroke to results in the DOM, median (reported only)", None, report["search_dom_median_ms"], False),
+        ("search keystroke to results in the DOM, 95th percentile (reported only)", None, report["search_dom_p95_ms"], False),
         ("first search on a cold page (card above 1 s)", "first_search_ms", report["first_search_ms"], False),
-        (f"imaging sign expansion, longest task ({report['imaging_sign']})", "long_task_ms", report["long_task_ms"], True),
+        (f"imaging sign expansion, longest task over {args.runs} runs ({report['imaging_sign']})", "long_task_ms",
+         report["long_task_ms"], True),
     ]
     for name, key, value, held in checks:
         target = TARGETS.get(key)

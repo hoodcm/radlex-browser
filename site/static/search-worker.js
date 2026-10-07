@@ -46,7 +46,11 @@ function prepare(bundle, name) {
     if (j >= later.length || (i < keys.length && keys[i] <= later[j][0])) { sfx[o] = keys[i]; key[o++] = i++; }
     else { sfx[o] = later[j][0]; key[o++] = later[j++][1]; }
   }
-  return { name, keys, postings, display, sfx, key };
+  // Every key in one string, so a substring is found with indexOf. "\n" joins them, and no
+  // normalized query holds it, so a match never spans two keys. starts[k] is key k's offset.
+  const starts = new Int32Array(keys.length + 1);
+  for (let k = 0, at = 0; k <= keys.length; k++) { starts[k] = at; at += (keys[k]?.length ?? 0) + 1; }
+  return { name, keys, postings, display, sfx, key, joined: keys.join("\n"), starts, mark: new Uint32Array(keys.length), stamp: 0 };
 }
 
 // A shard carries its own node table, and a label stored as "" is its node's label key.
@@ -69,6 +73,13 @@ function lowerBound(arr, q) {
   return lo;
 }
 
+// The key holding offset p of the joined string.
+function keyAt(starts, p) {
+  let lo = 0, hi = starts.length - 1;
+  while (hi - lo > 1) { const mid = (lo + hi) >> 1; if (starts[mid] <= p) lo = mid; else hi = mid; }
+  return lo;
+}
+
 // How a key matches: 0 at its start, 1 at a later word start, 2 inside a word, -1 not at all.
 function matchType(key, q, substrings) {
   if (key.startsWith(q)) return 0;
@@ -76,10 +87,20 @@ function matchType(key, q, substrings) {
   return substrings && key.includes(q) ? 2 : -1;
 }
 
+// The keys with a word start that begins with q, and with `substrings` every key holding q.
 function candidates(ix, q, substrings) {
-  const found = new Set();
-  for (let r = lowerBound(ix.sfx, q); r < ix.sfx.length && ix.sfx[r].startsWith(q); r++) found.add(ix.key[r]);
-  if (substrings) for (let k = 0; k < ix.keys.length; k++) if (!found.has(k) && ix.keys[k].includes(q)) found.add(k);
+  const stamp = ++ix.stamp, mark = ix.mark, found = [];
+  for (let r = lowerBound(ix.sfx, q); r < ix.sfx.length && ix.sfx[r].startsWith(q); r++) {
+    const k = ix.key[r];
+    if (mark[k] !== stamp) { mark[k] = stamp; found.push(k); }
+  }
+  if (substrings) {
+    for (let p = ix.joined.indexOf(q); p >= 0; ) {
+      const k = keyAt(ix.starts, p);
+      if (mark[k] !== stamp) { mark[k] = stamp; found.push(k); }
+      p = ix.joined.indexOf(q, ix.starts[k + 1]);
+    }
+  }
   return found;
 }
 
@@ -88,11 +109,20 @@ function tier(kind, type, exact) {
   return type === 0 ? 2 : type === 1 ? 3 : 4;
 }
 
+// Each node's best tier and the name it matched by, kept per node table and reset after each
+// search, because a Map over thousands of matching nodes costs more than the search itself.
+const UNSET = 5;
+function scratch(table) {
+  table.scratch ??= { tier: new Int8Array(table.ids.length).fill(UNSET), via: new Array(table.ids.length).fill(null), touched: [] };
+  return table.scratch;
+}
+
 // Ranks the matches of q in indexes that share one node table. `pools` holds each index's
 // matching keys for the previous query when the results narrow, and is null otherwise.
 function searchIn(q, indexes, table, substrings, pools) {
   const keysBy = new Map();
-  const best = new Map();    // node -> [tier, via]
+  const { tier: tierOf, via: viaOf, touched } = scratch(table);
+  touched.length = 0;
   // A RID matches only once the query holds a digit, so "r" doesn't list every term by its RID.
   const rids = /\d/.test(q);
   for (const ix of indexes) {
@@ -108,43 +138,64 @@ function searchIn(q, indexes, table, substrings, pools) {
         const node = Math.floor(code / 8), kind = code % 8;
         if (kind === KIND.rid && !rids) continue;
         const t = tier(kind, type, key === q);
-        const prev = best.get(node);
-        if (!prev || t < prev[0]) {
-          const via = kind === KIND.label || kind === KIND.rid || kind === KIND.misspelling ? null : ix.display[k] ?? key;
-          best.set(node, [t, via]);
+        if (t < tierOf[node]) {
+          if (tierOf[node] === UNSET) touched.push(node);
+          tierOf[node] = t;
+          viaOf[node] = kind === KIND.label || kind === KIND.rid || kind === KIND.misspelling ? null : ix.display[k] ?? key;
         }
       }
     }
     keysBy.set(ix.name, kept);
   }
-  const results = top(best, table).map((node) => ({
-    id: table.ids[node], label: table.labels[node], retired: table.retired[node], tier: best.get(node)[0], via: best.get(node)[1],
+  const results = top(touched, tierOf, table).map((node) => ({
+    id: table.ids[node], label: table.labels[node], retired: table.retired[node], tier: tierOf[node], via: viaOf[node],
   }));
-  return { out: { q, results, total: best.size }, keysBy };
+  for (const node of touched) tierOf[node] = UNSET;
+  return { out: { q, results, total: touched.length }, keysBy };
 }
 
 // The LIMIT best nodes, ranked retired last, then by tier, label length, and label. A histogram
 // over the integer part of that order finds the cut in one pass, so only the kept nodes are sorted.
 const MAX_LENGTH = 255;
-function top(best, table) {
-  const rank = (node, t) => (table.retired[node] * 5 + t) * (MAX_LENGTH + 1) + Math.min(table.labels[node].length, MAX_LENGTH);
+function top(nodes, tierOf, table) {
+  const rank = (node) => (table.retired[node] * 5 + tierOf[node]) * (MAX_LENGTH + 1) + Math.min(table.labels[node].length, MAX_LENGTH);
   const counts = new Uint32Array(2 * 5 * (MAX_LENGTH + 1));
-  for (const [node, [t]] of best) counts[rank(node, t)] += 1;
+  for (const node of nodes) counts[rank(node)] += 1;
   let cut = 0;
   for (let seen = 0; cut < counts.length && seen < LIMIT; cut++) seen += counts[cut];
   const kept = [];
-  for (const [node, [t]] of best) if (rank(node, t) < cut) kept.push(node);
-  kept.sort((a, b) => rank(a, best.get(a)[0]) - rank(b, best.get(b)[0]) || (table.labels[a] < table.labels[b] ? -1 : 1));
+  for (const node of nodes) if (rank(node) < cut) kept.push(node);
+  kept.sort((a, b) => rank(a) - rank(b) || (table.labels[a] < table.labels[b] ? -1 : 1));
   return kept.slice(0, LIMIT);
 }
 
+// One-character queries match the most terms and narrow from nothing, so their answers are
+// computed once, in the background after the full index loads, and kept until an index loads.
+const oneChar = new Map();
 function fullSearch(q) {
   const substrings = q.length >= 3;
   const rules = `${substrings}|${full.indexes.map((ix) => ix.name).join(",")}`;
-  const narrow = last && last.rules === rules && q.startsWith(last.q);
-  const { out, keysBy } = searchIn(q, full.indexes, full.tree, substrings, narrow ? last.keys : null);
-  last = { q, rules, keys: keysBy };
-  return out;
+  // Below three characters the word-start range is exact and cheap, so only substring
+  // queries narrow the previous query's matches.
+  const narrow = substrings && last && last.rules === rules && q.startsWith(last.q);
+  let found = q.length === 1 ? oneChar.get(q) : null;
+  if (!found) {
+    found = searchIn(q, full.indexes, full.tree, substrings, narrow ? last.keys : null);
+    if (q.length === 1) oneChar.set(q, found);
+  }
+  last = { q, rules, keys: found.keysBy };
+  return found.out;
+}
+
+function warmOneChar() {
+  const chars = [...new Set(full.indexes[0].keys.map((key) => Array.from(key)[0]))];
+  const next = () => {
+    const c = chars.pop();
+    if (c === undefined) return;
+    if (!oneChar.has(c)) oneChar.set(c, searchIn(c, full.indexes, full.tree, false, null));
+    setTimeout(next, 0);
+  };
+  setTimeout(next, 0);
 }
 
 // The shard whose name is a prefix of q, or null when no shard name is: either q is shorter than
@@ -171,6 +222,7 @@ function loadFull() {
     last = null;
     self.postMessage({ type: "complete" });
     if (latest?.partial) respond(latest);
+    warmOneChar();
   });
   return fullLoading;
 }
@@ -180,6 +232,7 @@ function loadIntl() {
     full.indexes.push(prepare(b, "intl"));
     intlReady = true;
     last = null;
+    oneChar.clear();
   });
   return intlLoading;
 }

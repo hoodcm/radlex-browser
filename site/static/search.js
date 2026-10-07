@@ -85,6 +85,8 @@ function receive(data) {
   count.textContent = !data.q ? "" : data.partial && !data.total ? "Searching…" : terms;
   list.dataset.query = input.value;
   list.dataset.partial = String(Boolean(data.partial));
+  // When the results are in the DOM, and when the next frame paints them.
+  R.searchLog.push({ rendered: input.value, t: performance.now() });
   const painted = { painted: input.value, n: data.results.length, partial: Boolean(data.partial) };
   requestAnimationFrame(() => R.searchLog.push({ ...painted, t: performance.now() }));
   if (enterPending) { enterPending = false; if (data.results.length) open(data.results[0]); }
