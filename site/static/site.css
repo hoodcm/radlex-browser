@@ -1,6 +1,20 @@
 /* RadLex browser styles. Every value is a radlex token or an alias of one.
    tokens.css is compiled output. Regenerate it from the repository root with:
    design-tools tokens compile --target css radlex -o site/static/tokens.css */
+
+/* Self-hosted open-licensed faces, registered in fonts/VENDORED.md. */
+@font-face {
+  font-family: "DM Sans"; font-style: normal; font-weight: 100 1000; font-display: swap;
+  src: url("fonts/dm-sans-latin-wght-normal.woff2") format("woff2-variations");
+}
+@font-face {
+  font-family: "Newsreader"; font-style: normal; font-weight: 200 800; font-display: swap;
+  src: url("fonts/newsreader-latin-wght-normal.woff2") format("woff2-variations");
+}
+@font-face {
+  font-family: "IBM Plex Mono"; font-style: normal; font-weight: 400; font-display: swap;
+  src: url("fonts/ibm-plex-mono-latin-400-normal.woff2") format("woff2");
+}
 :root {
   --ground: var(--dtools-palette-ink-paper);
   --surface: var(--dtools-palette-ink-paper);
