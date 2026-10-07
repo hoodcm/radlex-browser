@@ -1,0 +1,93 @@
+# Build the site from the newest RSNA/RadLex version tag and deploy it to GitHub Pages.
+name: Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  # A stopgap until the site lives in RSNA/RadLex, where a tag push triggers the build.
+  schedule:
+    - cron: "23 7 * * *"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    outputs:
+      skip: ${{ steps.skip.outputs.skip }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - id: pages
+        uses: actions/configure-pages@v6
+
+      - name: Resolve the input
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p site/_build
+          python3 site/resolve_input.py --out site/_build/input > site/_build/record.json
+          cat site/_build/record.json
+
+      - name: Stop a scheduled run when the deployed build matches
+        id: skip
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            python3 site/early_exit.py --record site/_build/record.json \
+              --base-url "${{ steps.pages.outputs.base_url }}" \
+              --base-path "${{ steps.pages.outputs.base_path }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - if: steps.skip.outputs.skip != 'true'
+        uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - name: Download ROBOT and check its SHA-256
+        if: steps.skip.outputs.skip != 'true'
+        run: python3 -c "import sys; sys.path.insert(0, 'site'); import extract; print(extract.ensure_robot())"
+
+      - name: Build
+        if: steps.skip.outputs.skip != 'true'
+        run: |
+          input=$(python3 -c "import json; print(json.load(open('site/_build/record.json'))['path'])")
+          python3 site/build.py --input "$input" --out _site \
+            --base-path "${{ steps.pages.outputs.base_path }}" \
+            --record site/_build/record.json --work site/_build/work | tee site/_build/summary.json
+
+      - name: Gate the build
+        if: steps.skip.outputs.skip != 'true'
+        run: python3 site/check_site.py _site --tsv site/_build/work/tsv >> "$GITHUB_STEP_SUMMARY"
+
+      - if: steps.skip.outputs.skip != 'true'
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    if: needs.build.outputs.skip != 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: start
+        run: echo "at=$(date +%s)" >> "$GITHUB_OUTPUT"
+      - id: deployment
+        uses: actions/deploy-pages@v5
+      - name: Record the deploy time
+        run: echo "Deployed in $(( $(date +%s) - ${{ steps.start.outputs.at }} )) s." >> "$GITHUB_STEP_SUMMARY"

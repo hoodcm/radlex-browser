@@ -8,8 +8,8 @@ the page count differs from the scoped count; a class with an @en label renders 
 title; the tree has other than one live root plus the retired group; tree.json's parent
 edges differ from the pages' "Is a" lists, or a search posting names a node with no
 page; an internal link in the sample is broken; a page exceeds 40 KB gzipped or the site
-900 MB; or version.json lacks a field. Prints the file count, the site size, and the
-gzipped bundle sizes as a Markdown table.
+900 MB; or version.json lacks a field. Prints the tag, commit, input source, build ID,
+file count, site size, and gzipped bundle sizes as a Markdown table for the job summary.
 """
 import argparse
 import gzip
@@ -180,8 +180,10 @@ def main(argv=None):
     size = sum(f.stat().st_size for f in files)
     if size > SITE_LIMIT:
         gate.fail(f"the site is {size / 2**20:.0f} MB, over 900 MB")
-    rows = [("Files", f"{len(files):,}"), ("Site size", f"{size / 2**20:.1f} MB"),
-            ("Pages linked-checked", f"{sampled:,}")]
+    rows = [("Tag", f"`{version.get('tag', '')}` ({version.get('tag_date', '')})"),
+            ("Commit", f"`{version.get('commit', '')[:12]}`"), ("Input source", version.get("source", "")),
+            ("Build ID", f"`{build_id}`"), ("Files", f"{len(files):,}"), ("Site size", f"{size / 2**20:.1f} MB"),
+            ("Pages link-checked", f"{sampled:,}")]
     for name in ("tree.json", "search-en.json", "search-intl.json"):
         path = data / name
         if path.is_file():
