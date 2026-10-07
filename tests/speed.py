@@ -26,7 +26,9 @@ CPU_SLOWDOWN = 4
 QUERIES = ["liver", "lung", "carotid", "kidney", "aorta", "femur", "brain", "heart", "spleen", "rid58",
            "pancreas", "ive", "fracture", "stenosis", "thyroid", "mri", "contrast", "lesion", "pleural effusion", "vertebra"]
 FIRST_QUERY = "liver"
-TARGETS = {"fcp_ms": 1000, "warm_swap_ms": 100, "search_p95_ms": 16, "first_search_ms": 1000, "long_task_ms": 50}
+# The keystroke target holds the time to results in the DOM. The time to paint adds the wait for the
+# next frame, up to 16.7 ms, so it is reported only (Michael's ruling, 2026-10-07).
+TARGETS = {"fcp_ms": 1000, "warm_swap_ms": 100, "search_dom_p95_ms": 16, "first_search_ms": 1000, "long_task_ms": 50}
 # The page set: RID665 and the terms it links to, imaging sign for the expansion.
 START = "/RID/RID665.html"
 
@@ -202,9 +204,9 @@ def main():
         ("term-to-term swap, touch, on-screen prefetch", "warm_swap_ms", report["touch_swap_ms"], True),
         ("cold swap, no prefetch (reported only)", None, report["cold_swap_ms"], False),
         ("search keystroke to paint, median (reported only)", None, report["search_median_ms"], False),
-        ("search keystroke to paint, 95th percentile", "search_p95_ms", report["search_p95_ms"], True),
+        ("search keystroke to paint, 95th percentile (reported only)", None, report["search_p95_ms"], False),
         ("search keystroke to results in the DOM, median (reported only)", None, report["search_dom_median_ms"], False),
-        ("search keystroke to results in the DOM, 95th percentile (reported only)", None, report["search_dom_p95_ms"], False),
+        ("search keystroke to results in the DOM, 95th percentile", "search_dom_p95_ms", report["search_dom_p95_ms"], True),
         ("first search on a cold page (card above 1 s)", "first_search_ms", report["first_search_ms"], False),
         (f"imaging sign expansion, longest task over {args.runs} runs ({report['imaging_sign']})", "long_task_ms",
          report["long_task_ms"], True),
