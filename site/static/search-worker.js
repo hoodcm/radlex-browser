@@ -63,6 +63,8 @@ function search(raw) {
   const narrow = last && last.rules === rules && q.startsWith(last.q);
   const keysBy = new Map();
   const best = new Map();    // node -> [tier, via]
+  // A RID matches only once the query holds a digit, so "r" doesn't list every term by its RID.
+  const rids = /\d/.test(q);
   for (const ix of indexes) {
     const pool = narrow ? last.keys.get(ix.name) : candidates(ix, q, substrings);
     const kept = [];
@@ -74,6 +76,7 @@ function search(raw) {
       const p = ix.postings[k];
       for (const code of typeof p === "number" ? [p] : p) {
         const node = Math.floor(code / 8), kind = code % 8;
+        if (kind === KIND.rid && !rids) continue;
         const t = tier(kind, type, key === q);
         const prev = best.get(node);
         if (!prev || t < prev[0]) {
@@ -85,13 +88,27 @@ function search(raw) {
     keysBy.set(ix.name, kept);
   }
   last = { q, rules, keys: keysBy };
-  const order = [...best.keys()].sort((a, b) =>
-    tree.retired[a] - tree.retired[b] || best.get(a)[0] - best.get(b)[0] ||
-    tree.labels[a].length - tree.labels[b].length || (tree.labels[a] < tree.labels[b] ? -1 : 1));
-  const results = order.slice(0, LIMIT).map((node) => ({
+  const results = top(best).map((node) => ({
     id: tree.ids[node], label: tree.labels[node], retired: tree.retired[node], tier: best.get(node)[0], via: best.get(node)[1],
   }));
   return { q, results, total: best.size };
+}
+
+// The LIMIT best nodes, ranked retired last, then by tier, label length, and label. A histogram
+// over the integer part of that order finds the cut in one pass, so only the kept nodes are sorted.
+const MAX_LENGTH = 255;
+function rank(node, t) {
+  return (tree.retired[node] * 5 + t) * (MAX_LENGTH + 1) + Math.min(tree.labels[node].length, MAX_LENGTH);
+}
+function top(best) {
+  const counts = new Uint32Array(2 * 5 * (MAX_LENGTH + 1));
+  for (const [node, [t]] of best) counts[rank(node, t)] += 1;
+  let cut = 0;
+  for (let seen = 0; cut < counts.length && seen < LIMIT; cut++) seen += counts[cut];
+  const kept = [];
+  for (const [node, [t]] of best) if (rank(node, t) < cut) kept.push(node);
+  kept.sort((a, b) => rank(a, best.get(a)[0]) - rank(b, best.get(b)[0]) || (tree.labels[a] < tree.labels[b] ? -1 : 1));
+  return kept.slice(0, LIMIT);
 }
 
 async function loadIntl() {
