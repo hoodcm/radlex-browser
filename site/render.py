@@ -98,6 +98,34 @@ def annotation(value, text=None):
     return f'<span class="v" data-property="{e(local_name(value.prop))}">{body}</span>{lang}'
 
 
+def items(values):
+    """Each value in its own box, so a reader sees where one value ends and the next begins."""
+    return '<ul class="items">' + "".join(f"<li>{v}</li>" for v in values) + "</ul>"
+
+
+# The OBO and Dublin Core properties a value can come from, each with the name and CURIE the
+# page shows for it. RadLex's own properties keep their RadLex row names.
+OBO_ROWS = {
+    "hasExactSynonym": ("Exact synonyms", "oboInOwl:hasExactSynonym"),
+    "hasRelatedSynonym": ("Related synonyms", "oboInOwl:hasRelatedSynonym"),
+    "hasNarrowSynonym": ("Narrow synonyms", "oboInOwl:hasNarrowSynonym"),
+    "hasBroadSynonym": ("Broad synonyms", "oboInOwl:hasBroadSynonym"),
+    "hasDbXref": ("Database cross-references", "oboInOwl:hasDbXref"),
+    "source": ("Sources", "dcterms:source"),
+}
+
+
+def obo_rows(values, dd_cls=""):
+    """One row per OBO property among the values, named as OBO names it, and the other values."""
+    rows = []
+    for local, (name, curie) in OBO_ROWS.items():
+        found = [v for v in values if local_name(v.prop) == local]
+        if found:
+            rows.append((f'{name}<span class="curie">{curie}</span>',
+                         items([annotation(v) for v in found]), "", dd_cls))
+    return rows, [v for v in values if local_name(v.prop) not in OBO_ROWS]
+
+
 def prose(value):
     paras = [p for p in value.text.split("\n\n") if p.strip()]
     inner = "".join("<p>" + "<br>".join(e(line) for line in p.split("\n")) + "</p>" for p in paras)
@@ -170,17 +198,20 @@ def banner(ctx, t):
 
 
 def names_section(t):
-    names = ([annotation(t.german_value)] if t.german_value else []) + [annotation(v) for v in t.synonyms]
+    synonym_rows, synonyms = obo_rows(t.synonyms)
+    other_rows, unsanctioned = obo_rows(t.unsanctioned)
+    names = ([annotation(t.german_value)] if t.german_value else []) + [annotation(v) for v in synonyms]
     rows = []
     if names:
-        rows.append(("Synonyms", ", ".join(names), ""))
+        rows.append(("Synonyms", items(names), ""))
+    rows += synonym_rows + other_rows
     if t.acronyms:
-        rows.append(("Acronyms", ", ".join(annotation(v) for v in t.acronyms), ""))
+        rows.append(("Acronyms", items(annotation(v) for v in t.acronyms), ""))
     former = [v for v in t.obsolete_names if v.text.casefold() != t.label.casefold()]
     if former:
-        rows.append(("Former name", ", ".join(annotation(v) for v in former), ""))
-    if t.unsanctioned:
-        rows.append(("Unsanctioned terms", ", ".join(annotation(v) for v in t.unsanctioned), "owl-only"))
+        rows.append(("Former name", items(annotation(v) for v in former), ""))
+    if unsanctioned:
+        rows.append(("Unsanctioned terms", items(annotation(v) for v in unsanctioned), "owl-only"))
     return section("names", "Names", pairs(rows))
 
 
@@ -218,11 +249,13 @@ def referenced_section(ctx, t):
 
 
 def xrefs_section(t):
-    rows = []
-    if t.xrefs:
-        rows.append(("Cross-references", ", ".join(annotation(v) for v in t.xrefs), "", "code"))
-    if t.sources:
-        rows.append(("Source", ", ".join(annotation(v) for v in t.sources), ""))
+    rows, xrefs = obo_rows(t.xrefs, "code")
+    if xrefs:
+        rows.append(("Cross-references", items(annotation(v) for v in xrefs), "", "code"))
+    source_rows, sources = obo_rows(t.sources)
+    rows += source_rows
+    if sources:
+        rows.append(("Source", items(annotation(v) for v in sources), ""))
     if t.version_changed:
         rows.append(("Change history", ", ".join(annotation(v) for v in t.version_changed), "owl-only"))
     return section("xrefs", "Cross-references and source", pairs(rows))

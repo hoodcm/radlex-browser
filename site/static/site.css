@@ -203,6 +203,9 @@ section { display: flex; flex-direction: column; gap: var(--dtools-space-scale-8
 .vals { list-style: none; margin: 0; padding: 0; columns: 2; column-gap: var(--dtools-space-scale-24); }
 .vals.one { columns: 1; }
 .vals li { break-inside: avoid; line-height: var(--dtools-leading-dense); padding-bottom: var(--dtools-space-scale-4); }
+.items { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--dtools-space-scale-4) var(--dtools-space-scale-8); }
+.items li { padding: 0 var(--dtools-space-scale-8); border: 1px solid var(--border); border-radius: var(--dtools-radius-chip); background: var(--surface); line-height: var(--dtools-leading-body); }
+.curie { display: block; font-family: var(--dtools-font-stack-mono); font-size: var(--dtools-type-scale-xs); color: var(--muted); }
 .group { color: var(--muted); }
 
 /* Reader view: one column, the two wrappers flattened and the sections ordered. */

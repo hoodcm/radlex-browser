@@ -22,6 +22,9 @@ RADLEX_ENTITIES = Path.home() / "GitHub/anatomy-ontology/data/radlex/radlex_enti
 RDFS_LABEL = "<http://www.w3.org/2000/01/rdf-schema#label>"
 EXACT = "<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>"
 RELATED = "<http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym>"
+NARROW = "<http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym>"
+BROAD = "<http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym>"
+SCOPES = {"exact": EXACT, "related": RELATED, "narrow": NARROW, "broad": BROAD}
 XREF = "<http://www.geneontology.org/formats/oboInOwl#hasDbXref>"
 COMMENT = "<http://www.w3.org/2000/01/rdf-schema#comment>"
 SOURCE = "<http://purl.org/dc/terms/source>"
@@ -53,9 +56,9 @@ def write_tsvs(entries, out):
             text = s["text"] if isinstance(s, dict) else s
             lang = (s.get("lang") or s.get("language") or "en") if isinstance(s, dict) else "en"
             scope = (s.get("scope") or "exact").lower() if isinstance(s, dict) else "exact"
-            ann.append((c, EXACT if "exact" in scope else RELATED, lit(text, lang)))
+            ann.append((c, SCOPES.get(scope, RELATED), lit(text, lang)))
         for code in e.get("codes", []):
-            pred = code.get("predicate", "").replace("skos:", "").replace("Match", "")
+            pred = code.get("predicate", "").replace("skos:", "").replace("Match", " match")
             ann.append((c, XREF, lit(f"{code['system']}:{code['code']} ({pred})")))
         facts = [f"Node type: {e['nodeType'].replace('_', ' ')}"] if e.get("nodeType") else []
         if e.get("sexSpecific"):
