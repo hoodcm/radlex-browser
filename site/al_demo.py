@@ -1,8 +1,10 @@
 """Build a demo of the browser over the Anatomic Locations staging data.
 
 Reads `data/anatomic_locations.json` at a git ref of the staging clone (default `origin/main`,
-what was pushed), writes it as the query TSVs build.py takes, with `containedById` as the tree
-parent, builds the site, and relabels the RadLex brand strings for the demo.
+what was pushed), writes it as the query TSVs build.py takes, with each entry's placing edge as
+the tree parent, its container (`containedInId`, else `embeddedInId`) or else its first whole
+(`partOfId`), builds the site, and relabels the RadLex brand strings for the demo. Each source
+ships as its own identifier string, so the demo prints it as given.
 
 Usage: python3 site/al_demo.py [--staging DIR] [--ref REF] [--out DIR]
 """
@@ -34,7 +36,7 @@ def iri(rid):
     return f"<{NS}{rid}>"
 
 
-def write_tsvs(entries, sources, out):
+def write_tsvs(entries, out):
     out.mkdir(parents=True, exist_ok=True)
     ids = {e["radlexId"] for e in entries}
     radlex = json.loads(RADLEX_ENTITIES.read_text())
@@ -55,21 +57,29 @@ def write_tsvs(entries, sources, out):
         for code in e.get("codes", []):
             pred = code.get("predicate", "").replace("skos:", "").replace("Match", "")
             ann.append((c, XREF, lit(f"{code['system']}:{code['code']} ({pred})")))
-        facts = [f"Node type: {e['nodeType'].replace('_', ' ')}"]
+        facts = [f"Node type: {e['nodeType'].replace('_', ' ')}"] if e.get("nodeType") else []
         if e.get("sexSpecific"):
             facts.append(f"Sex: {e['sexSpecific']}")
         if e.get("peritonealRelation"):
             facts.append(f"Peritoneal relation: {e['peritonealRelation']}")
         if e.get("locationClassificationIds"):
             facts.append("Location classifications: " + ", ".join(e["locationClassificationIds"]))
-        ann.append((c, COMMENT, lit(". ".join(facts) + ".")))
-        for key in e.get("sources", []):
-            cite = sources.get(key, {}).get("citation")
-            ann.append((c, SOURCE, lit(f"{cite} ({key})" if cite else key)))
-        if e.get("containedById"):
-            parents.append((c, iri(e["containedById"])))
-        if e.get("partOfId"):
-            rels.append((c, f"<{NS}Part_Of>", iri(e["partOfId"])))
+        if facts:
+            ann.append((c, COMMENT, lit(". ".join(facts) + ".")))
+        for source in e.get("sources", []):
+            ann.append((c, SOURCE, lit(source)))
+        wholes = e.get("partOfId") or []
+        host = e.get("containedInId") or e.get("embeddedInId")
+        if host or wholes:
+            parents.append((c, iri(host or wholes[0])))
+        if e.get("containedInId"):
+            rels.append((c, f"<{NS}Contained_In>", iri(e["containedInId"])))
+        if e.get("embeddedInId"):
+            rels.append((c, f"<{NS}Embedded_In>", iri(e["embeddedInId"])))
+        for whole in wholes:
+            rels.append((c, f"<{NS}Part_Of>", iri(whole)))
+        for group in e.get("memberOfId") or []:
+            rels.append((c, f"<{NS}Member_Of>", iri(group)))
         isa = e.get("isA")
         if isa:
             if isa in ids:
@@ -97,10 +107,11 @@ def write_tsvs(entries, sources, out):
 
 BRAND = [
     ("<b>RadLex</b><span>RSNA</span>", "<b>Anatomic Locations</b><span>staging</span>"),
-    ("<dt>Is a</dt>", "<dt>Contained by</dt>"),
-    ("<dt>Children (", "<dt>Contains ("),
-    ('aria-label="RadLex hierarchy"', 'aria-label="Containment hierarchy"'),
-    ("https://github.com/RSNA/RadLex", "https://github.com/openimagingdata/anatomic-locations-staging"),
+    ("<dt>Is a</dt>", "<dt>Placed in</dt>"),
+    ("<dt>Children (", "<dt>Places ("),
+    ('aria-label="RadLex hierarchy"', 'aria-label="Placement hierarchy"'),
+    ('href="https://github.com/RSNA/RadLex">GitHub',
+     'href="https://github.com/openimagingdata/anatomic-locations-staging">GitHub'),
     (" | RadLex</title>", " | Anatomic Locations</title>"),
     ("<title>RadLex</title>", "<title>Anatomic Locations</title>"),
     ("<h1>RadLex</h1>", "<h1>Anatomic Locations</h1>"),
@@ -133,16 +144,15 @@ def main():
                               check=True, capture_output=True, text=True).stdout
 
     doc = json.loads(show("data/anatomic_locations.json"))
-    src = json.loads(show("data/sources.json"))
-    sources = {s["id"]: s for s in src}
     commit = subprocess.run(["git", "-C", a.staging, "rev-parse", "--short", a.ref],
                             check=True, capture_output=True, text=True).stdout.strip()
     entries = doc["bodyParts"]
     tsv = Path(a.out + "-input")
-    write_tsvs(entries, sources, tsv)
+    write_tsvs(entries, tsv)
     summary = build.build(tsv, a.out, "", {"tag": commit, "source": "anatomic-locations-staging"})
     rebrand(Path(a.out), f"Staging snapshot {doc.get('$version', '')}, commit {commit}. "
-                         f"{len(entries):,} entries. The tree follows containment (contained by).")
+                         f"{len(entries):,} entries. The tree follows each entry's placing edge: "
+                         f"its container, else its first whole.")
     print(json.dumps(summary))
 
 
