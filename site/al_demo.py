@@ -3,7 +3,8 @@
 Reads `data/anatomic_locations.json` at a git ref of the staging clone (default `origin/main`,
 what was pushed), writes it as the query TSVs build.py takes, with each entry's placing edge as
 the tree parent, its container (`containedInId`, else `embeddedInId`) or else its first whole
-(`partOfId`), builds the site, and relabels the RadLex brand strings for the demo. Each source
+(`partOfId`), or for a whole placed through its pieces the deepest place that holds them all,
+builds the site, and relabels the RadLex brand strings for the demo. Each source
 ships as its own identifier string, so the demo prints it as given.
 
 Usage: python3 site/al_demo.py [--staging DIR] [--ref REF] [--out DIR]
@@ -39,6 +40,58 @@ def iri(rid):
     return f"<{NS}{rid}>"
 
 
+def tree_parents(entries):
+    """Each entry's tree parent: its container, else its first whole. An entry that stores
+    neither, such as a nerve whose pieces sit in each region it crosses, a set, or a class head,
+    goes under the deepest place that holds the places of its parts, members, sides, and
+    subclasses, since the library places it through them."""
+    tree, places = {}, {}
+    for e in entries:
+        host = e.get("containedInId") or e.get("embeddedInId")
+        wholes = e.get("partOfId") or []
+        places[e["radlexId"]] = ([host] if host else []) + wholes
+        if host or wholes:
+            tree[e["radlexId"]] = host or wholes[0]
+    pieces = {}  # what places a whole that stores no edge: its parts, members, sides, and kinds
+    for e in entries:
+        for whole in (e.get("partOfId") or []) + (e.get("memberOfId") or []) + [e.get("isA")]:
+            if whole:
+                pieces.setdefault(whole, []).append(e["radlexId"])
+
+    def chain(rid):
+        out, seen = [], set()
+        while rid in tree and rid not in seen:
+            seen.add(rid)
+            rid = tree[rid]
+            out.append(rid)
+        return out
+
+    def place_apart_from(member, whole):
+        # a piece is often part of its whole and of a region, so read the edge that isn't the whole
+        start = next((p for p in places.get(member, []) if p != whole), None)
+        if start is None and member in tree and tree[member] != whole:
+            start = tree[member]
+        return [start] + chain(start) if start else []
+
+    through, grew = set(), True
+    while grew:  # a piece can itself be a whole placed through its own pieces
+        grew = False
+        for whole, members in pieces.items():
+            if whole in tree:
+                continue
+            chains = [place_apart_from(m, whole) for m in members]
+            chains = [ch for ch in chains if ch and whole not in ch]
+            if not chains:
+                continue
+            common = set(chains[0]).intersection(*chains[1:])
+            deepest = next((p for p in chains[0] if p in common), None)
+            if deepest:
+                tree[whole] = deepest
+                through.add(whole)
+                grew = True
+    return tree, through
+
+
 def write_tsvs(entries, out):
     out.mkdir(parents=True, exist_ok=True)
     ids = {e["radlexId"] for e in entries}
@@ -48,6 +101,7 @@ def write_tsvs(entries, out):
         radlex = list(radlex.values())
     rl_label = {r["rid"]: r["preferred_label"] for r in radlex if isinstance(r, dict) and "rid" in r}
 
+    tree, through_pieces = tree_parents(entries)
     ann, parents, rels, external = [], [], [], {}
     for e in entries:
         c = iri(e["radlexId"])
@@ -72,9 +126,10 @@ def write_tsvs(entries, out):
         for source in e.get("sources", []):
             ann.append((c, SOURCE, lit(source)))
         wholes = e.get("partOfId") or []
-        host = e.get("containedInId") or e.get("embeddedInId")
-        if host or wholes:
-            parents.append((c, iri(host or wholes[0])))
+        if e["radlexId"] in tree:
+            parents.append((c, iri(tree[e["radlexId"]])))
+        if e["radlexId"] in through_pieces:
+            ann.append((c, COMMENT, lit("Placed through its pieces, under the place that holds them all.")))
         if e.get("containedInId"):
             rels.append((c, f"<{NS}Contained_In>", iri(e["containedInId"])))
         if e.get("embeddedInId"):
@@ -155,7 +210,8 @@ def main():
     summary = build.build(tsv, a.out, "", {"tag": commit, "source": "anatomic-locations-staging"})
     rebrand(Path(a.out), f"Staging snapshot {doc.get('$version', '')}, commit {commit}. "
                          f"{len(entries):,} entries. The tree follows each entry's placing edge: "
-                         f"its container, else its first whole.")
+                         f"its container, else its first whole, and a whole placed through its "
+                         f"pieces sits under the place that holds them all.")
     print(json.dumps(summary))
 
 
